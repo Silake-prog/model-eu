@@ -1,0 +1,114 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=2.2cm}
+
+\title{Extraction de la demande non-thermosensible\\
+\large M\'ethode POMMES/DemandForge pour l'Espagne, l'Allemagne et l'Italie, ann\'ee 2020}
+\author{CIRED}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Notation}
+
+Soit $c$ un pays et $y$ une ann\'ee (ici $y=2020$). On note :
+\begin{itemize}
+  \item $L_c(t)$ la consommation \'electrique horaire observ\'ee (MW), issue de la plateforme ENTSO-E Transparency ;
+  \item $T_c(t)$ la temp\'erature moyenne horaire du pays $c$, pond\'er\'ee par la population, calcul\'ee \`a partir des r\'eanalyses ERA5 $2\,\mathrm{m}$ et d'une grille de population (\textsc{ghsl}-pop) ;
+  \item $h(t) \in \{0,\ldots,23\}$ l'heure locale de l'horodatage $t$.
+\end{itemize}
+Les deux s\'eries sont align\'ees sur le m\^eme index horaire UTC couvrant $y$ et interpol\'ees lin\'eairement en cas de trous.
+
+\section{Mod\`ele horaire par morceaux}
+\label{sec:model}
+
+Pour chaque heure $h\in\{0,\ldots,23\}$ on postule deux r\'egressions lin\'eaires ind\'ependantes en fonction de la temp\'erature :
+\begin{align}
+  \text{(Hiver)}\quad & L_c(t)\;=\;\alpha_h^{w} + \beta_h^{w}\;T_c(t) + \varepsilon_t,
+    && \text{valable pour } T_c(t) < T_h^{w}, \label{eq:winter}\\[2pt]
+  \text{(\'Et\'e)}\quad & L_c(t)\;=\;\alpha_h^{s} + \beta_h^{s}\;T_c(t) + \varepsilon_t,
+    && \text{valable pour } T_c(t) > T_h^{s}. \label{eq:summer}
+\end{align}
+Les pentes $\beta_h^{w}$ et $\beta_h^{s}$ portent une interpr\'etation physique directe :
+\begin{itemize}
+  \item $\beta_h^{w}$ (unit\'e : $\mathrm{MW/{}^{\circ}C}$, typiquement n\'egatif) est le \textbf{heating rate} : lorsque la temp\'erature descend d'un degr\'e sous le seuil hivernal, la demande augmente de $|\beta_h^{w}|\,\mathrm{MW}$ ;
+  \item $\beta_h^{s}$ (unit\'e : $\mathrm{MW/{}^{\circ}C}$, positif) est le \textbf{cooling rate} : lorsque la temp\'erature monte d'un degr\'e au-dessus du seuil estival, la demande augmente de $\beta_h^{s}\,\mathrm{MW}$ ;
+  \item $T_h^{w}$ et $T_h^{s}$ sont les temp\'eratures de seuil (\textbf{threshold temperatures}) d\'elimitant les r\'egimes chauffage et climatisation.
+\end{itemize}
+Le double seuillage et la stratification horaire sont importants : ils \'evitent que la tendance de la consommation nocturne contamine la pente diurne, et ils laissent appara\^itre naturellement une zone centrale \textbf{neutre} $T_h^{w}\leq T_c(t) \leq T_h^{s}$ dans laquelle la consommation ne r\'epond plus \`a la temp\'erature.
+
+\section{Grid search sur les seuils}
+
+Les seuils $(T_h^{w},T_h^{s})$ ne sont pas donn\'es a priori : on les d\'etermine par recherche exhaustive sur deux grilles
+\[
+  T_h^{w}\in\mathcal{G}_w=\{5,8,10,12,14,15,16,17\}~^{\circ}C,\qquad
+  T_h^{s}\in\mathcal{G}_s=\{15,18,19,20,21,22,24,26\}~^{\circ}C.
+\]
+Pour chaque paire $(T_h^{w},T_h^{s})$ avec $T_h^{w}<T_h^{s}$ on ajuste les r\'egressions \eqref{eq:winter} et \eqref{eq:summer} \`a l'aide de \texttt{scipy.stats.linregress}, et on retient la paire qui maximise la somme des $R^2$ :
+\begin{equation}
+  (\hat T_h^{w},\hat T_h^{s})\;=\;\arg\max_{(T_h^{w},T_h^{s})\in\mathcal{G}_w\times\mathcal{G}_s,\,T_h^{w}<T_h^{s}}
+    \Big[R_h^{2,w}(T_h^{w})+R_h^{2,s}(T_h^{s})\Big].
+  \label{eq:gridsearch}
+\end{equation}
+On impose un nombre minimal de points $n_{\min}=30$ pour accepter une r\'egression ; sinon le $R^2$ correspondant est marqu\'e \texttt{NaN} et la paire est exclue. Une r\'egression est appliqu\'ee en d\'ecomposition ult\'erieure uniquement si $R^2\geq 0.1$, afin de ne pas injecter un signal thermosensible fictif dans les heures \`a demande faiblement corr\'el\'ee \`a la temp\'erature (heures de nuit d'\'et\'e, par exemple).
+
+\section{D\'efinition saisonni\`ere}
+
+Pour \'eviter le va-et-vient entre r\'egime hivernal et estival lors des journ\'ees de mi-saison, on d\'efinit l'appartenance \`a l'hiver \`a partir d'une moyenne mobile sur $4$ semaines de la temp\'erature hebdomadaire moyenne, compar\'ee \`a un seuil de $12\,^{\circ}\mathrm{C}$ :
+\begin{equation}
+  \overline{T}_w=\frac{1}{4}\sum_{k=0}^{3}\langle T_c\rangle_{w-k},\qquad
+  \text{hiver}(w)=\mathbf{1}\big[\overline{T}_w < 12\,^{\circ}\mathrm{C}\big],
+  \label{eq:season}
+\end{equation}
+o\`u $\langle T_c\rangle_w$ d\'esigne la moyenne des temp\'eratures horaires de la semaine~$w$ (du lundi au dimanche). L'indicateur hebdomadaire est ensuite propag\'e \`a chaque heure de la semaine.
+
+\section{D\'ecomposition de la charge}
+
+Munis des param\`etres $(\hat\alpha_h^{w},\hat\beta_h^{w},\hat T_h^{w})$ et $(\hat\alpha_h^{s},\hat\beta_h^{s},\hat T_h^{s})$, on d\'ecompose la charge observ\'ee $L_c(t)$ en trois composantes :
+\begin{align}
+  \text{Chauffage (hiver) :} &\quad
+  H_c(t)\;=\;\mathbf{1}\big[\text{hiver}(t)\big]\,\max\!\Big\{0,\,
+    \hat\beta_{h(t)}^{w}\big(T_c(t)-\hat T_{h(t)}^{w}\big)\Big\},\label{eq:heating}\\[2pt]
+  \text{Climatisation (\'et\'e) :} &\quad
+  C_c(t)\;=\;\mathbf{1}\big[\neg\,\text{hiver}(t)\big]\,\max\!\Big\{0,\,
+    \hat\beta_{h(t)}^{s}\big(T_c(t)-\hat T_{h(t)}^{s}\big)\Big\},\label{eq:cooling}\\[2pt]
+  \text{Baseload (non-thermosensible) :} &\quad
+  B_c(t)\;=\;L_c(t)\;-\;H_c(t)\;-\;C_c(t).\label{eq:baseload}
+\end{align}
+Le $\max\{0,\cdot\}$ garantit que $H_c$ et $C_c$ sont positifs : m\^eme si $\hat\beta_{h}^{w}<0$, le produit $\hat\beta_{h}^{w}(T-\hat T_h^{w})$ est positif lorsque $T<\hat T_h^{w}$. Dans le rare cas o\`u $B_c(t)<0$ (surestimation de la thermosensibilit\'e) on r\'eduit $H_c$ et $C_c$ proportionnellement de sorte que $B_c(t)=0$, ce qui pr\'eserve l'\'egalit\'e $L_c=B_c+H_c+C_c$.
+
+La courbe $B_c(t)$ est la \textbf{demande d\'ebarrass\'ee de sa composante thermosensible} : c'est ce que l'on trace pour l'Espagne, l'Allemagne et l'Italie en 2020 dans le livrable accompagnant ce document.
+
+\section{Agr\'egation par pays}
+
+Pour r\'esumer par un seul chiffre les vingt-quatre r\'egressions horaires d'un pays, on calcule :
+\begin{equation}
+  \bar\beta_c^{w}=\operatorname{mean}_{h\in H_c^{w}}\hat\beta_h^{w},\qquad
+  \bar\beta_c^{s}=\operatorname{mean}_{h\in H_c^{s}}\hat\beta_h^{s},
+\end{equation}
+o\`u $H_c^{w}$ (resp.\ $H_c^{s}$) est l'ensemble des heures dont la r\'egression hivernale (resp.\ estivale) satisfait $R^2\geq 0.1$. Les seuils pays sont pris comme la m\'ediane sur ces m\^emes sous-ensembles :
+\begin{equation}
+  \tilde T_c^{w}=\operatorname{median}_{h\in H_c^{w}}\hat T_h^{w},\qquad
+  \tilde T_c^{s}=\operatorname{median}_{h\in H_c^{s}}\hat T_h^{s}.
+\end{equation}
+Ces quatre nombres constituent les livrables scalaires pour chaque pays (heating rate moyen, cooling rate moyen, seuil hivernal m\'edian, seuil estival m\'edian), directement exploitables dans un mod\`ele prospectif du type \textsc{clever}~2050 ou pour un d\'eflateur climatique sur l'historique.
+
+\section{Remarques}
+
+\begin{enumerate}
+  \item \textbf{Lin\'earit\'e locale.} La lin\'earit\'e n'est postul\'ee qu'en de\c{c}\`a du seuil hivernal et au-del\`a du seuil estival ; la zone centrale est explicitement neutralis\'ee, ce qui \'evite de surestimer la sensibilit\'e autour du neutre. En Espagne et en Italie, o\`u la pointe de climatisation d\'epasse celle du chauffage en absolu, cette propri\'et\'e est critique : un mod\`ele en valeur absolue sur une seule pente croirait \`a tort que la pointe hivernale est climatique.
+  \item \textbf{Heure par heure.} La d\'ependance horaire des pentes refl\`ete le fait que la climatisation bascule le jour et que le chauffage \'electrique (pompes \`a chaleur, convecteurs) pointe surtout en matin\'ee et en soir\'ee d'hiver.
+  \item \textbf{Pond\'eration population.} L'utilisation d'une temp\'erature pond\'er\'ee par la population (et non d'une moyenne arithm\'etique spatiale) est essentielle pour les grands pays : les Alpes ou la Sierra Nevada ne doivent pas peser autant que Madrid ou Milan.
+  \item \textbf{Ann\'ee 2020.} Le confinement COVID-19 a r\'eduit la demande d'environ $10\,\%$ sur une partie de l'ann\'ee. La r\'egression reste valide mais les pentes sont l\'eg\`erement d\'eform\'ees ; un contr\^ole de robustesse avec 2019 ou 2021 est recommand\'e avant toute utilisation prospective.
+  \item \textbf{Lien avec \textsc{pommes}/\textsc{demandforge}.} La proc\'edure d\'ecrite est strictement celle impl\'ement\'ee dans \texttt{demandforge.thermosensitivity} et \texttt{demandforge.thermosensitive\_share}. Le script \texttt{baseload\_curves\_2020.py} fourni avec le pr\'esent document est un \emph{thin wrapper} : il n'en r\'eimpl\'emente aucune \'etape et appelle directement \texttt{analyze\_thermosensitivity} puis \texttt{process\_thermosensitive\_share}, garantissant une parit\'e bit-\`a-bit avec la cha\^ine de production et un suivi automatique des \'evolutions futures de la biblioth\`eque. \textsc{supplyforge} n'intervient pas ici, le sujet \'etant purement demande ; il serait sollicit\'e si l'on voulait en plus les profils \textsc{vre} ERA5 ou les facteurs de charge.
+\end{enumerate}
+
+\end{document}

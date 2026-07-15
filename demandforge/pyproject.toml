@@ -1,0 +1,92 @@
+[project]
+name = "demandforge"
+version = "0.2.3"
+description = "Country level electricity load analysis and projection"
+authors = [
+    { name = "Yassine Abdelouadoud", email = "yassine.abdelouadoud@minesparis.psl.eu" },
+]
+maintainers = [
+    { name = "Yassine Abdelouadoud", email = "yassine.abdelouadoud@minesparis.psl.eu" },
+]
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+requires-python = ">=3.10,<4.0.0"
+dependencies = [
+    "pandas",
+    "pyarrow"
+]
+[project.optional-dependencies]
+workflow = [
+    "xarray",
+    "cdsapi",
+    "polars",
+    "h5netcdf",
+    "entsoe-py",
+    "python-dotenv",
+    "snakemake",
+    "google-cloud-storage",
+    "platformdirs"
+]
+notebooks = [
+    "notebook",
+    "ipykernel",
+    "ipython",
+    "nbformat",
+    "matplotlib",
+    "seaborn",
+]
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["demandforge", "demandforge.fetch", "demandforge.process"]
+
+# Formatter and linter settings
+
+[tool.ruff]
+extend-include = ['*.ipynb']
+line-length = 79
+
+[tool.ruff.lint]
+select = [
+    'F',   # pyflakes
+    'E',   # pycodestyle: Error
+    'W',   # pycodestyle: Warning
+    'I',   # isort
+    'D',   # pydocstyle
+    'UP',  # pyupgrade
+    'ANN', # flake-8 annotations
+    'TID', # flake8-tidy-imports
+    'NPY', # numpy
+    'RUF013', # ruff
+]
+
+ignore = [
+    'D203', # 1 blank line required before class docstring
+    'D212', # Multi-line docstring summary should start at the second line
+    'D401', # First line should be in imperative mood
+#    'E501', # Line too long
+    ]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 99
+
+[tool.ruff.lint.flake8-tidy-imports]
+# Disallow all relative imports.
+ban-relative-imports = "all"

@@ -1,0 +1,37 @@
+name: supplyforge-env-doc
+channels:
+    - conda-forge
+    - bioconda
+dependencies:
+    - python=3.13
+    - snakemake
+    - pandas
+    - pyarrow
+    - geopandas
+    - rasterio
+    - xarray
+    - numpy
+    - polars
+    - h5netcdf
+    - notebook
+    - plotly
+    - seaborn
+    - sphinx
+    - nbsphinx
+    - pandoc
+    - graphviz
+    - python-graphviz
+    - pip
+    - pip:
+          - entsoe-py
+          - cdsapi
+          - python-dotenv
+          - google-cloud-storage
+          - sphinx-autoapi
+          - pydata-sphinx-theme
+          - pommes_craft
+          - fastexcel
+          - platformdirs
+          - pytest
+          - hdf5plugin
+

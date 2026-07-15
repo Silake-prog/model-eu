@@ -1,0 +1,15 @@
+FROM mambaorg/micromamba:latest
+
+COPY --chown=$MAMBA_USER:$MAMBA_USER ci/envs/environment-test.yaml /tmp/environment-test.yaml
+RUN micromamba install -y -n base -f /tmp/environment-test.yaml && \
+    micromamba clean --all --yes
+
+ARG MAMBA_DOCKERFILE_ACTIVATE=1
+
+COPY --chown=$MAMBA_USER:$MAMBA_USER . /demandforge
+WORKDIR /demandforge
+
+# Installing the pommes package
+RUN pip install .
+# Verifying the installation
+RUN python -c "import demandforge"

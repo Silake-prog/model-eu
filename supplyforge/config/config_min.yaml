@@ -1,0 +1,20 @@
+# Configuration file for DemandForge data fetching
+
+# Countries to process
+countries:
+  - FR  # France
+  - DE  # Germany
+  - IT  # Italy
+  - PL  # Poland
+  - ES  # Spain
+  - BE  # Belgium
+  - CH  # Switzerland
+
+
+# Years to process
+years:
+  - 2020
+  - 2021
+  - 2022
+  - 2023
+  - 2024

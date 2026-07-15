@@ -1,0 +1,68 @@
+"""
+Main Snakefile for DemandForge workflow
+"""
+
+# Load configuration
+configfile: "config/config.yaml"
+
+# Define output paths
+RESULTS_DIR = config["output_dir"]
+
+# Get countries and years from config
+COUNTRIES = config["countries"]
+YEARS = config["years"]
+POPULATION_YEARS = config["population_years"]
+
+# Include fetching rules
+include: "workflow/rules/fetch.smk"
+
+# Include processing rules
+include: "workflow/rules/process.smk"
+
+# Target rule - defines what to build by default
+rule all:
+    input:
+        # Country borders
+        f"{RESULTS_DIR}/{config['country_borders']['filename']}",
+        # ENTSO-E load data for all countries and years
+        expand(f"{RESULTS_DIR}/entsoe/entsoe_load_{{country}}_{{year}}.parquet",
+               country=COUNTRIES,
+               year=YEARS),
+        # ERA5 temperature data for all countries and years
+        expand(f"{RESULTS_DIR}/era5/era5_temp_{{country}}_{{year}}.nc",
+               country=COUNTRIES,
+               year=YEARS),
+        # GHSL population data for all years
+        expand(f"{RESULTS_DIR}/ghsl/ghsl_pop_europe_{{population_year}}.tif",
+               population_year=POPULATION_YEARS),
+        # Population-weighted temperature for all countries and years
+        expand(f"{RESULTS_DIR}/weighted_temp/weighted_temp_{{country}}_{{year}}.parquet",
+               country=COUNTRIES,
+               year=YEARS),
+        # Thermosensitivity analysis results
+        expand(f"{RESULTS_DIR}/thermosensitivity/thermosensitivity_results_{{country}}_{{year}}.csv",
+            country=COUNTRIES,
+            year=YEARS),
+        expand(f"{RESULTS_DIR}/thermosensitivity/thermosensitivity_report_{{country}}_{{year}}.pdf",
+            country=COUNTRIES,
+            year=YEARS),
+        expand(
+            f"{RESULTS_DIR}/thermosensitive_share/thermosensitive_share_{{country}}_{{year}}.parquet",
+            country=COUNTRIES,
+            year=YEARS
+            ),
+        expand(
+            f"{RESULTS_DIR}/thermosensitive_share/thermosensitive_share_report_{{country}}_{{year}}.pdf",
+            country=COUNTRIES,
+            year=YEARS
+            ),
+        expand(
+            f"{RESULTS_DIR}/combined_load/combined_load_{{country}}_{{year}}.parquet",
+            country=COUNTRIES,
+            year=YEARS
+            ),
+        expand(
+            f"{RESULTS_DIR}/gcs_upload/combined_load_{{country}}_{{year}}.txt",
+            country=COUNTRIES,
+            year=YEARS
+            )

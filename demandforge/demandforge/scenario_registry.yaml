@@ -1,0 +1,203 @@
+# DemandForge Scenario Registry
+# Defines named scenario bundles for reproducible hydrogen demand projections.
+# Each bundle specifies parameters for all 6 sector modules.
+#
+# Usage:
+#   import yaml
+#   with open("scenario_registry.yaml") as f:
+#       registry = yaml.safe_load(f)
+#   params = registry["bundles"]["central"]
+
+bundles:
+  # Central scenario — constant demand, moderate structural transition.
+  # This is the reference scenario for POMMES baseline runs.
+  central:
+    description: "Reference scenario — constant demand, moderate structural transition"
+    ammonia:
+      domestic_share_end: 1.0
+      h2_route_share_end: 0.80
+      decarb_start: 2030
+      decarb_end: 2050
+    refinery:
+      molecule_scenario: "more-molecule"
+      inefficiency_share: 0.14
+      capacity_delay_years: 10
+    esaf:
+      demand_growth_rate: 0.02
+      # Technology mix for eSAF production.  Drives BOTH the H2 demand
+      # (FT ≈ 0.43, MtJ ≈ 0.55 t H2/t SAF) AND the CO2 feedstock demand
+      # (FT 7.084 vs MtJ 7.275 t CO2/t H2).  See constants.py
+      # H2_INTENSITY_T_PER_T_ESAF_BY_PATHWAY for stoichiometric
+      # derivations.
+      # Central: FT-dominant with modest MtJ share (reflecting early
+      # methanol-to-jet demo projects).
+      pathway_shares:
+        fischer_tropsch: 0.70
+        methanol_to_jet: 0.30
+    maritime:
+      demand_growth_rate: 0.0
+      e_methanol_share_2050: 0.40
+      ammonia_fuel_share_2050: 0.15
+      biomethanol_share_2050: 0.20
+    olefins:
+      olefins_cagr: 0.0
+      pathways:
+        mto:
+          share_2050: 0.20
+          ramp_start: 2030
+          ramp_end: 2045
+        bio_naphtha:
+          share_2050: 0.15
+          ramp_start: 2024
+          ramp_end: 2035
+        chem_recycling:
+          share_2050: 0.10
+          ramp_start: 2027
+          ramp_end: 2038
+    steel:
+      dri_share_2050: 0.60
+      steel_cagr: 0.0
+      h2_per_t_dri: 0.054
+
+  # High H2 demand — growing demand, full electrolytic transition.
+  # Stresses the hydrogen network to its maximum plausible capacity.
+  # Olefins: MTO-heavy pathway (H2-intensive), reflecting a world where
+  # abundant electrolysis capacity makes power-to-methanol competitive.
+  high_h2:
+    description: "High H2 demand — growing demand, full electrolytic transition"
+    ammonia:
+      domestic_share_end: 1.0
+      h2_route_share_end: 1.0
+      decarb_start: 2025
+      decarb_end: 2045
+    refinery:
+      molecule_scenario: "more-molecule"
+      inefficiency_share: 0.14
+      capacity_delay_years: 10
+    esaf:
+      demand_growth_rate: 0.03
+      # High_H2: MtJ-heavy mix — abundant electrolysis makes
+      # power-to-methanol pathways competitive, pulling jet fuel through
+      # the methanol intermediate (higher H2 AND CO2 intensity per t SAF).
+      pathway_shares:
+        fischer_tropsch: 0.40
+        methanol_to_jet: 0.60
+    maritime:
+      demand_growth_rate: 0.02
+      e_methanol_share_2050: 0.50
+      ammonia_fuel_share_2050: 0.20
+      biomethanol_share_2050: 0.15
+    olefins:
+      olefins_cagr: 0.005
+      pathways:
+        mto:
+          share_2050: 0.35
+          ramp_start: 2028
+          ramp_end: 2042
+        bio_naphtha:
+          share_2050: 0.15
+          ramp_start: 2024
+          ramp_end: 2035
+        chem_recycling:
+          share_2050: 0.15
+          ramp_start: 2026
+          ramp_end: 2036
+    steel:
+      dri_share_2050: 1.0
+      steel_cagr: 0.005
+      h2_per_t_dri: 0.054
+
+  # Low H2 demand — declining demand, CCS and imports favoured.
+  # Represents a future where hydrogen plays a minimal role in industry.
+  # Olefins: bio-naphtha and recycling dominate (H2-light pathways).
+  # MTO minimal — insufficient electrolysis build-out.
+  low_h2:
+    description: "Low H2 demand — declining demand, CCS and imports favoured"
+    ammonia:
+      domestic_share_end: 0.50
+      h2_route_share_end: 0.30
+      decarb_start: 2035
+      decarb_end: 2050
+    refinery:
+      molecule_scenario: "max-electron"
+      inefficiency_share: 0.10
+      capacity_delay_years: 10
+    esaf:
+      demand_growth_rate: 0.0
+      # Low_H2: pure Fischer-Tropsch — conservative, most mature route,
+      # and the lowest H2 intensity per t SAF (0.43 vs 0.55 for MtJ).
+      pathway_shares:
+        fischer_tropsch: 1.0
+        methanol_to_jet: 0.0
+    maritime:
+      demand_growth_rate: -0.01
+      e_methanol_share_2050: 0.20
+      ammonia_fuel_share_2050: 0.10
+      biomethanol_share_2050: 0.30
+    olefins:
+      olefins_cagr: -0.005
+      pathways:
+        mto:
+          share_2050: 0.05
+          ramp_start: 2035
+          ramp_end: 2050
+        bio_naphtha:
+          share_2050: 0.15
+          ramp_start: 2024
+          ramp_end: 2035
+        chem_recycling:
+          share_2050: 0.10
+          ramp_start: 2027
+          ramp_end: 2040
+    steel:
+      dri_share_2050: 0.30
+      steel_cagr: -0.005
+      h2_per_t_dri: 0.054
+
+  # Maximum industry H2 stress test.
+  # Pushes all sectors to maximum electrolytic hydrogen uptake simultaneously.
+  # Olefins: all pathways pushed to maximum simultaneously.
+  industry_stress:
+    description: "Maximum industry H2 stress test"
+    ammonia:
+      domestic_share_end: 1.0
+      h2_route_share_end: 1.0
+      decarb_start: 2025
+      decarb_end: 2040
+    refinery:
+      molecule_scenario: "more-molecule"
+      inefficiency_share: 0.14
+      capacity_delay_years: 10
+    esaf:
+      demand_growth_rate: 0.03
+      # Industry stress: MtJ-heavy mix maximises BOTH H2 demand
+      # (0.55 vs 0.43 t H2/t SAF) and CO2 feedstock demand
+      # (7.275 vs 7.084 t CO2/t H2) — jointly stresses H2 and CO2
+      # supply chains.
+      pathway_shares:
+        fischer_tropsch: 0.30
+        methanol_to_jet: 0.70
+    maritime:
+      demand_growth_rate: 0.02
+      e_methanol_share_2050: 0.55
+      ammonia_fuel_share_2050: 0.25
+      biomethanol_share_2050: 0.10
+    olefins:
+      olefins_cagr: 0.01
+      pathways:
+        mto:
+          share_2050: 0.40
+          ramp_start: 2026
+          ramp_end: 2040
+        bio_naphtha:
+          share_2050: 0.20
+          ramp_start: 2024
+          ramp_end: 2033
+        chem_recycling:
+          share_2050: 0.20
+          ramp_start: 2025
+          ramp_end: 2035
+    steel:
+      dri_share_2050: 1.0
+      steel_cagr: 0.01
+      h2_per_t_dri: 0.054

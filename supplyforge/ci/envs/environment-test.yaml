@@ -1,0 +1,17 @@
+name: supplyforge-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pandas
+  - polars
+  - pyarrow
+  - pytest
+  - pip:
+      - entsoe-py
+      - python-dotenv
+      - google-cloud-storage
+      - pommes_craft
+      - fastexcel
+      - platformdirs
+      - hdf5plugin

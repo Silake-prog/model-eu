@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["supplyforge", "supplyforge.fetch", "supplyforge.process"]
+
+[project]
+name = "supplyforge"
+version = "0.1.5"
+authors = [
+    { name = "Yassine Abdelouadoud", email = "yassine.abdelouadoud@minesparis.psl.eu" }
+]
+description = "A Snakemake workflow to generate country-level electricity supply datasets."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pandas",
+    "polars",
+    "pyarrow",
+    "entsoe-py",
+    "pommes_craft",
+    "fastexcel",
+    "python-dotenv",
+    "platformdirs",
+    "plotly"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+license = {file = "LICENSE"}
+[project.urls]
+"Homepage" = "https://git.persee.minesparis.psl.eu/energy-alternatives/supplyforge"
+"Bug Tracker" = "https://git.persee.minesparis.psl.eu/energy-alternatives/supplyforge/-/issues"
