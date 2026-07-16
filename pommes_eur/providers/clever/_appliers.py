@@ -3,7 +3,7 @@
 The five in-place mutators applied to the assembled POMMES dataset by
 ``dataset_overrides.apply_r0_overrides`` (electrolyser CAPEX / sovereignty min-bounds,
 H2 storage CAPEX / caps, hydrogen load-shedding cost), plus the shared tech-name and
-default-cost constants. Split verbatim out of the old r0_overrides.py.
+default-cost constants. Split verbatim out of the CLEVER R0 calibration pipeline.
 """
 from __future__ import annotations
 

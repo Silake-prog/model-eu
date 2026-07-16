@@ -18,7 +18,7 @@ changes. From that one declaration the module provides:
 
 Backwards compatibility: this does not change how any value is computed — it only
 declares, in one table, the flags that ``parse.py`` already implements, plus the base
-prefixes and the ``corr``/``batt``/``storPx`` levers resolved in ``overrides.py`` and the
+prefixes and the ``corr``/``batt``/``storPx`` levers resolved in ``scenario/resolved.py`` and the
 drivers. No numerics changed.
 """
 from __future__ import annotations
@@ -64,7 +64,7 @@ class Flag:
 # ── The flag vocabulary ─────────────────────────────────────────────────────────────
 # Ordered most-specific-first so the left-to-right matcher never mis-splits a token
 # (e.g. `menaH2cost..` must be tried before `menaH2..`). Patterns mirror the regexes
-# inside clever/scenario/parse.py (and the corr/batt/storPx levers in overrides.py /
+# inside clever/scenario/parse.py (and the corr/batt/storPx levers in scenario/resolved.py /
 # r0_input_tables.py) exactly.
 FLAG_REGISTRY: tuple[Flag, ...] = (
     # structural modifiers (no dedicated parser; gate via prefix/substring)

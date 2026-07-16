@@ -3,8 +3,8 @@
 Battery-power scaling (`_battNNN`/DECARB), the investable-technology set (with nuclear
 injection for `_nuke*`), and the per-country capacity-expansion headroom (with the
 nuclear-reentry and `_nukeXXL` mutations). Derived from static `data.inputs` base tables +
-the scenario flags in `scenario.resolved`. Re-exported through the data/overrides.py facade.
-Carved verbatim out of the old overrides.py — values byte-identical, guarded by tests/golden.
+the scenario flags in `scenario.resolved`. Re-exported through pommes_eur.constants.
+Carved out of the old constants.py monolith — values byte-identical, guarded by tests/golden.
 The mutation order (headroom literal -> reentry loop -> _nukeXXL) is load-bearing; preserved.
 """
 from __future__ import annotations

@@ -2,8 +2,8 @@
 
 DECARB-run detection flags and the VRE upper-expansion / downside-decommission bands
 (`_vreEXT`/`_vreXXL`/`_vreFree`/DECARB-aware), keyed off the scenario flags in
-`scenario.resolved`. Re-exported through the data/overrides.py facade. Carved verbatim out
-of the old overrides.py — values byte-identical, guarded by tests/golden. No numerics changed.
+`scenario.resolved`. Re-exported through pommes_eur.constants. Carved out
+of the old constants.py monolith — values byte-identical, guarded by tests/golden. No numerics changed.
 """
 from __future__ import annotations
 

@@ -35,7 +35,7 @@ adding one `Flag` to the registry**, nothing else.
 
 Each flag's regex is the token *after* the leading `_`. The parser column names the pure
 function in `pommes_eur/scenario/parse.py` that resolves the value (blank = structural
-modifier or base-inherited gate resolved in `pommes_eur/overrides.py`).
+modifier or base-inherited gate resolved in `pommes_eur/scenario/resolved.py`).
 """
 
 

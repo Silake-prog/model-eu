@@ -4,9 +4,8 @@ Reads the active scenario once (POMMES_EUR_SCENARIO / CLEVER_SCENARIO) and mater
 the per-run scalar globals — the eager, process-global form of ScenarioSpec: flag bools,
 prices, MENA settings, the corridor multiplier, the DemandForge bundle name, the ENSPRESO
 coupling. The scenario-gated derived *tables* live in data/expansion.py + data/vre_limits.py;
-the fuel-price functions in costs/fuel_prices.py; all are re-exported through the
-data/overrides.py facade (and thence pommes_eur.constants). Carved verbatim out of the old
-overrides.py — values byte-identical, guarded by tests/golden. No numerics changed.
+the fuel-price functions in costs/fuel_prices.py; all are re-exported through pommes_eur.constants
+(the aggregation facade). Carved out of the old constants.py monolith — values byte-identical, guarded by tests/golden. No numerics changed.
 """
 from __future__ import annotations
 

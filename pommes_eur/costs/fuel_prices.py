@@ -4,8 +4,8 @@ The commodity price (WB Pink Sheet anchor × optional geopolitical-premium ramp)
 CO2 adder (via costs.carbon_price) and upstream-CH4-leak adder, resolved to a delivered
 €/MWh_th price on the natural_gas / oil buses. Scenario overrides (_ngPriceNNN /
 _oilPriceNNN / _fuelRampNN) come from scenario.resolved. Lives next to carbon_price.py;
-re-exported through the data/overrides.py facade for back-compat. Carved verbatim out of the
-old overrides.py — behaviour byte-identical. No numerics changed.
+re-exported through pommes_eur.constants for back-compat. Carved out of the old
+scenario-resolution layer — behaviour byte-identical. No numerics changed.
 """
 from __future__ import annotations
 
