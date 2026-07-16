@@ -2,7 +2,7 @@
 
 Guards three properties:
   1. Structural validation is a *superset* of the historical whitelist — every string in
-     ``scripts/run_adequacy.py``'s ``_VALID_SCENARIOS`` (plus free-suffix compositions)
+     the retired ``_VALID_SCENARIOS`` set (now captured as ``_HISTORICAL_SCENARIOS`` here)
      validates, and obviously-malformed strings are rejected.
   2. ``parse_scenario(s)`` reproduces the ``clever.constants`` scenario globals exactly
      (per-scenario subprocess, since the globals are an import-time singleton). This is
@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import subprocess
 import sys
 import tempfile
@@ -49,7 +48,6 @@ _FIELD_TO_GLOBAL = {
     "weather_year_override": "_WEATHER_YEAR_OVERRIDE",
     "no_elec_floor": "_NO_ELEC_FLOOR",
     "no_grid_expansion": "_NO_GRID_EXPANSION",
-    "h2_local_share": "_H2_LOCAL_SHARE",
     "no_gas": "_NO_GAS",
     "mena_h2_import_cap_twh": "_MENA_H2_IMPORT_CAP_TWH",
     "mena_h2_delivered_cost_eur_per_mwh": "_MENA_H2_DELIVERED_COST_EUR_PER_MWH",
@@ -75,10 +73,29 @@ REFERENCE_SCENARIOS = [
 ]
 
 
-def _whitelist_strings() -> set[str]:
-    src = (REPO_ROOT / "scripts" / "run_adequacy.py").read_text()
-    block = src[src.index("_VALID_SCENARIOS"): src.index("NO_MIN_BOUNDS")]
-    return set(re.findall(r"['\"]((?:R0_v1|policy_)[A-Za-z0-9_]*)['\"]", block))
+# Representative historical scenarios — one per flag family, drawn from the
+# retired scripts/run_adequacy.py `_VALID_SCENARIOS` whitelist (now superseded by
+# the registry). The registry MUST still accept every one of these, so this list
+# is the standing regression guard that the structural validator is a superset of
+# the strings the whitelist used to accept.
+_HISTORICAL_SCENARIOS: frozenset[str] = frozenset({
+    "R0_v1", "policy_re", "policy_nuke", "R0_v1_nuke", "policy_re_noMin",
+    "R0_v1_corr2x", "policy_nuke_corr3x", "policy_re_noMin_corr2x",
+    "R0_v1_bioLow", "policy_nuke_bioMed_el900_atr", "policy_nuke_bioMed_h2HIGH_atr",
+    "R0_v1_bioMed", "R0_v1_nuke_bioLow_co2250_nofloor",
+    "R0_v1_nuke_bioMed_atr_el700_noGas_corr2x_elecX180_h2HIGH_vreEXT",
+    "R0_v1_nuke_bioLow_atr_el700_noGas_corr2x_wy2010",
+    "R0_v1_nuke_bioMed_atr_el700_corr2x_elecX125_h2central_co2300",
+    "R0_v1_nuke_bioMed_atr_el700_noGas_corr3x_elecX125_h2central",
+    "R0_v1_nuke_bioLow_atr_el700_corr2x_h2HIGH_vreEXT_nofloor_noElecFloor_ccsCap5_co2150_batt20_vreFree",
+    "R0_v1_nuke_bioLow_atr_el700_corr2x_noGas_h2HIGH_vreXXL_nukeXXL_nofloor_noElecFloor_co2150_batt20_vreFree",
+    "R0_v1_nuke_bioLow_atr_el700_corr2x_noGas_elecX180_h2HIGH_vreEXT_nofloor_noElecFloor_co2150_batt20_menaOptim_menaCap200",
+    "R0_v1_nuke_bioLow_atr_el700_corr2x_noGas_h2HIGH_vreEXT_nofloor_noElecFloor_co2150_batt20_voll900_h2voll400_menaOptim_vreFree",
+})
+
+
+def _whitelist_strings() -> frozenset[str]:
+    return _HISTORICAL_SCENARIOS
 
 
 def _canon(o):

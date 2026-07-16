@@ -33,7 +33,6 @@ from pommes_eur.scenario.parse import (  # noqa: E402
     _parse_vre_extended,
     _parse_no_elec_floor,
     _parse_no_grid_exp,
-    _parse_h2_local_share,
     _parse_no_gas,
     _parse_mena_h2_cap,
     _parse_mena_h2_cost,
@@ -139,7 +138,6 @@ _ELEC_DEMAND_MULTIPLIER: float = _parse_elec_demand_multiplier(_SCENARIO)
 _NO_GAS: bool = _parse_no_gas(_SCENARIO)
 _NO_ELEC_FLOOR: bool = _parse_no_elec_floor(_SCENARIO)
 _NO_GRID_EXPANSION: bool = _parse_no_grid_exp(_SCENARIO)
-_H2_LOCAL_SHARE: float | None = _parse_h2_local_share(_SCENARIO)
 _VRE_EXTENDED: bool = _parse_vre_extended(_SCENARIO) or _VRE_XXL
 _WEATHER_YEAR_OVERRIDE: int | None = _parse_weather_year(_SCENARIO)
 

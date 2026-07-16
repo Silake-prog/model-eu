@@ -34,7 +34,6 @@ __all__ = [
     '_parse_vre_extended',
     '_parse_no_elec_floor',
     '_parse_no_grid_exp',
-    '_parse_h2_local_share',
     '_parse_no_gas',
     '_parse_mena_h2_cap',
     '_parse_mena_h2_cost',
@@ -286,10 +285,6 @@ def _parse_no_elec_floor(s: str) -> bool:
     SMR_CCS bio_mode) are cheaper. The `_noElecFloor` suffix removes that
     tech-specific floor entirely; the LP is free to allocate H₂ production
     across electrolysis, biomethane-ATR, BECCS, and imports.
-
-    For a tech-agnostic local-supply constraint (sovereignty without
-    technology lock-in), use `_h2LocalNN` (parser stub below — implementation
-    deferred to a follow-up patch).
     """
     return bool(_re.search(r"_noElecFloor(?:_|$)", s))
 
@@ -305,26 +300,6 @@ def _parse_no_grid_exp(s: str) -> bool:
     used here to benchmark the value-of-network against their reported figure.
     """
     return bool(_re.search(r"_noGridExp(?:_|$)", s))
-
-
-def _parse_h2_local_share(s: str) -> float | None:
-    """Return the local-H₂-supply target share (0.0–1.0) from `_h2LocalNN`.
-
-    Format: `_h2LocalNN` where NN is the percentage of demand to cover
-    locally (e.g. `_h2Local70` → 70 %). Default `None` = no constraint.
-
-    Implementation is deferred: when the constraint is active, the
-    intention is to cap each area's H₂ NetImport at `(1 − share) × demand`,
-    leaving the LP free to choose any local H₂ tech (electrolysis,
-    biomethane-ATR, BECCS, etc.). The constraint is meaningless in
-    FR-only smoke runs (no imports anyway), so the parser ships now and
-    the constraint application lands when the full-EU run uses it.
-    """
-    m = _re.search(r"_h2Local(\d+)(?:_|$)", s)
-    if m is None:
-        return None
-    pct = int(m.group(1))
-    return float(pct) / 100.0
 
 
 def _parse_no_gas(s: str) -> bool:

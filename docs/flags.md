@@ -28,7 +28,6 @@ modifier or base-inherited gate resolved in `pommes_eur/scenario/resolved.py`).
 | `atr` | `atr` | flag | enable ATR-biomethane H2 route | `_parse_atr_enabled` |
 | `h2HIGH` | `h2HIGH` | enum | industrial H2 demand bundle = high_h2 | `_parse_demandforge_bundle_override` |
 | `h2central` | `h2central` | enum | industrial H2 demand bundle = central | `_parse_demandforge_bundle_override` |
-| `h2Local` | `h2Local\d+` | float | H2 local-production share (deferred) | `_parse_h2_local_share` |
 | `h2voll` | `h2voll\d+` | float | H2 demand-response VoLL override | `_parse_voll_override` |
 | `el` | `el\d+` | int | electrolyser CAPEX €/kW override | `_parse_electrolyser_capex_override` |
 | `co2off` | `co2off` | flag | disable CO2 adder | `_parse_co2_price_override` |
@@ -67,4 +66,4 @@ modifier or base-inherited gate resolved in `pommes_eur/scenario/resolved.py`).
 | `menaCap` | `menaCap\d+` | int | MENA import cap scale (percent) | `_parse_mena_cap_scale` |
 | `menaPref` | `menaPref\d+` | int | MENA preference scale (percent) | `_parse_mena_pref_scale` |
 
-_45 flags declared._
+_44 flags declared._

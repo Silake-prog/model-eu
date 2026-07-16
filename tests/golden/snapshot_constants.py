@@ -36,7 +36,7 @@ BASELINE_PATH = HERE / "baseline_hashes.json"
 #   - policy_re        : the policy_* prefix gate (high demand, VRE 0.30)
 #   - rich_high        : deep flag stack (nuke/bioMed/atr/el700/noGas/corr2x/elecX180/h2HIGH/vreEXT)
 #   - mena_variantB    : MENA optimised-imports path + caps/floors (Variant-B parsers)
-# All four are members of the _VALID_SCENARIOS whitelist in scripts/run_adequacy.py.
+# All four are structurally valid under the flag registry (scenario/registry.py).
 REFERENCE_SCENARIOS: dict[str, str] = {
     "baseline_R0": "R0_v1",
     "policy_re": "policy_re",

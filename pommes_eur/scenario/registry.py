@@ -76,7 +76,6 @@ FLAG_REGISTRY: tuple[Flag, ...] = (
     Flag("atr", r"atr", "flag", "enable ATR-biomethane H2 route", _p._parse_atr_enabled),
     Flag("h2HIGH", r"h2HIGH", "enum", "industrial H2 demand bundle = high_h2", _p._parse_demandforge_bundle_override),
     Flag("h2central", r"h2central", "enum", "industrial H2 demand bundle = central", _p._parse_demandforge_bundle_override),
-    Flag("h2Local", r"h2Local\d+", "float", "H2 local-production share (deferred)", _p._parse_h2_local_share),
     Flag("h2voll", r"h2voll\d+", "float", "H2 demand-response VoLL override", _p._parse_voll_override),
     # electrolyser / CO2 / fuel prices
     Flag("el", r"el\d+", "int", "electrolyser CAPEX €/kW override", _p._parse_electrolyser_capex_override),
@@ -192,7 +191,6 @@ class ScenarioSpec:
     weather_year_override: Optional[int]
     no_elec_floor: bool
     no_grid_expansion: bool
-    h2_local_share: Optional[float]
     no_gas: bool
     mena_h2_import_cap_twh: float
     mena_h2_delivered_cost_eur_per_mwh: Optional[float]
@@ -235,7 +233,6 @@ def parse_scenario(s: str) -> ScenarioSpec:
         weather_year_override=_p._parse_weather_year(s),
         no_elec_floor=_p._parse_no_elec_floor(s),
         no_grid_expansion=_p._parse_no_grid_exp(s),
-        h2_local_share=_p._parse_h2_local_share(s),
         no_gas=_p._parse_no_gas(s),
         mena_h2_import_cap_twh=_p._parse_mena_h2_cap(s),
         mena_h2_delivered_cost_eur_per_mwh=_p._parse_mena_h2_cost(s),

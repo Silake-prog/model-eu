@@ -120,7 +120,7 @@ def build_calibration_inputs(
     if not tables_dir.exists():
         import re as _re_local
         base_name = _re_local.sub(
-            r"_(?:bioLow|bioMed|bioHigh|bioOff|atr|el\d+|h2HIGH|h2central|co2\d+|co2off|co2traj[a-zA-Z0-9]+|nofloor|noGas|noElecFloor|h2Local\d+|fuelRamp\d+|ngPrice\d+|oilPrice\d+|ngLeak\d+|bioLeak\d+|ccsCap\d+|elecX\d+|corr\dx|vreEXT|vreXXL|vreFree|nukeXXL|wy\d+|menaH2cost[A-Z]{2}_\d+|menaH2(?:cost)?\d+|menaOptim(?:[A-Z]{2}_?)*|menaInfra(?:[A-Z]{2}_[A-Z]{2}_)?\d+|menaRisk[A-Z]{2}_\d+|menaNGcost[A-Z]{2}_\d+|menaCap\d+|menaPref\d+|batt\d+|h2voll\d+|voll\d+|pipekm\d+|storPx\d+|noGridExp|(?:it|at|pt|ie|dk|lu|gr)Nuke\d+)",
+            r"_(?:bioLow|bioMed|bioHigh|bioOff|atr|el\d+|h2HIGH|h2central|co2\d+|co2off|co2traj[a-zA-Z0-9]+|nofloor|noGas|noElecFloor|fuelRamp\d+|ngPrice\d+|oilPrice\d+|ngLeak\d+|bioLeak\d+|ccsCap\d+|elecX\d+|corr\dx|vreEXT|vreXXL|vreFree|nukeXXL|wy\d+|menaH2cost[A-Z]{2}_\d+|menaH2(?:cost)?\d+|menaOptim(?:[A-Z]{2}_?)*|menaInfra(?:[A-Z]{2}_[A-Z]{2}_)?\d+|menaRisk[A-Z]{2}_\d+|menaNGcost[A-Z]{2}_\d+|menaCap\d+|menaPref\d+|batt\d+|h2voll\d+|voll\d+|pipekm\d+|storPx\d+|noGridExp|(?:it|at|pt|ie|dk|lu|gr)Nuke\d+)",
             "",
             tables_dir.name,
         )
