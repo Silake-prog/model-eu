@@ -14,14 +14,19 @@ dependencies = [
     "polars",
     "pyarrow",
     "xarray",
+    "hdf5plugin",                # NetCDF/HDF5 codecs (xarray/pommes IO)
+    "python-dotenv",             # supplyforge reads a .env for the ENTSO-E token
 ]
 
-# The optimisation framework (pommes, pommes_craft) and the data packages
-# (supplyforge, demandforge) are access-gated / path-installed and NOT on PyPI —
-# deliberately excluded here (documented in requirements.txt). Install out-of-band
-# on the cluster.
+# The POMMES optimisation framework is on PyPI; install the `solver` extra to build/solve
+# the LP. The data packages supplyforge/demandforge are path-vendored in this repo (add
+# them to PYTHONPATH — see README). A full solve additionally needs a Gurobi license and
+# the CLEVER data caches, which live on the cluster.
 [project.optional-dependencies]
-solver = []
+solver = [
+    "pommes_craft",
+    "pommes",
+]
 
 [tool.setuptools]
 # Explicit package list (not auto-find) so tests/, results/, notebooks/ and the vendored

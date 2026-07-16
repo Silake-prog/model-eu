@@ -1,10 +1,9 @@
-# Minimal runtime dependencies for the clever model package.
+# Runtime dependencies for the pommes_eur model package.
 #
-# This is a code-only snapshot: the full solve additionally needs a Gurobi license,
-# the CLEVER data caches, and the POMMES framework (pommes / pommes_craft), which live
-# on the cluster and are NOT on PyPI — see below. The lightweight structural checks
-# (tests/golden/, tests/test_registry.py, tests/test_smoke_build.py's spec layer) run
-# with only `platformdirs` + the scientific stack.
+# The full solve additionally needs a Gurobi license and the CLEVER data caches (both live
+# only on the cluster). Everything below is pip-installable, so the whole package IMPORTS
+# and the no-solve test suite (tests/) runs in a plain checkout — you do not need the
+# cluster to build the LP object or exercise the reorg/fingerprint guards.
 
 # -- always needed (import time / structural checks) --
 platformdirs
@@ -15,14 +14,14 @@ pandas
 polars
 pyarrow
 xarray
+hdf5plugin        # NetCDF/HDF5 codecs used via xarray/pommes IO
+python-dotenv     # supplyforge reads a .env for the ENTSO-E token
 
-# -- POMMES optimisation framework: NOT on PyPI --
-# Install from the upstream GitLab (access-gated):
-#   git.persee.minesparis.psl.eu/energy-alternatives/pommes
-# provides the `pommes` and `pommes_craft` importables.
-# pommes_craft
-# pommes
+# -- POMMES optimisation framework (on PyPI) --
+pommes_craft      # model primitives (Area, EnergyModel, ConversionTechnology, …)
+pommes            # LP builder + dataset validation (pommes.model.build_model, …)
 
 # -- vendored, path-installed via PYTHONPATH (see README "Running") --
-# supplyforge  -> ./supplyforge
-# demandforge  -> ./demandforge
+# supplyforge  -> ./supplyforge      (add $ROOT/supplyforge to PYTHONPATH)
+# demandforge  -> ./demandforge      (add $ROOT/demandforge to PYTHONPATH)
+# On the cluster: PYTHONPATH="$ROOT/supplyforge:$ROOT:$ROOT/demandforge"
