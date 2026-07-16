@@ -21,8 +21,7 @@ document the flag vocabulary, and get a minimal reproducible env spec. See `READ
     `resolved.py` (the scenario string resolved to per-run scalar globals).
   - `data/` — `inputs.py` facade over `_inputs_generic.py` (dataset-agnostic scalars) +
     `_inputs_clever.py` (CLEVER/EOLES/PEMMDB tables); `expansion.py` + `vre_limits.py`
-    (scenario-gated derived tables); `overrides.py` (thin back-compat facade re-exporting
-    resolved + expansion + vre_limits + fuel prices).
+    (scenario-gated derived tables).
   - `costs/` — `carbon_price.py`, `fuel_prices.py`. `sources/` — `fetch.py`, `process.py`,
     `demand.py`, `data_fetchers.py` (data acquisition).
   - `model/` — `build.py` (POMMES LP; formerly model.py) + `techs/` (`biomethane.py`,
@@ -30,7 +29,8 @@ document the flag vocabulary, and get a minimal reproducible env spec. See `READ
   - `solve/` — `runner.py` (solve + NetCDF), `adequacy.py`. `providers/` — `base.py`
     protocol, `eraa.py` stub, and `clever/` (the CLEVER case study: `provider.py`,
     `dataset_calibration.py` + `calibration_inputs.py` — formerly the `r0_*` pipeline).
-  - `constants.py` — top-level back-compat facade re-exporting parse+inputs+overrides.
+  - `constants.py` — top-level back-compat aggregation facade re-exporting scenario/parse +
+    scenario/resolved + inputs + expansion + vre_limits + costs/fuel_prices.
   - Every old top-level module name (`inputs`, `model`, `runner`, `fetch`, …) remains a
     one-line `sys.modules` alias shim, so old `from clever.X import Y` imports keep working.
     `pyproject.toml` declares the flat package (deps mirror `requirements.txt`).
@@ -61,9 +61,11 @@ Flags: `noGas` (methane ban), `elecX180` (high elec demand), `h2HIGH` (industria
 ## Cleanup status
 Done (see `CLEANUP_MISSION.md` phases): dead code removed (staged launchers, one-off
 `_watchdog_*`/`verify_*`/`diagnose_*`, dead notebooks, nested `clever/clever/`, `smr_ccs.py`);
-`constants.py` carved into `scenario/parse.py` + `inputs.py` + `overrides.py` (facade);
-scenario registry replaces the `_VALID_SCENARIOS` whitelist; package renamed to `pommes_eur`
-with compat shim; provider seam added. Every step is guarded by the golden snapshot
+`constants.py` carved into `scenario/parse.py` + `scenario/resolved.py` + `inputs.py` +
+`data/expansion.py` + `data/vre_limits.py` + `costs/fuel_prices.py` (with `constants.py` as
+the aggregation facade); scenario registry replaces the `_VALID_SCENARIOS` whitelist; package
+renamed to `pommes_eur` with compat shim; provider seam added. Every step is guarded by the
+golden snapshot
 (`tests/golden/`) — inputs are bit-identical, no numerics changed.
 
 Still candidate for cleanup (verify before acting): observatory generators in `notebooks/`
