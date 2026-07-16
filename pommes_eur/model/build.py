@@ -234,16 +234,6 @@ def read_two_col_cost_csv(path: str | Path) -> dict[str, float]:
     return dict(zip(df["technology"], df["value"]))
 
 
-def load_eoles_cost_assumptions(eoles_dir: Path) -> dict:
-    return {
-        "fom": read_two_col_cost_csv(eoles_dir / "fOM_2026.csv"),
-        "vom": read_two_col_cost_csv(eoles_dir / "vOM_2026.csv"),
-        "capex": read_two_col_cost_csv(eoles_dir / "capex_2026.csv"),
-        "discount": read_two_col_cost_csv(eoles_dir / "discount_rate_uniform.csv"),
-        "storage_capex": read_two_col_cost_csv(eoles_dir / "storage_capex_2026.csv"),
-    }
-
-
 def techno_costs_from_eoles(eoles_tech: str, eoles_costs: dict) -> dict[str, float | int]:
     vom = float(eoles_costs["vom"].get(eoles_tech, 0.0))
     fuel = float(FUEL_ADDER_2050.get(eoles_tech, 0.0))
@@ -719,35 +709,6 @@ def try_load_supplyforge_parquet(
         )
         return None
 
-
-def try_load_supplyforge_with_year_fallback(
-    country: str,
-    reference_year: int,
-    input_file: str,
-    max_attempts: int = 3,
-) -> tuple[Optional[pl.DataFrame], int]:
-    """Try loading SupplyForge data for the requested year, then fallback years.
-
-    Returns (DataFrame_or_None, year_used). If no year works, returns (None, reference_year).
-    """
-    # Try requested year first
-    df = try_load_supplyforge_parquet(country, reference_year, input_file, max_attempts)
-    if df is not None and not df.is_empty():
-        return df, reference_year
-
-    # Try fallback years
-    for fallback_year in SUPPLYFORGE_FALLBACK_YEARS:
-        if fallback_year == reference_year:
-            continue
-        df = try_load_supplyforge_parquet(country, fallback_year, input_file, max_attempts)
-        if df is not None and not df.is_empty():
-            logger.info(
-                "SupplyForge %s for %s: year %d unavailable, using fallback year %d.",
-                input_file, country, reference_year, fallback_year,
-            )
-            return df, fallback_year
-
-    return None, reference_year
 
 def _build_flat_hourly_availability(hours: list[int], year_op: int, value: float = 1.0) -> pl.DataFrame:
     return pl.DataFrame(
@@ -2111,99 +2072,6 @@ def add_manual_interconnections(
         else:
             logger.info("Added manual interconnection %s <-> %s : %.0f MW", c1, c2, capacity)
 
-
-def add_h2_pipeline_interconnections(
-    energy_model: EnergyModel,
-    areas: dict[str, Area],
-    interconnections: dict[tuple[str, str], dict],
-    hurdle_cost: float = 0.5,
-) -> None:
-    """
-    Add hydrogen pipeline links between all interconnected country pairs.
-
-    By default the pipeline capacity is *unconstrained* (investment_max = NaN,
-    which POMMES interprets as "no upper bound" via its ``np.isfinite`` mask).
-    This lets the optimiser freely decide how much H₂ pipeline capacity to build
-    based on cost trade-offs.
-
-    Parameters
-    ----------
-    energy_model : EnergyModel
-    areas : dict mapping country codes to Area objects
-    interconnections : same dict used for electricity (only the country pairs
-        are used — capacity and cost are pipeline-specific)
-    hurdle_cost : float
-        Compression energy + losses expressed as EUR/MWh_H₂ transported.
-        Default 0.5 EUR/MWh ≈ 1-2 % loss at ~75 EUR/MWh_H₂.
-    """
-    for countries in interconnections:
-        if len(countries) != 2:
-            continue
-
-        c1 = normalize_country_code(countries[0])
-        c2 = normalize_country_code(countries[1])
-
-        if c1 == c2 or c1 not in areas or c2 not in areas:
-            continue
-
-        h2_pipeline_dict = {
-            "name": "h2_pipeline",
-            "resource": "hydrogen",
-            "life_span": 40.0,           # Steel pipeline lifetime
-            "invest_cost": 0.0,          # Sunk cost (European Hydrogen Backbone)
-            "fixed_cost": 0.0,
-            "hurdle_costs": hurdle_cost,
-            "finance_rate": 0.0,
-            # NaN = unconstrained in POMMES (np.isfinite mask skips the constraint)
-            "power_capacity_investment_min": 0.0,
-            "power_capacity_investment_max": float("nan"),
-        }
-
-        with energy_model.context():
-            t_fw = TransportTechnology(**h2_pipeline_dict)
-            l_fw = Link(
-                name=f"h2_link_{c1}_{c2}",
-                area_from=areas[c1],
-                area_to=areas[c2],
-            )
-            l_fw.add_transport_technology(t_fw)
-
-            t_bw = TransportTechnology(**h2_pipeline_dict)
-            l_bw = Link(
-                name=f"h2_link_{c2}_{c1}",
-                area_from=areas[c2],
-                area_to=areas[c1],
-            )
-            l_bw.add_transport_technology(t_bw)
-
-        logger.info("Added H₂ pipeline %s <-> %s (unconstrained capacity)", c1, c2)
-
-
-# =========================================================
-# OPTIONAL: helper for current POMMES ramping issue
-# =========================================================
-def neutralize_conversion_ramping_table(model: EnergyModel) -> None:
-    model.to_pommes_model()
-
-    target_key = None
-    for key in model.parameter_tables:
-        if "conversion_area_conversion_tech_year_op" in key:
-            target_key = key
-            break
-
-    if target_key is None:
-        return
-
-    df = model.parameter_tables[target_key].copy()
-
-    for col in ("conversion_ramp_up", "conversion_ramp_down"):
-        if col in df.columns:
-            df[col] = np.nan
-
-    if "conversion_ramp_relative_to_capacity" in df.columns:
-        df["conversion_ramp_relative_to_capacity"] = False
-
-    model.parameter_tables[target_key] = df
 
 # NOTE: sanitize_storage_inputs lives in clever.runner (single definition).
 

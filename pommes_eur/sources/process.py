@@ -117,57 +117,6 @@ END_USE_ELEC_INDICATORS: list[tuple[str, str]] = [
     ("res_cooling_total",         "toccfrescli"),
 ]
 
-# ════════════════════════════════════════════════════════════════════
-# H₂ indicator codes to skip when DemandForge supplies hydrogen demand.
-# These CLEVER top-down H₂ indicators are replaced by DemandForge's
-# bottom-up sector-specific projections.
-# ════════════════════════════════════════════════════════════════════
-H2_INDICATORS_TO_SKIP: set[str] = {
-    "hydcftra",   # transport hydrogen demand (FEC)
-    "hydcfind",   # industry hydrogen demand (FEC)
-    "prohyd",     # electrolysis production
-    "prohydmet",  # methanation production
-    "prohydcl",   # e-liquid production
-}
-
-
-def filter_h2_indicators(
-    indicators: list[tuple],
-    skip_h2: bool = False,
-) -> list[tuple]:
-    """Optionally remove CLEVER H₂ indicators from an indicator list.
-
-    When DemandForge provides sector-specific H₂ demand, the CLEVER
-    top-down H₂ indicators must be excluded to avoid double-counting.
-
-    Parameters
-    ----------
-    indicators : list[tuple]
-        Original indicator list (e.g. DEMAND_INDICATORS).
-    skip_h2 : bool
-        If True, remove entries whose code is in H2_INDICATORS_TO_SKIP.
-
-    Returns
-    -------
-    list[tuple]
-        Filtered indicator list.
-    """
-    if not skip_h2:
-        return indicators
-    filtered = [
-        entry for entry in indicators
-        if entry[-1] not in H2_INDICATORS_TO_SKIP
-    ]
-    skipped = len(indicators) - len(filtered)
-    if skipped > 0:
-        logger.info(
-            f"Skipped {skipped} CLEVER H₂ indicator(s) "
-            f"(replaced by DemandForge): "
-            f"{[e[-1] for e in indicators if e[-1] in H2_INDICATORS_TO_SKIP]}"
-        )
-    return filtered
-
-
 # Flat list of all known codes — used for auto-detecting the indicator column.
 _ALL_KNOWN_CODES: list[str] = [
     code

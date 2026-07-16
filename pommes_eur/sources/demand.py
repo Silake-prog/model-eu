@@ -37,7 +37,7 @@ import logging
 import urllib.error
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Iterable, Optional, Tuple
+from typing import Dict, Iterable, Optional
 
 import numpy as np
 import pandas as pd
@@ -181,17 +181,6 @@ def list_ev_load_years(country: str, reference_year: int) -> list[int]:
     return out
 
 
-def infer_step_hours(dt_series: pd.Series) -> float:
-    """Infer robust median timestep in hours (handles DST-like quirks)."""
-    dt = dt_series.sort_values().diff().dropna()
-    if len(dt) == 0:
-        return 1.0
-    step_h = dt.median() / np.timedelta64(1, "h")
-    if not np.isfinite(step_h) or step_h <= 0:
-        return 1.0
-    return float(step_h)
-
-
 def pick_reference_ev_year(country: str, reference_year: int, requested_ev_year: int) -> int:
     """
     Pick the best available EV reference year from combined_load parquet.
@@ -203,23 +192,6 @@ def pick_reference_ev_year(country: str, reference_year: int, requested_ev_year:
     if requested_ev_year in years:
         return requested_ev_year
     return max(years)
-
-
-def demandforge_ev_profile_is_zero(country: str, reference_ev_year: int) -> bool:
-    """
-    Check if EV profile in DemandForge reference parquet has zero annual energy.
-    True if the profile exists but sums to zero (DemandForge can't scale it).
-    """
-    p = Path(lp.RESULTS_DIR) / "combined_load" / f"combined_load_{country}_{reference_ev_year}.parquet"
-    if not p.exists():
-        return False
-
-    df = pd.read_parquet(p)
-    ev_cols = [c for c in df.columns if "ev" in str(c).lower()]
-    if not ev_cols:
-        return False
-    ev = df[ev_cols[0]].to_numpy()
-    return np.nansum(ev) == 0.0
 
 
 def _ensure_datetime(s: pd.Series) -> pd.Series:
@@ -438,51 +410,6 @@ def rescale_profiles_to_target(wide: pd.DataFrame, target_mwh: float) -> tuple[p
     # re-enforce total = sum of components if available
     wide = rebuild_total_from_components(wide)
     return wide, float(scale)
-
-
-def reallocate_ev_into_baseload_if_needed(wide: pd.DataFrame, ev_target_mwh: float) -> Tuple[pd.DataFrame, bool]:
-    """
-    If EV is missing/zero after projection but ev_target_mwh > 0,
-    add that annual energy into baseload by scaling baseload profile.
-
-    Assumes wide already contains ONLY projected components (via normalize_demandforge_output()).
-    Returns (wide_modified, was_reallocated).
-    """
-    if ev_target_mwh <= 0:
-        return wide, False
-
-    wide = wide.copy()
-    if "datetime" in wide.columns:
-        wide["datetime"] = _ensure_datetime(wide["datetime"])
-
-    # EV present?
-    if "ev" in wide.columns:
-        ev_energy = hourly_energy_mwh(wide[["datetime", "ev"]])
-        if abs(ev_energy) > 1e-6:
-            return wide, False
-        # EV exists but is zero -> we will absorb + set to 0
-    else:
-        wide["ev"] = 0.0  # make schema explicit
-
-    # Absorb into baseload
-    if "baseload" in wide.columns:
-        base_energy = hourly_energy_mwh(wide[["datetime", "baseload"]])
-        if base_energy > 0:
-            scale = (base_energy + ev_target_mwh) / base_energy
-            wide["baseload"] = pd.to_numeric(wide["baseload"], errors="coerce") * scale
-        else:
-            # no baseload energy -> inject flat MW
-            n = len(wide)
-            step_h = _step_h_from_datetime_or_length(wide["datetime"], n) if "datetime" in wide.columns else float(HOURS_PER_YEAR / n)
-            wide["baseload"] = (ev_target_mwh / (n * step_h))  # MW flat
-    else:
-        n = len(wide)
-        step_h = _step_h_from_datetime_or_length(wide["datetime"], n) if "datetime" in wide.columns else float(HOURS_PER_YEAR / n)
-        wide["baseload"] = (ev_target_mwh / (n * step_h))
-
-    wide["ev"] = 0.0
-    wide = rebuild_total_from_components(wide)
-    return wide, True
 
 
 def energy_check_hourly(total_series: pd.DataFrame, target_mwh: float, tol_rel: float) -> None:
