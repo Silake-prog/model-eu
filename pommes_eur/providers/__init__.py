@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from pommes_eur.providers.base import ModelProvider, ProviderInputs
 
-__all__ = ["ModelProvider", "ProviderInputs", "CleverProvider"]
+__all__ = ["ModelProvider", "ProviderInputs", "CleverProvider", "EraaProvider"]
 
 
 def __getattr__(name: str):  # lazy: CleverProvider pulls in the heavy model builder
@@ -16,4 +16,8 @@ def __getattr__(name: str):  # lazy: CleverProvider pulls in the heavy model bui
         from pommes_eur.providers.clever import CleverProvider
 
         return CleverProvider
+    if name == "EraaProvider":
+        from pommes_eur.providers.eraa import EraaProvider
+
+        return EraaProvider
     raise AttributeError(name)

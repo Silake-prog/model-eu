@@ -67,6 +67,26 @@ def test_builder_kwargs_shape() -> None:
     assert kw["include_hydrogen"] is True
 
 
+def test_eraa_provider_is_a_conformant_stub() -> None:
+    """The ERAA provider proves a second dataset plugs into the same seam."""
+    from pommes_eur.providers import EraaProvider
+    from pommes_eur.providers.base import ProviderInputs
+
+    prov = EraaProvider()
+    assert isinstance(prov, ModelProvider)  # structural conformance
+    # unimplemented data paths raise clearly rather than silently mis-building
+    for call in (
+        prov.country_set,
+        lambda: prov.fetch_inputs(None),
+        lambda: prov.build_model(None, ProviderInputs([], 2021, 2050, None, None, None, {}, {})),
+    ):
+        try:
+            call()
+        except NotImplementedError:
+            continue
+        raise AssertionError("expected NotImplementedError from ERAA stub")
+
+
 def _run_standalone() -> int:
     failed = 0
     for name, fn in [
@@ -74,6 +94,7 @@ def _run_standalone() -> int:
         ("scenario_spec_resolves", test_scenario_spec_resolves),
         ("country_set_is_data_driven", test_country_set_is_data_driven),
         ("builder_kwargs_shape", test_builder_kwargs_shape),
+        ("eraa_provider_is_a_conformant_stub", test_eraa_provider_is_a_conformant_stub),
     ]:
         try:
             fn()

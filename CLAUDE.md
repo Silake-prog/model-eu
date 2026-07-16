@@ -14,14 +14,24 @@ Cleaning up the model code: prune duplicate/dead scripts, consolidate the scenar
 document the flag vocabulary, and get a minimal reproducible env spec. See `README.md`.
 
 ## Map of the code
-- `clever/` — the model package. Start with `constants.py` (scenario-string parser + all input
-  assembly), `model.py` (the POMMES linear program), `runner.py` (solve + NetCDF extraction).
+- `pommes_eur/` — the model package (formerly `clever`; `import clever` still works via the
+  `clever/` compat shim). Scenario layer: `scenario/parse.py` (flag parsers) +
+  `scenario/registry.py` (flag vocabulary + structural validation) + `scenario/env.py`
+  (`POMMES_EUR_SCENARIO`/`CLEVER_SCENARIO`). Inputs: `inputs.py` (static tables),
+  `overrides.py` (scenario-resolved values), `constants.py` (back-compat facade re-exporting
+  all three). Build/solve: `model.py` (POMMES LP), `runner.py` (solve + NetCDF). Data-source
+  seam: `providers/` (`base.py` protocol, `clever.py` adapter, `eraa.py` stub).
 - `notebooks/adequacy_clean.ipynb` — the live driver; `jupyter nbconvert` turns it into
   `scripts/run_adequacy.py`, which the SLURM job (`scripts/sbatch_clever.sh`) executes.
+  NOTE: the committed `run_adequacy.py` has diverged from the notebook (hand edits); treat the
+  committed script as authoritative until the notebook is re-synced.
+- `docs/flags.md` (auto-generated flag vocabulary), `docs/extending.md` (how to add a
+  lever/tech/region/dataset). `tests/` — no-solve safety net (golden reproduction, registry,
+  smoke, rename-shim, provider-contract). Regenerate flags: `python docs/gen_flags_doc.py`.
 - `supplyforge/`, `demandforge/` — vendored data packages (imported by the model).
 
 ## How a run is defined
-Everything is encoded in the **scenario string** (parsed in `clever/constants.py`), e.g.
+Everything is encoded in the **scenario string** (parsed in `pommes_eur/scenario/`), e.g.
 `R0_v1_nuke_bioLow_atr_el700_corr2x_noGas_elecX180_h2HIGH_vreEXT_nofloor_noElecFloor_co2150_batt20_pipekm1000`.
 Flags: `noGas` (methane ban), `elecX180` (high elec demand), `h2HIGH` (industrial H2 demand),
 `vreEXT`/`vreXXL` (VRE ceiling, normal/doubled), `nukeXXL` (nuclear ceiling doubled),
@@ -35,8 +45,15 @@ Flags: `noGas` (methane ban), `elecX180` (high elec demand), `h2HIGH` (industria
 - Clear notebook outputs before committing (they bulk up the repo and can leak the Gurobi
   LicenseID banner).
 
-## Things known to need cleanup (candidates, verify before deleting)
-- Duplicate launchers in `scripts/` (`run_adequacy_staged.py`, `run_adequacy_staged_v2.py`,
-  and the generated `run_adequacy.py`).
-- Observatory generators in `notebooks/` (`generate_observatory.py`, `generate_scenario_observatory.py`)
-  may be dead relative to the current paper workflow.
+## Cleanup status
+Done (see `CLEANUP_MISSION.md` phases): dead code removed (staged launchers, one-off
+`_watchdog_*`/`verify_*`/`diagnose_*`, dead notebooks, nested `clever/clever/`, `smr_ccs.py`);
+`constants.py` carved into `scenario/parse.py` + `inputs.py` + `overrides.py` (facade);
+scenario registry replaces the `_VALID_SCENARIOS` whitelist; package renamed to `pommes_eur`
+with compat shim; provider seam added. Every step is guarded by the golden snapshot
+(`tests/golden/`) — inputs are bit-identical, no numerics changed.
+
+Still candidate for cleanup (verify before acting): observatory generators in `notebooks/`
+(`generate_observatory.py`, `generate_scenario_observatory.py`) may be dead relative to the
+current paper workflow; the `run_adequacy.py` ↔ `adequacy_clean.ipynb` divergence should be
+reconciled (re-sync the notebook or make the script the committed source of truth).
