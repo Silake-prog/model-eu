@@ -414,9 +414,22 @@ _VALID_SCENARIOS = _VALID_SCENARIOS | {'R0_v1_nuke_bioLow_atr_el700_corr2x_noGas
 import re as _re_pk  # free sensitivity axes stripped before validation: distance-CAPEX, storage-power, weather-year, MENA-risk
 _VALID_SCENARIOS = _VALID_SCENARIOS | {'R0_v1_nuke_bioLow_atr_el700_corr2x_noGas_elecX180_h2HIGH_vreEXT_nukeXXL_nofloor_noElecFloor_co2150_batt20'}  # Exp NUKEonly (nuclear headroom only, VRE at EXT)
 _VALID_SCENARIOS = _VALID_SCENARIOS | {'R0_v1_nuke_bioLow_atr_el700_corr2x_noGas_elecX180_h2HIGH_vreXXL_nofloor_noElecFloor_co2150_batt20'}  # Exp VREonly (VRE headroom only, nuclear normal)
-assert _re_pk.sub(r'_pipekm\d+|_storPx\d+|_wy\d+|_menaRisk[A-Z]{2}_\d+|_noGridExp','',SCENARIO) in _VALID_SCENARIOS, (
-    f"Unknown SCENARIO: {SCENARIO!r}. Supported axes: "
-    f"{{base}}_{{nuke,corrNx,bioLow,bioMed,bioHigh,atr,elNNN,h2HIGH,menaH2NNN,menaOptim*}} — see clever/constants.py suffix parsers."
+# Scenario validation is now structural: the declarative flag registry
+# (clever/scenario/registry.py) accepts any string whose tokens are all declared
+# flags — declaring a flag once is enough, no whitelist edit needed. The legacy
+# _VALID_SCENARIOS set above is retained for one release as a shadow-check that the
+# registry is a strict superset (any string the old whitelist accepted, the registry
+# must accept too); once trusted, the set and this shadow-check can be deleted.
+from clever.scenario.registry import validate as _scn_validate  # noqa: E402
+_scenario_valid = _scn_validate(SCENARIO)
+_legacy_valid = _re_pk.sub(r'_pipekm\d+|_storPx\d+|_wy\d+|_menaRisk[A-Z]{2}_\d+|_noGridExp', '', SCENARIO) in _VALID_SCENARIOS
+assert _scenario_valid, (
+    f"Unknown SCENARIO: {SCENARIO!r}. Every '_'-token must be a declared flag — "
+    f"see clever/scenario/registry.py (FLAG_REGISTRY) and docs/flags.md. "
+    f"Diagnostic: {__import__('clever.scenario.registry', fromlist=['explain']).explain(SCENARIO)}"
+)
+assert not (_legacy_valid and not _scenario_valid), (
+    f"Registry regression: legacy whitelist accepts {SCENARIO!r} but the registry does not."
 )
 # Sub-task 5 flag: policy_re_noMin is policy_re with electrolyser_min_bounds_gw=None
 NO_MIN_BOUNDS = SCENARIO.endswith("_noMin")
