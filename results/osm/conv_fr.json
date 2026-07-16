@@ -1,0 +1,6557 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-07T15:05:00Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1277351353,
+  "lat": 44.7128191,
+  "lon": 3.6249921,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 2206861031,
+  "lat": 46.4889490,
+  "lon": 9.8973880,
+  "tags": {
+    "frequency": "50",
+    "location": "indoor",
+    "operator": "RhB",
+    "power": "converter",
+    "rating": "1200 kVA",
+    "voltage": "23000;1000"
+  }
+},
+{
+  "type": "node",
+  "id": 4459351234,
+  "lat": 50.5540258,
+  "lon": 8.6246609,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 4614072806,
+  "lat": 44.9657034,
+  "lon": 9.3237504,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 4839927693,
+  "lat": 49.6080812,
+  "lon": 9.1237537,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 4839945185,
+  "lat": 49.6255130,
+  "lon": 9.1362829,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 4851179212,
+  "lat": 49.2428333,
+  "lon": 8.4472839,
+  "tags": {
+    "frequency": "50",
+    "manufacturer": "Power One",
+    "operator": "Wircon GmbH",
+    "power": "converter",
+    "start_date": "2013-05"
+  }
+},
+{
+  "type": "node",
+  "id": 5167698834,
+  "lat": 49.0352534,
+  "lon": 8.3360564,
+  "tags": {
+    "description": "Umspanner Netz",
+    "frequency": "50;0",
+    "operator": "Verkehrsbetriebe Karlsruhe GmbH",
+    "power": "converter",
+    "voltage": "750"
+  }
+},
+{
+  "type": "node",
+  "id": 5354088295,
+  "lat": 49.8320129,
+  "lon": 5.7298343,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5600627207,
+  "lat": 51.2653684,
+  "lon": 3.2101415,
+  "tags": {
+    "frequency": "50",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5600627208,
+  "lat": 51.2653551,
+  "lon": 3.2100104,
+  "tags": {
+    "frequency": "50",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5600627209,
+  "lat": 51.2653818,
+  "lon": 3.2102726,
+  "tags": {
+    "frequency": "50",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5600627210,
+  "lat": 51.2648609,
+  "lon": 3.2104082,
+  "tags": {
+    "frequency": "50",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5600627211,
+  "lat": 51.2648476,
+  "lon": 3.2102771,
+  "tags": {
+    "frequency": "50",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5600627212,
+  "lat": 51.2648342,
+  "lon": 3.2101459,
+  "tags": {
+    "frequency": "50",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5893101529,
+  "lat": 51.3101434,
+  "lon": 1.3473995,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5893101531,
+  "lat": 51.3101584,
+  "lon": 1.3472689,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5893101534,
+  "lat": 51.3101734,
+  "lon": 1.3471383,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5893101538,
+  "lat": 51.3096549,
+  "lon": 1.3469858,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5893101544,
+  "lat": 51.3096248,
+  "lon": 1.3472472,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 5893101549,
+  "lat": 51.3096399,
+  "lon": 1.3471166,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 6320442339,
+  "lat": 48.3526869,
+  "lon": -3.9919722,
+  "tags": {
+    "power": "converter",
+    "ref": "P14",
+    "voltage": "20000"
+  }
+},
+{
+  "type": "node",
+  "id": 6449952426,
+  "lat": 48.8372641,
+  "lon": 2.3855004,
+  "tags": {
+    "frequency": "0",
+    "location": "indoor",
+    "operator": "SNCF Réseau",
+    "power": "converter",
+    "voltage": "1500"
+  }
+},
+{
+  "type": "node",
+  "id": 6449952427,
+  "lat": 48.8373131,
+  "lon": 2.3853837,
+  "tags": {
+    "frequency": "0",
+    "location": "indoor",
+    "operator": "SNCF Réseau",
+    "power": "converter",
+    "voltage": "1500"
+  }
+},
+{
+  "type": "node",
+  "id": 6449952428,
+  "lat": 48.8373594,
+  "lon": 2.3852670,
+  "tags": {
+    "frequency": "0",
+    "location": "indoor",
+    "operator": "SNCF Réseau",
+    "power": "converter",
+    "voltage": "1500"
+  }
+},
+{
+  "type": "node",
+  "id": 7187924818,
+  "lat": 46.5480794,
+  "lon": 9.8878880,
+  "tags": {
+    "converter": "motor_generator",
+    "frequency": "16.7",
+    "location": "indoor",
+    "operator": "RhB",
+    "phases": "1",
+    "power": "converter",
+    "rating": "20 MVA",
+    "start_date": "2004",
+    "voltage": "66000"
+  }
+},
+{
+  "type": "node",
+  "id": 7570518874,
+  "lat": 49.5805914,
+  "lon": 9.6522476,
+  "tags": {
+    "model": "PowerOne PVI",
+    "operator": "BürgerEnergie Tauberfranken 2 eG",
+    "power": "converter",
+    "start_date": "2009"
+  }
+},
+{
+  "type": "node",
+  "id": 7837437601,
+  "lat": 49.0334376,
+  "lon": 8.3760563,
+  "tags": {
+    "frequency": "50;0",
+    "operator": "Albtal-Verkehrs-Gesellschaft mbH",
+    "power": "converter",
+    "ref": "Gleichrichter - Trafo 1",
+    "voltage": "750"
+  }
+},
+{
+  "type": "node",
+  "id": 7837437602,
+  "lat": 49.0334392,
+  "lon": 8.3760135,
+  "tags": {
+    "frequency": "50;0",
+    "operator": "Albtal-Verkehrs-Gesellschaft mbH",
+    "power": "converter",
+    "ref": "Gleichrichter - Trafo 2",
+    "voltage": "750"
+  }
+},
+{
+  "type": "node",
+  "id": 7855045518,
+  "lat": 49.0294452,
+  "lon": 8.4474560,
+  "tags": {
+    "frequency": "50;0",
+    "operator": "Verkehrsbetriebe Karlsruhe GmbH",
+    "power": "converter",
+    "voltage": "750"
+  }
+},
+{
+  "type": "node",
+  "id": 7924267880,
+  "lat": 49.0175195,
+  "lon": 8.4412983,
+  "tags": {
+    "frequency": "50;0",
+    "operator": "Verkehrsbetriebe Karlsruhe GmbH",
+    "power": "converter",
+    "voltage": "750"
+  }
+},
+{
+  "type": "node",
+  "id": 9019539403,
+  "lat": 49.5325102,
+  "lon": 9.2117978,
+  "tags": {
+    "frequency": "50",
+    "operator": "EnBW",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 9019539404,
+  "lat": 49.5325103,
+  "lon": 9.2117679,
+  "tags": {
+    "frequency": "50",
+    "operator": "EnBW",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 9019539405,
+  "lat": 49.5324819,
+  "lon": 9.2117678,
+  "tags": {
+    "frequency": "50",
+    "operator": "EnBW",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 9019539406,
+  "lat": 49.5324818,
+  "lon": 9.2117977,
+  "tags": {
+    "frequency": "50",
+    "operator": "EnBW",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 9176673676,
+  "lat": 49.0386049,
+  "lon": 8.3470992,
+  "tags": {
+    "frequency": "50;0",
+    "operator": "Verkehrsbetriebe Karlsruhe GmbH",
+    "power": "converter",
+    "voltage": "750"
+  }
+},
+{
+  "type": "node",
+  "id": 9817520703,
+  "lat": 47.5003119,
+  "lon": -0.4911288,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817520704,
+  "lat": 47.5002991,
+  "lon": -0.4910959,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817520705,
+  "lat": 47.5002787,
+  "lon": -0.4910977,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817520706,
+  "lat": 47.5002920,
+  "lon": -0.4911301,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817520707,
+  "lat": 47.5002832,
+  "lon": -0.4910520,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817520708,
+  "lat": 47.5002731,
+  "lon": -0.4910231,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817905986,
+  "lat": 47.5002975,
+  "lon": -0.4911435,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817905987,
+  "lat": 47.5003070,
+  "lon": -0.4911159,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817905988,
+  "lat": 47.5002933,
+  "lon": -0.4910826,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817905989,
+  "lat": 47.5002832,
+  "lon": -0.4911097,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817905990,
+  "lat": 47.5002875,
+  "lon": -0.4910637,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817905991,
+  "lat": 47.5002778,
+  "lon": -0.4910357,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2019-24-07",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953894,
+  "lat": 47.4755205,
+  "lon": 0.7769791,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953895,
+  "lat": 47.4754976,
+  "lon": 0.7770135,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953896,
+  "lat": 47.4754804,
+  "lon": 0.7770228,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953897,
+  "lat": 47.4754706,
+  "lon": 0.7770293,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953898,
+  "lat": 47.4754492,
+  "lon": 0.7770408,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953899,
+  "lat": 47.4754372,
+  "lon": 0.7770459,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953900,
+  "lat": 47.4755113,
+  "lon": 0.7769854,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953901,
+  "lat": 47.4754942,
+  "lon": 0.7769968,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953902,
+  "lat": 47.4754774,
+  "lon": 0.7770072,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953903,
+  "lat": 47.4754672,
+  "lon": 0.7770118,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953904,
+  "lat": 47.4754460,
+  "lon": 0.7770267,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9817953905,
+  "lat": 47.4754352,
+  "lon": 0.7770319,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9819928329,
+  "lat": 46.3130779,
+  "lon": 1.4167726,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9819928330,
+  "lat": 46.3130780,
+  "lon": 1.4167887,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9819928331,
+  "lat": 46.3130977,
+  "lon": 1.4167722,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9819928332,
+  "lat": 46.3130987,
+  "lon": 1.4167883,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9819928333,
+  "lat": 46.3131218,
+  "lon": 1.4167708,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9819928334,
+  "lat": 46.3131218,
+  "lon": 1.4167874,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9819928335,
+  "lat": 46.3131104,
+  "lon": 1.4167713,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9819928336,
+  "lat": 46.3131107,
+  "lon": 1.4167878,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820148587,
+  "lat": 46.3141698,
+  "lon": 1.4201290,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820148588,
+  "lat": 46.3141604,
+  "lon": 1.4201220,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820148589,
+  "lat": 46.3140809,
+  "lon": 1.4202128,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820148590,
+  "lat": 46.3140736,
+  "lon": 1.4202191,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820148591,
+  "lat": 46.3140663,
+  "lon": 1.4202258,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820148592,
+  "lat": 46.3140889,
+  "lon": 1.4202272,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820148593,
+  "lat": 46.3140814,
+  "lon": 1.4202346,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820148594,
+  "lat": 46.3140746,
+  "lon": 1.4202430,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227161,
+  "lat": 47.9488961,
+  "lon": 1.8593118,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "6B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227162,
+  "lat": 47.9488925,
+  "lon": 1.8593235,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "5B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227163,
+  "lat": 47.9488883,
+  "lon": 1.8593347,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227164,
+  "lat": 47.9488839,
+  "lon": 1.8593476,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227165,
+  "lat": 47.9488761,
+  "lon": 1.8593722,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227166,
+  "lat": 47.9488802,
+  "lon": 1.8593597,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227167,
+  "lat": 47.9488727,
+  "lon": 1.8593690,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227168,
+  "lat": 47.9488773,
+  "lon": 1.8593576,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227169,
+  "lat": 47.9488815,
+  "lon": 1.8593453,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227170,
+  "lat": 47.9488861,
+  "lon": 1.8593326,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227171,
+  "lat": 47.9488901,
+  "lon": 1.8593210,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "5A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820227172,
+  "lat": 47.9488936,
+  "lon": 1.8593095,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "6A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820322734,
+  "lat": 47.1662783,
+  "lon": 0.6318575,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820322735,
+  "lat": 47.1662890,
+  "lon": 0.6318536,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820322736,
+  "lat": 47.1662815,
+  "lon": 0.6318750,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820322737,
+  "lat": 47.1662926,
+  "lon": 0.6318702,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820322738,
+  "lat": 47.1662184,
+  "lon": 0.6315087,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "6A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820322739,
+  "lat": 47.1662300,
+  "lon": 0.6315020,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "6B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820322740,
+  "lat": 47.1662233,
+  "lon": 0.6315275,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "5A",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9820322741,
+  "lat": 47.1662350,
+  "lon": 0.6315217,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "5B",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822308122,
+  "lat": 45.1968066,
+  "lon": 6.6230196,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1A",
+    "start_date": "2019-18-04",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822308123,
+  "lat": 45.1968053,
+  "lon": 6.6230062,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1B",
+    "start_date": "2019-18-04",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822308124,
+  "lat": 45.1967905,
+  "lon": 6.6230058,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2A",
+    "start_date": "2019-18-04",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822308125,
+  "lat": 45.1967905,
+  "lon": 6.6229959,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2B",
+    "start_date": "2019-18-04",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822308126,
+  "lat": 45.1967757,
+  "lon": 6.6229928,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3A",
+    "start_date": "2019-18-04",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822308127,
+  "lat": 45.1967751,
+  "lon": 6.6229830,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3B",
+    "start_date": "2019-18-04",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822308128,
+  "lat": 45.1967593,
+  "lon": 6.6229803,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4A",
+    "start_date": "2019-18-04",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822308129,
+  "lat": 45.1967574,
+  "lon": 6.6229691,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4B",
+    "start_date": "2019-18-04",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822390378,
+  "lat": 50.1673179,
+  "lon": 1.7552682,
+  "tags": {
+    "colour": "white",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "Tesla, Inc.",
+    "operator": "Tesla, Inc.",
+    "operator:wikidata": "Q478214",
+    "owner": "Tesla, Inc.",
+    "owner:wikidata": "Q478214",
+    "phases": "3",
+    "power": "converter",
+    "rating": "150 kW",
+    "utility": "power"
+  }
+},
+{
+  "type": "node",
+  "id": 9822390379,
+  "lat": 50.1673122,
+  "lon": 1.7552778,
+  "tags": {
+    "colour": "white",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "Tesla, Inc.",
+    "operator": "Tesla, Inc.",
+    "operator:wikidata": "Q478214",
+    "owner": "Tesla, Inc.",
+    "owner:wikidata": "Q478214",
+    "phases": "3",
+    "power": "converter",
+    "rating": "150 kW",
+    "utility": "power"
+  }
+},
+{
+  "type": "node",
+  "id": 9822390380,
+  "lat": 50.1673049,
+  "lon": 1.7552849,
+  "tags": {
+    "colour": "white",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "Tesla, Inc.",
+    "operator": "Tesla, Inc.",
+    "operator:wikidata": "Q478214",
+    "owner": "Tesla, Inc.",
+    "owner:wikidata": "Q478214",
+    "phases": "3",
+    "power": "converter",
+    "rating": "150 kW",
+    "utility": "power"
+  }
+},
+{
+  "type": "node",
+  "id": 9822390381,
+  "lat": 50.1672990,
+  "lon": 1.7552939,
+  "tags": {
+    "colour": "white",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "Tesla, Inc.",
+    "operator": "Tesla, Inc.",
+    "operator:wikidata": "Q478214",
+    "owner": "Tesla, Inc.",
+    "owner:wikidata": "Q478214",
+    "phases": "3",
+    "power": "converter",
+    "rating": "150 kW",
+    "utility": "power"
+  }
+},
+{
+  "type": "node",
+  "id": 9822390382,
+  "lat": 50.1672924,
+  "lon": 1.7553004,
+  "tags": {
+    "colour": "white",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "Tesla, Inc.",
+    "operator": "Tesla, Inc.",
+    "operator:wikidata": "Q478214",
+    "owner": "Tesla, Inc.",
+    "owner:wikidata": "Q478214",
+    "phases": "3",
+    "power": "converter",
+    "rating": "150 kW",
+    "utility": "power"
+  }
+},
+{
+  "type": "node",
+  "id": 9822893112,
+  "lat": 50.1674648,
+  "lon": 1.7555222,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1A",
+    "start_date": "2019-03-28",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822893113,
+  "lat": 50.1674730,
+  "lon": 1.7555380,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1B",
+    "start_date": "2019-03-28",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822893114,
+  "lat": 50.1674542,
+  "lon": 1.7555362,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2A",
+    "start_date": "2019-03-28",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822893115,
+  "lat": 50.1674644,
+  "lon": 1.7555544,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2B",
+    "start_date": "2019-03-28",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822893116,
+  "lat": 50.1674461,
+  "lon": 1.7555526,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3A",
+    "start_date": "2019-03-28",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822905017,
+  "lat": 50.1674546,
+  "lon": 1.7555666,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3B",
+    "start_date": "2019-03-28",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822905018,
+  "lat": 50.1674324,
+  "lon": 1.7555684,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4A",
+    "start_date": "2019-03-28",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9822905019,
+  "lat": 50.1674398,
+  "lon": 1.7555818,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4B",
+    "start_date": "2019-03-28",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701183,
+  "lat": 48.4673815,
+  "lon": 1.5790569,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701184,
+  "lat": 48.4673877,
+  "lon": 1.5790763,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701185,
+  "lat": 48.4673723,
+  "lon": 1.5790633,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701186,
+  "lat": 48.4673791,
+  "lon": 1.5790809,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701187,
+  "lat": 48.4673521,
+  "lon": 1.5790781,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701188,
+  "lat": 48.4673570,
+  "lon": 1.5790957,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701189,
+  "lat": 48.4673423,
+  "lon": 1.5790855,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701190,
+  "lat": 48.4673491,
+  "lon": 1.5791031,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701211,
+  "lat": 48.4688662,
+  "lon": 1.5799539,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701212,
+  "lat": 48.4688676,
+  "lon": 1.5799735,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701213,
+  "lat": 48.4688560,
+  "lon": 1.5799567,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701214,
+  "lat": 48.4688588,
+  "lon": 1.5799742,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701215,
+  "lat": 48.4688323,
+  "lon": 1.5799637,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833701216,
+  "lat": 48.4688351,
+  "lon": 1.5799798,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833707717,
+  "lat": 48.4688253,
+  "lon": 1.5799644,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9833707718,
+  "lat": 48.4688258,
+  "lon": 1.5799833,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "start_date": "2018-29-10",
+    "street_cabinet": "power",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835468864,
+  "lat": 43.3378724,
+  "lon": 1.2454325,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4B",
+    "start_date": "2019-18-02",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835468865,
+  "lat": 43.3378755,
+  "lon": 1.2454466,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4A",
+    "start_date": "2019-18-02",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835468866,
+  "lat": 43.3378620,
+  "lon": 1.2454359,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3B",
+    "start_date": "2019-18-02",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835468867,
+  "lat": 43.3378647,
+  "lon": 1.2454497,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3A",
+    "start_date": "2019-18-02",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835468868,
+  "lat": 43.3378442,
+  "lon": 1.2454415,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2B",
+    "start_date": "2019-18-02",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835468869,
+  "lat": 43.3378471,
+  "lon": 1.2454573,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2A",
+    "start_date": "2019-18-02",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835468870,
+  "lat": 43.3378342,
+  "lon": 1.2454452,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1B",
+    "start_date": "2019-18-02",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835468871,
+  "lat": 43.3378366,
+  "lon": 1.2454599,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1A",
+    "start_date": "2019-18-02",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835564080,
+  "lat": 43.3344375,
+  "lon": 1.2448681,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4A",
+    "start_date": "2019-14-03",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835564081,
+  "lat": 43.3344273,
+  "lon": 1.2448721,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "4B",
+    "start_date": "2019-14-03",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835564082,
+  "lat": 43.3344346,
+  "lon": 1.2448547,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3A",
+    "start_date": "2019-14-03",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835564083,
+  "lat": 43.3344229,
+  "lon": 1.2448594,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "3B",
+    "start_date": "2019-14-03",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835564084,
+  "lat": 43.3344263,
+  "lon": 1.2448293,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2A",
+    "start_date": "2019-14-03",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835564085,
+  "lat": 43.3344171,
+  "lon": 1.2448340,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "2B",
+    "start_date": "2019-14-03",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835564086,
+  "lat": 43.3344227,
+  "lon": 1.2448146,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1A",
+    "start_date": "2019-14-03",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 9835564087,
+  "lat": 43.3344125,
+  "lon": 1.2448189,
+  "tags": {
+    "colour": "white",
+    "current": "375",
+    "description": "Armoire de puissance",
+    "frequency": "50",
+    "hinge": "horizontal",
+    "location": "outdoor",
+    "man_made": "street_cabinet",
+    "manufacturer": "ABB",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "owner": "Ionity",
+    "owner:wikidata": "Q42717773",
+    "owner:wikipedia": "en:IONITY",
+    "phases": "3",
+    "power": "converter",
+    "rating": "175 kW",
+    "ref": "1B",
+    "start_date": "2019-14-03",
+    "utility": "power",
+    "voltage": "920"
+  }
+},
+{
+  "type": "node",
+  "id": 10131402657,
+  "lat": 42.8027181,
+  "lon": -2.9975930,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 10131402658,
+  "lat": 42.8027150,
+  "lon": -2.9976313,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 10131402659,
+  "lat": 42.8027118,
+  "lon": -2.9976691,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 10131402660,
+  "lat": 42.8027036,
+  "lon": -2.9977551,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 10131402661,
+  "lat": 42.8027077,
+  "lon": -2.9977104,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 10131402662,
+  "lat": 42.8027005,
+  "lon": -2.9977947,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 11293958518,
+  "lat": 48.8481458,
+  "lon": 8.2485945,
+  "tags": {
+    "frequency": "50;16.7",
+    "operator": "DB Energie",
+    "operator:wikidata": "Q1152043",
+    "operator:wikipedia": "de:DB Energie",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 11293958519,
+  "lat": 48.8482198,
+  "lon": 8.2488193,
+  "tags": {
+    "frequency": "50;16.7",
+    "operator": "DB Energie",
+    "operator:wikidata": "Q1152043",
+    "operator:wikipedia": "de:DB Energie",
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 11363280485,
+  "lat": 42.6793667,
+  "lon": -2.9333358,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "node",
+  "id": 11697373661,
+  "lat": 50.8721630,
+  "lon": 6.4526224,
+  "tags": {
+    "frequency": "0;50",
+    "location": "indoor",
+    "power": "converter",
+    "voltage": "320000"
+  }
+},
+{
+  "type": "node",
+  "id": 12979424511,
+  "lat": 48.9810338,
+  "lon": 8.3767185,
+  "tags": {
+    "converter": "motor_generator",
+    "frequency": "50;16.7",
+    "location": "indoor",
+    "operator": "DB Energie",
+    "operator:wikidata": "Q1152043",
+    "operator:wikipedia": "de:DB Energie",
+    "phases": "3;1",
+    "power": "converter",
+    "rating": "26.5 MVA",
+    "ref": "E1",
+    "start_date": "1957"
+  }
+},
+{
+  "type": "node",
+  "id": 12979424512,
+  "lat": 48.9809238,
+  "lon": 8.3764543,
+  "tags": {
+    "converter": "motor_generator",
+    "frequency": "50;16.7",
+    "location": "indoor",
+    "operator": "DB Energie",
+    "operator:wikidata": "Q1152043",
+    "operator:wikipedia": "de:DB Energie",
+    "phases": "3;1",
+    "power": "converter",
+    "rating": "26.5 MVA",
+    "ref": "E2",
+    "start_date": "2020"
+  }
+},
+{
+  "type": "node",
+  "id": 13363943543,
+  "lat": 49.5062491,
+  "lon": 8.7631613,
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 69383156,
+  "center": {
+    "lat": 47.4379357,
+    "lon": 0.6798204
+  },
+  "tags": {
+    "building": "yes",
+    "note": "poste de transformation haute tension \"M.G.E.N 261 P1 001\"",
+    "power": "converter",
+    "ref": "MGEN 261 P1 001",
+    "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010"
+  }
+},
+{
+  "type": "way",
+  "id": 73002451,
+  "center": {
+    "lat": 48.9079907,
+    "lon": 2.3686005
+  },
+  "tags": {
+    "building": "yes",
+    "location": "outdoor",
+    "power": "converter",
+    "source": "extraction vectorielle v1 cadastre-dgi-fr source : Direction Générale des Impôts - Cadas. Mise à jour : 2010"
+  }
+},
+{
+  "type": "way",
+  "id": 81887632,
+  "center": {
+    "lat": 48.9356018,
+    "lon": 0.2008023
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter",
+    "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010"
+  }
+},
+{
+  "type": "way",
+  "id": 89405673,
+  "center": {
+    "lat": 47.4059988,
+    "lon": 8.1054185
+  },
+  "tags": {
+    "building": "yes",
+    "converter": "motor_generator",
+    "frequency": "50;16.7",
+    "name": "Frequenzumformerwerk Rupperswil",
+    "note": "Rotierender Umformer in zwei Gruppen",
+    "operator": "SBB",
+    "power": "converter",
+    "start_date": "1965",
+    "voltage": "220000;132000"
+  }
+},
+{
+  "type": "way",
+  "id": 104448823,
+  "center": {
+    "lat": 51.0520731,
+    "lon": 9.2837413
+  },
+  "tags": {
+    "building": "industrial",
+    "converter": "motor_generator",
+    "description": "Zwei rotierende Umformer mit je 12,5 MW",
+    "frequency": "50;16.7",
+    "name": "Maschinenhaus",
+    "operator": "DB Energie GmbH",
+    "operator:wikidata": "Q1152043",
+    "power": "converter",
+    "roof:colour": "black",
+    "roof:shape": "flat",
+    "start_date": "1963"
+  }
+},
+{
+  "type": "way",
+  "id": 113189667,
+  "center": {
+    "lat": 48.8408825,
+    "lon": 2.5860475
+  },
+  "tags": {
+    "building": "yes",
+    "panoramax": "c113a9a6-1163-4942-9f9b-8fa1a6e3a511",
+    "power": "converter",
+    "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2011"
+  }
+},
+{
+  "type": "way",
+  "id": 135545015,
+  "center": {
+    "lat": 48.3452650,
+    "lon": -1.3092595
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter",
+    "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2011"
+  }
+},
+{
+  "type": "way",
+  "id": 135939302,
+  "center": {
+    "lat": 49.7454335,
+    "lon": 0.3678985
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter",
+    "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2011"
+  }
+},
+{
+  "type": "way",
+  "id": 153332489,
+  "center": {
+    "lat": 49.0396037,
+    "lon": 9.1778393
+  },
+  "tags": {
+    "building": "yes",
+    "converter": "motor_generator",
+    "description": "Zwei rotierende Umformer mit je 70 MW",
+    "frequency": "50;16.7",
+    "height": "19.25",
+    "name": "Bahnstromumformerwerk Neckarwestheim",
+    "operator": "DB Energie GmbH",
+    "operator:2": "DB Energie GmbH",
+    "operator:wikidata": "Q1152043",
+    "operator:wikipedia": "de:DB Energie",
+    "power": "converter",
+    "railway:ref": "ITNWM",
+    "start_date": "unknown",
+    "voltage": "12500"
+  }
+},
+{
+  "type": "way",
+  "id": 168860151,
+  "center": {
+    "lat": 46.9749927,
+    "lon": 7.1913953
+  },
+  "tags": {
+    "addr:city": "Kerzers",
+    "addr:housenumber": "7",
+    "addr:postcode": "3210",
+    "addr:street": "Unterwerk",
+    "building": "industrial",
+    "converter": "back-to-back",
+    "height": "10",
+    "layer": "1",
+    "operator": "SBB",
+    "power": "converter",
+    "roof:shape": "flat"
+  }
+},
+{
+  "type": "way",
+  "id": 171118822,
+  "center": {
+    "lat": 47.5504855,
+    "lon": -2.8675245
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter",
+    "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 171402311,
+  "center": {
+    "lat": 51.3120245,
+    "lon": 6.5623774
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 174696675,
+  "center": {
+    "lat": 47.6412117,
+    "lon": 9.1743394
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 175112800,
+  "center": {
+    "lat": 50.9041753,
+    "lon": 7.0491577
+  },
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "converter": "motor_generator",
+    "description": "Drei rotierende Umformer mit je 25 MW",
+    "frequency": "50;16.7",
+    "manufacturer": "unknown",
+    "operator": "DB Energie GmbH",
+    "power": "converter",
+    "rating": "75 MW",
+    "start_date": "1957",
+    "voltage": "medium"
+  }
+},
+{
+  "type": "way",
+  "id": 177199369,
+  "center": {
+    "lat": 51.2202212,
+    "lon": 6.7301779
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "description": "Ein statischer Umrichter mit 15 MW",
+    "frequency": "50;16.7",
+    "manufacturer": "Alstrom",
+    "operator": "DB Energie GmbH",
+    "power": "converter",
+    "start_date": "1999-10",
+    "voltage:primary": "110000",
+    "voltage:secondary": "20000"
+  }
+},
+{
+  "type": "way",
+  "id": 177199373,
+  "center": {
+    "lat": 51.2202961,
+    "lon": 6.7299631
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "description": "Ein statischer Umrichter mit 15 MW",
+    "frequency": "50;16.7",
+    "manufacturer": "ABB",
+    "operator": "DB Energie GmbH",
+    "power": "converter",
+    "start_date": "1999-10",
+    "voltage": "110000;20000"
+  }
+},
+{
+  "type": "way",
+  "id": 177390234,
+  "center": {
+    "lat": 47.5719244,
+    "lon": 8.3766951
+  },
+  "tags": {
+    "addr:street": "Sportplatzweg",
+    "building": "yes",
+    "power": "converter",
+    "source": "AGIS 2011"
+  }
+},
+{
+  "type": "way",
+  "id": 199290754,
+  "center": {
+    "lat": 50.9034769,
+    "lon": 7.0511866
+  },
+  "tags": {
+    "building": "service",
+    "converter": "ac_converter",
+    "description": "Ein statischer Umrichter mit 40 MW",
+    "frequency": "50;16.7",
+    "manufacturer": "ConverTeam",
+    "operator": "DB Energie GmbH",
+    "power": "converter",
+    "rating": "40 MW",
+    "start_date": "unknown",
+    "voltage": "110000"
+  }
+},
+{
+  "type": "way",
+  "id": 199290755,
+  "center": {
+    "lat": 50.9036245,
+    "lon": 7.0508441
+  },
+  "tags": {
+    "building": "service",
+    "converter": "ac_converter",
+    "description": "Ein statischer Umrichter mit 40 MW",
+    "frequency": "50;16.7",
+    "manufacturer": "ConverTeam",
+    "operator": "DB Energie GmbH",
+    "power": "converter",
+    "rating": "40 MW",
+    "start_date": "unknown",
+    "voltage": "110000"
+  }
+},
+{
+  "type": "way",
+  "id": 207582292,
+  "center": {
+    "lat": 46.7519871,
+    "lon": 7.2356660
+  },
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 230733830,
+  "center": {
+    "lat": 50.9029292,
+    "lon": 1.7818519
+  },
+  "tags": {
+    "building": "industrial",
+    "frequency": "0",
+    "power": "converter",
+    "source": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013",
+    "utility": "power",
+    "voltage": "270000"
+  }
+},
+{
+  "type": "way",
+  "id": 246497558,
+  "center": {
+    "lat": 43.4625725,
+    "lon": 3.3013795
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter",
+    "source": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013"
+  }
+},
+{
+  "type": "way",
+  "id": 254446764,
+  "center": {
+    "lat": 46.6808027,
+    "lon": 7.6578232
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "frequency": "50;16.7",
+    "generator:output:electricity": "20 MW",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 254446765,
+  "center": {
+    "lat": 46.6807280,
+    "lon": 7.6576483
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "frequency": "50;16.7",
+    "generator:output:electricity": "20 MW",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 254446766,
+  "center": {
+    "lat": 46.6805672,
+    "lon": 7.6573141
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "frequency": "50;16.7",
+    "generator:output:electricity": "20 MW",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 254446767,
+  "center": {
+    "lat": 46.6810450,
+    "lon": 7.6567543
+  },
+  "tags": {
+    "addr:city": "Wimmis",
+    "addr:country": "CH",
+    "addr:housenumber": "120d",
+    "addr:postcode": "3752",
+    "addr:street": "Hauptstrasse",
+    "building": "yes",
+    "converter": "motor_generator",
+    "ele": "635",
+    "frequency": "50;16.7",
+    "power": "converter",
+    "voltage": "unknown;132000"
+  }
+},
+{
+  "type": "way",
+  "id": 254446768,
+  "center": {
+    "lat": 46.6804887,
+    "lon": 7.6571361
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "frequency": "50;16.7",
+    "generator:output:electricity": "20 MW",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 254607612,
+  "center": {
+    "lat": 47.4234557,
+    "lon": 8.5558872
+  },
+  "tags": {
+    "architect": "Max Vogt",
+    "architect:wikidata": "Q1913571",
+    "building": "service",
+    "building:levels": "4",
+    "converter": "motor_generator",
+    "frequency": "50;16.7",
+    "name": "Frequenzumformerwerk Seebach",
+    "note": "Rotierender Umformer in zwei Gruppen à 62 MW",
+    "operator": "SBB",
+    "power": "converter",
+    "roof:shape": "flat",
+    "start_date": "1977",
+    "voltage": "220000;132000",
+    "wikidata": "Q128385242"
+  }
+},
+{
+  "type": "way",
+  "id": 255353908,
+  "center": {
+    "lat": 46.1751579,
+    "lon": 9.0021584
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "frequency": "50;16.7",
+    "power": "converter",
+    "start_date": "2010",
+    "voltage": "unknown"
+  }
+},
+{
+  "type": "way",
+  "id": 255353923,
+  "center": {
+    "lat": 46.1753514,
+    "lon": 9.0018787
+  },
+  "tags": {
+    "converter": "motor_generator",
+    "frequency": "50;16.7",
+    "power": "converter",
+    "start_date": "1965",
+    "voltage": "unknown"
+  }
+},
+{
+  "type": "way",
+  "id": 258569357,
+  "center": {
+    "lat": 51.3168899,
+    "lon": 6.5379505
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 258579411,
+  "center": {
+    "lat": 51.3186893,
+    "lon": 6.5325324
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 263644479,
+  "center": {
+    "lat": 49.2645918,
+    "lon": 8.5281775
+  },
+  "tags": {
+    "building": "yes",
+    "building:colour": "#F4F4F4",
+    "converter": "solar",
+    "description": "Wechselrichter",
+    "frequency": "50",
+    "height": "3",
+    "operator": "Wircon GmbH",
+    "power": "converter",
+    "source": "Maps4BW; information board at power station",
+    "start_date": "2013..2017",
+    "voltage": "20000"
+  }
+},
+{
+  "type": "way",
+  "id": 263644497,
+  "center": {
+    "lat": 49.2614500,
+    "lon": 8.5262228
+  },
+  "tags": {
+    "building": "yes",
+    "building:colour": "#F4F4F4",
+    "converter": "solar",
+    "description": "Wechselrichter",
+    "frequency": "50",
+    "height": "3",
+    "operator": "Wircon GmbH",
+    "power": "converter",
+    "source": "Maps4BW; information board at power station",
+    "start_date": "2013..2017",
+    "voltage": "20000"
+  }
+},
+{
+  "type": "way",
+  "id": 264102291,
+  "center": {
+    "lat": 51.1054817,
+    "lon": 0.9747115
+  },
+  "tags": {
+    "building": "industrial",
+    "frequency": "0;50",
+    "operator": "National Grid plc",
+    "power": "converter",
+    "rating": "1000",
+    "roof:colour": "white",
+    "roof:shape": "flat",
+    "voltage": "270000"
+  }
+},
+{
+  "type": "way",
+  "id": 264102293,
+  "center": {
+    "lat": 51.1053894,
+    "lon": 0.9756875
+  },
+  "tags": {
+    "building": "industrial",
+    "frequency": "0;50",
+    "operator": "National Grid plc",
+    "power": "converter",
+    "rating": "1000",
+    "roof:colour": "white",
+    "roof:shape": "flat",
+    "voltage": "270000"
+  }
+},
+{
+  "type": "way",
+  "id": 292375403,
+  "center": {
+    "lat": 51.4734907,
+    "lon": -2.6085651
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 301701204,
+  "center": {
+    "lat": 51.4628095,
+    "lon": 6.7330098
+  },
+  "tags": {
+    "addr:city": "Duisburg",
+    "addr:country": "DE",
+    "addr:housenumber": "50",
+    "addr:postcode": "47119",
+    "addr:street": "Friedrich-Ebert-Straße",
+    "building": "yes",
+    "building:levels": "1",
+    "building:use:infrastructure": "yes",
+    "power": "converter",
+    "roof:shape": "flat",
+    "source:outline": "ALKIS NRW"
+  }
+},
+{
+  "type": "way",
+  "id": 303466191,
+  "center": {
+    "lat": 50.9919348,
+    "lon": 7.1142283
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 310909612,
+  "center": {
+    "lat": 47.7796343,
+    "lon": 8.9594583
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 340399377,
+  "center": {
+    "lat": 42.2298477,
+    "lon": 2.9441764
+  },
+  "tags": {
+    "building": "industrial",
+    "frequency": "0",
+    "poles": "2",
+    "power": "converter",
+    "utility": "power",
+    "voltage": "320000"
+  }
+},
+{
+  "type": "way",
+  "id": 340399378,
+  "center": {
+    "lat": 42.2309319,
+    "lon": 2.9442684
+  },
+  "tags": {
+    "building": "industrial",
+    "frequency": "0",
+    "poles": "2",
+    "power": "converter",
+    "utility": "power",
+    "voltage": "320000"
+  }
+},
+{
+  "type": "way",
+  "id": 346634460,
+  "center": {
+    "lat": 43.8303035,
+    "lon": 4.0877522
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter",
+    "source": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2015"
+  }
+},
+{
+  "type": "way",
+  "id": 361445566,
+  "center": {
+    "lat": 49.2438626,
+    "lon": 6.9765172
+  },
+  "tags": {
+    "converter": "motor_generator",
+    "description": "rotierende Umformer",
+    "frequency": "50;16.7",
+    "noref": "yes",
+    "operator": "DB Energie GmbH",
+    "power": "converter",
+    "voltage": "110000;15000"
+  }
+},
+{
+  "type": "way",
+  "id": 362083058,
+  "center": {
+    "lat": 49.4452029,
+    "lon": 8.5031047
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "description": "Ein statischer Umrichter mit 120 MW.",
+    "frequency": "50;16.7",
+    "manufacturer": "GE Power Conversion",
+    "operator": "DB Energie",
+    "operator:wikidata": "Q1152043",
+    "operator:wikipedia": "de:DB Energie",
+    "power": "converter",
+    "rating": "120 MW",
+    "voltage": "110000"
+  }
+},
+{
+  "type": "way",
+  "id": 405645085,
+  "center": {
+    "lat": 50.6202861,
+    "lon": 7.0379960
+  },
+  "tags": {
+    "building": "service",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 407750378,
+  "center": {
+    "lat": 47.8185495,
+    "lon": 8.1792559
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 421690881,
+  "center": {
+    "lat": 50.9035058,
+    "lon": 1.7827792
+  },
+  "tags": {
+    "building": "industrial",
+    "frequency": "0",
+    "power": "converter",
+    "source": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013",
+    "utility": "power",
+    "voltage": "270000"
+  }
+},
+{
+  "type": "way",
+  "id": 424891019,
+  "center": {
+    "lat": 50.8779335,
+    "lon": 3.3618325
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 444579200,
+  "center": {
+    "lat": 50.8486660,
+    "lon": 4.4632976
+  },
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 461142647,
+  "center": {
+    "lat": 48.3480017,
+    "lon": 2.9706929
+  },
+  "tags": {
+    "building": "yes",
+    "man_made": "street_cabinet",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 466998233,
+  "center": {
+    "lat": 50.7851906,
+    "lon": 6.4989545
+  },
+  "tags": {
+    "operator": "Leitungspartner Düren",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 467747476,
+  "center": {
+    "lat": 50.7758047,
+    "lon": 6.4684585
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "Leitungspartner Düren",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 467747477,
+  "center": {
+    "lat": 50.7809398,
+    "lon": 6.4785993
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "Leitungspartner Düren",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 467747478,
+  "center": {
+    "lat": 50.7829368,
+    "lon": 6.4880227
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "Leitungspartner Düren",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 469932952,
+  "center": {
+    "lat": 50.6281260,
+    "lon": 6.3892222
+  },
+  "tags": {
+    "building": "yes",
+    "building:levels": "1",
+    "building:use": "commercial",
+    "name": "Station Uferstr",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 510097082,
+  "center": {
+    "lat": 51.4577136,
+    "lon": 6.7550764
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 520542434,
+  "center": {
+    "lat": 49.9175532,
+    "lon": 7.0107301
+  },
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 570784437,
+  "center": {
+    "lat": 46.2221667,
+    "lon": 6.0775885
+  },
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 581691556,
+  "center": {
+    "lat": 49.2119661,
+    "lon": 9.0772176
+  },
+  "tags": {
+    "building": "service",
+    "frequency": "50",
+    "note": "AC-to-DC converter for Supercharging",
+    "operator": "Tesla, Inc.",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 586059402,
+  "center": {
+    "lat": 41.7951622,
+    "lon": -1.1642564
+  },
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 586994824,
+  "center": {
+    "lat": 48.6413711,
+    "lon": 8.0378611
+  },
+  "tags": {
+    "note": "AC-to-DC converter for Supercharging",
+    "operator": "Tesla",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 634025106,
+  "center": {
+    "lat": 51.0076315,
+    "lon": -3.1992891
+  },
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "converter": "vsc",
+    "operator": "TGC Renewables",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 634025139,
+  "center": {
+    "lat": 51.0081715,
+    "lon": -3.1997197
+  },
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "converter": "vsc",
+    "operator": "TGC Renewables",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 634025592,
+  "center": {
+    "lat": 51.0103558,
+    "lon": -3.2218509
+  },
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "converter": "vsc",
+    "location": "indoor",
+    "operator": "Anesco",
+    "poles": "monopole",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 634025596,
+  "center": {
+    "lat": 51.0119770,
+    "lon": -3.2219033
+  },
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "converter": "vsc",
+    "location": "indoor",
+    "operator": "Anesco",
+    "poles": "monopole",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 634025678,
+  "center": {
+    "lat": 51.0098201,
+    "lon": -3.2218100
+  },
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "converter": "vsc",
+    "location": "indoor",
+    "operator": "Anesco",
+    "poles": "monopole",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 634025689,
+  "center": {
+    "lat": 51.0109870,
+    "lon": -3.2218718
+  },
+  "tags": {
+    "building": "service",
+    "building:levels": "1",
+    "converter": "vsc",
+    "location": "indoor",
+    "operator": "Anesco",
+    "poles": "monopole",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 663837827,
+  "center": {
+    "lat": 41.4565422,
+    "lon": 2.1812742
+  },
+  "tags": {
+    "building": "industrial",
+    "building:levels": "1",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 699269156,
+  "center": {
+    "lat": 51.0983310,
+    "lon": 1.1452277
+  },
+  "tags": {
+    "building": "industrial",
+    "frequency": "0",
+    "power": "converter",
+    "voltage": "320000"
+  }
+},
+{
+  "type": "way",
+  "id": 747433707,
+  "center": {
+    "lat": 41.4007605,
+    "lon": 2.1875921
+  },
+  "tags": {
+    "operator": "Adif",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 775577826,
+  "center": {
+    "lat": 50.9202933,
+    "lon": 1.7800935
+  },
+  "tags": {
+    "building": "industrial",
+    "frequency": "0",
+    "name": "ElecLink Converter Station",
+    "power": "converter",
+    "utility": "power",
+    "voltage": "320000"
+  }
+},
+{
+  "type": "way",
+  "id": 863806530,
+  "center": {
+    "lat": 50.7529684,
+    "lon": 5.6675834
+  },
+  "tags": {
+    "building": "service",
+    "frequency": "0",
+    "power": "converter",
+    "utility": "power",
+    "voltage": "320000"
+  }
+},
+{
+  "type": "way",
+  "id": 870598506,
+  "center": {
+    "lat": 50.8716205,
+    "lon": 6.4529047
+  },
+  "tags": {
+    "building": "service",
+    "frequency": "0",
+    "power": "converter",
+    "utility": "power",
+    "voltage": "320000"
+  }
+},
+{
+  "type": "way",
+  "id": 883309039,
+  "center": {
+    "lat": 50.5173139,
+    "lon": 8.4601643
+  },
+  "tags": {
+    "building": "service",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 984864052,
+  "center": {
+    "lat": 48.2339195,
+    "lon": 9.7401890
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 991013773,
+  "center": {
+    "lat": 47.8219007,
+    "lon": 9.9974137
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "description": "Ein statischer Umrichter mit 15 MW",
+    "fixme": "Genaue Position",
+    "frequency": "50;16.7",
+    "manufacturer": "Siemens",
+    "operator": "DB Energie GmbH",
+    "power": "converter",
+    "voltage": "110000;15000"
+  }
+},
+{
+  "type": "way",
+  "id": 991013774,
+  "center": {
+    "lat": 47.8220431,
+    "lon": 9.9973353
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "description": "Ein statischer Umrichter mit 15 MW",
+    "fixme": "Genaue Position",
+    "frequency": "50;16.7",
+    "manufacturer": "Siemens",
+    "operator": "DB Energie GmbH",
+    "power": "converter",
+    "voltage": "110000;15000"
+  }
+},
+{
+  "type": "way",
+  "id": 991013779,
+  "center": {
+    "lat": 47.8373522,
+    "lon": 9.6240291
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "description": "Ein statischer Umrichter mit 15 MW",
+    "frequency": "50;16.7",
+    "manufacturer": "GE Power Conversion",
+    "operator": "DB Energie GmbH",
+    "power": "converter",
+    "voltage": "110000;15000"
+  }
+},
+{
+  "type": "way",
+  "id": 991013780,
+  "center": {
+    "lat": 47.8371899,
+    "lon": 9.6241036
+  },
+  "tags": {
+    "converter": "ac_converter",
+    "description": "Ein statischer Umrichter mit 15 MW",
+    "frequency": "50;16.7",
+    "manufacturer": "GE Power Conversion",
+    "operator": "DB Energie GmbH",
+    "power": "converter",
+    "voltage": "110000;15000"
+  }
+},
+{
+  "type": "way",
+  "id": 999483264,
+  "center": {
+    "lat": 51.0180113,
+    "lon": 6.1050046
+  },
+  "tags": {
+    "building": "service",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 999483265,
+  "center": {
+    "lat": 51.0152925,
+    "lon": 6.1088497
+  },
+  "tags": {
+    "building": "service",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 999887250,
+  "center": {
+    "lat": 51.4510552,
+    "lon": 6.9912865
+  },
+  "tags": {
+    "building": "yes",
+    "building:colour": "beige",
+    "building:levels": "1",
+    "building:material": "concrete",
+    "height": "1.5",
+    "power": "converter",
+    "ref": "Schederhofstr. 105",
+    "roof:colour": "beige",
+    "roof:material": "concrete",
+    "roof:shape": "flat"
+  }
+},
+{
+  "type": "way",
+  "id": 1066788533,
+  "center": {
+    "lat": 49.2596025,
+    "lon": 8.5252468
+  },
+  "tags": {
+    "building": "yes",
+    "building:colour": "#F4F4F4",
+    "converter": "solar",
+    "description": "Wechselrichter",
+    "frequency": "50",
+    "height": "3",
+    "operator": "Wircon GmbH",
+    "power": "converter",
+    "source": "Maps4BW; information board at power station",
+    "start_date": "2013..2017",
+    "voltage": "20000"
+  }
+},
+{
+  "type": "way",
+  "id": 1069434650,
+  "center": {
+    "lat": 47.9488905,
+    "lon": 1.8593469
+  },
+  "tags": {
+    "access": "no",
+    "covered": "no",
+    "description": "Zone Technique",
+    "industrial": "power",
+    "landuse": "industrial",
+    "lit": "no",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1069613922,
+  "center": {
+    "lat": 45.0309202,
+    "lon": 1.5246951
+  },
+  "tags": {
+    "access": "no",
+    "covered": "no",
+    "description": "Zone Technique",
+    "industrial": "power",
+    "landuse": "industrial",
+    "lit": "no",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1069682753,
+  "center": {
+    "lat": 47.4754910,
+    "lon": 0.7770914
+  },
+  "tags": {
+    "access": "no",
+    "covered": "no",
+    "description": "Zone Technique",
+    "industrial": "power",
+    "landuse": "industrial",
+    "lit": "no",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1069964720,
+  "center": {
+    "lat": 47.9488848,
+    "lon": 1.8593826
+  },
+  "tags": {
+    "access": "no",
+    "covered": "no",
+    "description": "Zone Technique",
+    "industrial": "power",
+    "landuse": "industrial",
+    "lit": "no",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1070258503,
+  "center": {
+    "lat": 45.1967785,
+    "lon": 6.6230076
+  },
+  "tags": {
+    "access": "no",
+    "covered": "no",
+    "description": "Zone Technique",
+    "industrial": "power",
+    "landuse": "industrial",
+    "lit": "no",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "power": "converter",
+    "start_date": "2019-18-04"
+  }
+},
+{
+  "type": "way",
+  "id": 1070337547,
+  "center": {
+    "lat": 50.1674109,
+    "lon": 1.7556049
+  },
+  "tags": {
+    "access": "no",
+    "barrier": "fence",
+    "covered": "no",
+    "description": "Zone Technique",
+    "industrial": "power",
+    "landuse": "industrial",
+    "lit": "no",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1071639629,
+  "center": {
+    "lat": 48.4673817,
+    "lon": 1.5791315
+  },
+  "tags": {
+    "access": "no",
+    "covered": "no",
+    "description": "Zone Technique",
+    "industrial": "power",
+    "landuse": "industrial",
+    "lit": "no",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "power": "converter",
+    "start_date": "2018-29-10"
+  }
+},
+{
+  "type": "way",
+  "id": 1071639631,
+  "center": {
+    "lat": 48.4688553,
+    "lon": 1.5800265
+  },
+  "tags": {
+    "access": "no",
+    "covered": "no",
+    "description": "Zone Technique",
+    "industrial": "power",
+    "landuse": "industrial",
+    "lit": "no",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "power": "converter",
+    "start_date": "2018-29-10"
+  }
+},
+{
+  "type": "way",
+  "id": 1071876032,
+  "center": {
+    "lat": 43.3378488,
+    "lon": 1.2454308
+  },
+  "tags": {
+    "access": "no",
+    "barrier": "fence",
+    "covered": "no",
+    "description": "Zone Technique",
+    "industrial": "power",
+    "landuse": "industrial",
+    "lit": "no",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "power": "converter",
+    "start_date": "2019-18-02"
+  }
+},
+{
+  "type": "way",
+  "id": 1071884004,
+  "center": {
+    "lat": 43.3344152,
+    "lon": 1.2448489
+  },
+  "tags": {
+    "access": "no",
+    "barrier": "fence",
+    "covered": "no",
+    "description": "Zone Technique",
+    "industrial": "power",
+    "landuse": "industrial",
+    "lit": "no",
+    "operator": "Ionity",
+    "operator:wikidata": "Q42717773",
+    "operator:wikipedia": "en:IONITY",
+    "power": "converter",
+    "start_date": "2019-14-03"
+  }
+},
+{
+  "type": "way",
+  "id": 1121034497,
+  "center": {
+    "lat": 49.2571298,
+    "lon": 8.5210434
+  },
+  "tags": {
+    "building": "service",
+    "converter": "solar",
+    "description": "Wechselrichter",
+    "frequency": "50",
+    "height": "3",
+    "operator": "W Power GmbH",
+    "power": "converter",
+    "start_date": "2022-03",
+    "voltage": "20000"
+  }
+},
+{
+  "type": "way",
+  "id": 1121034498,
+  "center": {
+    "lat": 49.2573862,
+    "lon": 8.5215136
+  },
+  "tags": {
+    "building": "service",
+    "converter": "solar",
+    "description": "Wechselrichter",
+    "frequency": "50",
+    "height": "3",
+    "operator": "W Power GmbH",
+    "power": "converter",
+    "start_date": "2022-03",
+    "voltage": "20000"
+  }
+},
+{
+  "type": "way",
+  "id": 1121034499,
+  "center": {
+    "lat": 49.2581716,
+    "lon": 8.5227423
+  },
+  "tags": {
+    "building": "service",
+    "converter": "solar",
+    "description": "Wechselrichter",
+    "frequency": "50",
+    "height": "3",
+    "operator": "W Power GmbH",
+    "power": "converter",
+    "start_date": "2022-03",
+    "voltage": "20000"
+  }
+},
+{
+  "type": "way",
+  "id": 1217799782,
+  "center": {
+    "lat": 49.0055463,
+    "lon": 8.5349604
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1235504412,
+  "center": {
+    "lat": 43.2025046,
+    "lon": 2.3185431
+  },
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1251208246,
+  "center": {
+    "lat": 48.1421502,
+    "lon": -1.7666708
+  },
+  "tags": {
+    "name": "ILE ROUZIC",
+    "operator": "Enedis",
+    "power": "converter",
+    "ref": "35210 P 0025"
+  }
+},
+{
+  "type": "way",
+  "id": 1251208250,
+  "center": {
+    "lat": 48.1415650,
+    "lon": -1.7665260
+  },
+  "tags": {
+    "name": "BREHAT",
+    "note": "HTA",
+    "operator": "Enedis",
+    "power": "converter",
+    "ref": "35210P0021"
+  }
+},
+{
+  "type": "way",
+  "id": 1290060942,
+  "center": {
+    "lat": 49.6117823,
+    "lon": 1.5575219
+  },
+  "tags": {
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1290194486,
+  "center": {
+    "lat": 49.6165691,
+    "lon": 1.5449229
+  },
+  "tags": {
+    "barrier": "fence",
+    "fence_type": "metal",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1290646381,
+  "center": {
+    "lat": 49.6017004,
+    "lon": 1.3297234
+  },
+  "tags": {
+    "barrier": "fence",
+    "fence_type": "metal",
+    "height": "2",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1298779717,
+  "center": {
+    "lat": 45.8968349,
+    "lon": 8.6338405
+  },
+  "tags": {
+    "man_made": "street_cabinet",
+    "manufacturer": "ENEL",
+    "operator": "ENEL",
+    "power": "converter",
+    "utility": "power"
+  }
+},
+{
+  "type": "way",
+  "id": 1305738599,
+  "center": {
+    "lat": 46.6481311,
+    "lon": 6.3210812
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1317011603,
+  "center": {
+    "lat": 43.5055911,
+    "lon": 5.4453792
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1330124365,
+  "center": {
+    "lat": 47.4321377,
+    "lon": 0.6828277
+  },
+  "tags": {
+    "note": "poste de transformation haute tension Enedis \"BIG DATA TOP77\"",
+    "operator": "Enedis",
+    "power": "converter",
+    "ref": "BIG DATA TOP77"
+  }
+},
+{
+  "type": "way",
+  "id": 1378963692,
+  "center": {
+    "lat": 49.9445008,
+    "lon": 8.2516030
+  },
+  "tags": {
+    "name": "Gleichstromstation",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1378963693,
+  "center": {
+    "lat": 49.9444355,
+    "lon": 8.2516297
+  },
+  "tags": {
+    "name": "Gleichstromstation",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1378963694,
+  "center": {
+    "lat": 49.9443713,
+    "lon": 8.2516525
+  },
+  "tags": {
+    "name": "Gleichstromstation",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1392375818,
+  "center": {
+    "lat": 51.2469025,
+    "lon": 6.6986175
+  },
+  "tags": {
+    "power": "converter",
+    "ref": "Station Witzfeldstraße"
+  }
+},
+{
+  "type": "way",
+  "id": 1447799386,
+  "center": {
+    "lat": 50.8462413,
+    "lon": 6.0130466
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1447799387,
+  "center": {
+    "lat": 50.8464196,
+    "lon": 6.0123761
+  },
+  "tags": {
+    "building": "yes",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349502,
+  "center": {
+    "lat": 50.9425363,
+    "lon": 4.4258551
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349507,
+  "center": {
+    "lat": 50.9425266,
+    "lon": 4.4260538
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349509,
+  "center": {
+    "lat": 50.9425315,
+    "lon": 4.4259544
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349523,
+  "center": {
+    "lat": 50.9425412,
+    "lon": 4.4257557
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349550,
+  "center": {
+    "lat": 50.9427274,
+    "lon": 4.4258380
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349551,
+  "center": {
+    "lat": 50.9427226,
+    "lon": 4.4259375
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349552,
+  "center": {
+    "lat": 50.9427177,
+    "lon": 4.4260367
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349557,
+  "center": {
+    "lat": 50.9427418,
+    "lon": 4.4255398
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349559,
+  "center": {
+    "lat": 50.9427371,
+    "lon": 4.4256392
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349561,
+  "center": {
+    "lat": 50.9427322,
+    "lon": 4.4257386
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349565,
+  "center": {
+    "lat": 50.9427516,
+    "lon": 4.4253412
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349577,
+  "center": {
+    "lat": 50.9427467,
+    "lon": 4.4254406
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349580,
+  "center": {
+    "lat": 50.9425702,
+    "lon": 4.4251594
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349582,
+  "center": {
+    "lat": 50.9425653,
+    "lon": 4.4252588
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349585,
+  "center": {
+    "lat": 50.9425750,
+    "lon": 4.4250600
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349586,
+  "center": {
+    "lat": 50.9425799,
+    "lon": 4.4249606
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349588,
+  "center": {
+    "lat": 50.9425848,
+    "lon": 4.4248613
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349590,
+  "center": {
+    "lat": 50.9425604,
+    "lon": 4.4253582
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349592,
+  "center": {
+    "lat": 50.9425460,
+    "lon": 4.4256563
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349593,
+  "center": {
+    "lat": 50.9425508,
+    "lon": 4.4255569
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349596,
+  "center": {
+    "lat": 50.9425557,
+    "lon": 4.4254575
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349603,
+  "center": {
+    "lat": 50.9425217,
+    "lon": 4.4261532
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349609,
+  "center": {
+    "lat": 50.9425169,
+    "lon": 4.4262526
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349614,
+  "center": {
+    "lat": 50.9425120,
+    "lon": 4.4263519
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349618,
+  "center": {
+    "lat": 50.9425071,
+    "lon": 4.4264513
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349625,
+  "center": {
+    "lat": 50.9426985,
+    "lon": 4.4264344
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349627,
+  "center": {
+    "lat": 50.9427081,
+    "lon": 4.4262355
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349628,
+  "center": {
+    "lat": 50.9427033,
+    "lon": 4.4263348
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349630,
+  "center": {
+    "lat": 50.9426936,
+    "lon": 4.4265336
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349667,
+  "center": {
+    "lat": 50.9431274,
+    "lon": 4.4263445
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349668,
+  "center": {
+    "lat": 50.9431371,
+    "lon": 4.4261457
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349672,
+  "center": {
+    "lat": 50.9431322,
+    "lon": 4.4262451
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349676,
+  "center": {
+    "lat": 50.9431225,
+    "lon": 4.4264440
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349678,
+  "center": {
+    "lat": 50.9431177,
+    "lon": 4.4265432
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349682,
+  "center": {
+    "lat": 50.9430097,
+    "lon": 4.4248443
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349683,
+  "center": {
+    "lat": 50.9430048,
+    "lon": 4.4249437
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349685,
+  "center": {
+    "lat": 50.9430000,
+    "lon": 4.4250431
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349693,
+  "center": {
+    "lat": 50.9429903,
+    "lon": 4.4252418
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349695,
+  "center": {
+    "lat": 50.9429951,
+    "lon": 4.4251423
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349697,
+  "center": {
+    "lat": 50.9431757,
+    "lon": 4.4253507
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349699,
+  "center": {
+    "lat": 50.9431804,
+    "lon": 4.4252513
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349701,
+  "center": {
+    "lat": 50.9431853,
+    "lon": 4.4251520
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349708,
+  "center": {
+    "lat": 50.9431997,
+    "lon": 4.4248538
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349710,
+  "center": {
+    "lat": 50.9431948,
+    "lon": 4.4249532
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349712,
+  "center": {
+    "lat": 50.9431902,
+    "lon": 4.4250526
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349724,
+  "center": {
+    "lat": 50.9431515,
+    "lon": 4.4258476
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349729,
+  "center": {
+    "lat": 50.9431418,
+    "lon": 4.4260464
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349731,
+  "center": {
+    "lat": 50.9431467,
+    "lon": 4.4259470
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349733,
+  "center": {
+    "lat": 50.9431612,
+    "lon": 4.4256488
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349735,
+  "center": {
+    "lat": 50.9431659,
+    "lon": 4.4255495
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349739,
+  "center": {
+    "lat": 50.9431563,
+    "lon": 4.4257482
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349772,
+  "center": {
+    "lat": 50.9431708,
+    "lon": 4.4254501
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349805,
+  "center": {
+    "lat": 50.9427130,
+    "lon": 4.4261361
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349866,
+  "center": {
+    "lat": 50.9426138,
+    "lon": 4.4242650
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349870,
+  "center": {
+    "lat": 50.9426187,
+    "lon": 4.4241656
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349871,
+  "center": {
+    "lat": 50.9426091,
+    "lon": 4.4243644
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349873,
+  "center": {
+    "lat": 50.9426041,
+    "lon": 4.4244638
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349892,
+  "center": {
+    "lat": 50.9426284,
+    "lon": 4.4239669
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349894,
+  "center": {
+    "lat": 50.9426333,
+    "lon": 4.4238675
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349902,
+  "center": {
+    "lat": 50.9426235,
+    "lon": 4.4240663
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349910,
+  "center": {
+    "lat": 50.9425945,
+    "lon": 4.4246625
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349912,
+  "center": {
+    "lat": 50.9425993,
+    "lon": 4.4245632
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349919,
+  "center": {
+    "lat": 50.9430388,
+    "lon": 4.4242481
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349922,
+  "center": {
+    "lat": 50.9430340,
+    "lon": 4.4243474
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349925,
+  "center": {
+    "lat": 50.9430436,
+    "lon": 4.4241487
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349930,
+  "center": {
+    "lat": 50.9430291,
+    "lon": 4.4244468
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349932,
+  "center": {
+    "lat": 50.9430243,
+    "lon": 4.4245462
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349935,
+  "center": {
+    "lat": 50.9430194,
+    "lon": 4.4246455
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349936,
+  "center": {
+    "lat": 50.9432190,
+    "lon": 4.4244563
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349937,
+  "center": {
+    "lat": 50.9432142,
+    "lon": 4.4245557
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349941,
+  "center": {
+    "lat": 50.9432093,
+    "lon": 4.4246551
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349944,
+  "center": {
+    "lat": 50.9432239,
+    "lon": 4.4243569
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349946,
+  "center": {
+    "lat": 50.9432287,
+    "lon": 4.4242576
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349987,
+  "center": {
+    "lat": 50.9432432,
+    "lon": 4.4239594
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349988,
+  "center": {
+    "lat": 50.9432335,
+    "lon": 4.4241582
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349990,
+  "center": {
+    "lat": 50.9432384,
+    "lon": 4.4240588
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462349994,
+  "center": {
+    "lat": 50.9430486,
+    "lon": 4.4240493
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462350016,
+  "center": {
+    "lat": 50.9432045,
+    "lon": 4.4247545
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462350017,
+  "center": {
+    "lat": 50.9430145,
+    "lon": 4.4247450
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+},
+{
+  "type": "way",
+  "id": 1462350021,
+  "center": {
+    "lat": 50.9425895,
+    "lon": 4.4247619
+  },
+  "tags": {
+    "building": "container",
+    "building:structure": "prefabricated",
+    "power": "converter"
+  }
+}
+
+  ]
+}

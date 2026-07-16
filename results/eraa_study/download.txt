@@ -1,0 +1,10 @@
+Aggregated_Demand.xlsx
+Commodity Prices.xlsx
+FlowBased_Core_KPI.xlsx
+FlowBased_Nordic_KPI.xlsx
+GenerationCapacities.xlsx
+Hydro capacities.csv
+MaintenanceDaily_PerTechnology.csv
+Non-Market Batteries.csv
+Reserve requirements.xlsx
+Storage.xlsx

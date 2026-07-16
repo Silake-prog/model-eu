@@ -1,0 +1,510 @@
+MARKET_NODE,TECHNOLOGY,MAX TURBINE CAP (MW),MAX PUMPING CAP (MW),TARGET_YEAR,Country
+AL00,Reservoir,1821.744,0,2026,AL
+AL00,Run of river,420.672,0,2026,AL
+AT00,Open loop pumping,4190.3,3543.92,2026,AT
+AT00,Pondage,1149.307,0,2026,AT
+AT00,Reservoir,2531.844,0,2026,AT
+AT00,Run of river,4810.48893,0,2026,AT
+BA00,Open loop pumping,440,440,2026,BA
+BA00,Pondage,227.8,0,2026,BA
+BA00,Reservoir,1456,0,2026,BA
+BA00,Run of river,40.8,0,2026,BA
+BE00,Closed loop pumping,1305,1226.76,2026,BE
+BE00,Run of river,137.002,0,2026,BE
+BG00,Closed loop pumping,420,390,2026,BG
+BG00,Open loop pumping,535,148,2026,BG
+BG00,Reservoir,1281.3,0,2026,BG
+BG00,Run of river,535.51,0,2026,BG
+CH00,Closed loop pumping,1900,1900,2026,CH
+CH00,Open loop pumping,2258.2,1717.817143,2026,CH
+CH00,Reservoir,7924.634286,0,2026,CH
+CH00,Run of river,4189.885714,0,2026,CH
+CZ00,Closed loop pumping,678.15,664,2026,CZ
+CZ00,Open loop pumping,475.2,438,2026,CZ
+CZ00,Reservoir,535.34,0,2026,CZ
+CZ00,Run of river,431.63,0,2026,CZ
+DE00,Closed loop pumping,6322.84,6428.6,2026,DE
+DE00,Open loop pumping,2225.8,1881,2026,DE
+DE00,Reservoir,1001.9,8,2026,DE
+DE00,Run of river,3933.9,0,2026,DE
+ES00,Closed loop pumping,3331.4,3141.03,2026,ES
+ES00,Open loop pumping,2683.32,2424.005633,2026,ES
+ES00,Reservoir,11176.984,0,2026,ES
+ES00,Run of river,3411.643047,0,2026,ES
+FI00,Reservoir,3236.608,0,2026,FI
+FR00,Closed loop pumping,1950,1950.003833,2026,FR
+FR00,Open loop pumping,1850,1850.004662,2026,FR
+FR00,Reservoir,9600,0,2026,FR
+FR00,Run of river,13600,0,2026,FR
+GR00,Closed loop pumping,680,710,2026,GR
+GR00,Open loop pumping,699,735,2026,GR
+GR00,Pondage,22.02,0,2026,GR
+GR00,Reservoir,2660.7,0,2026,GR
+GR00,Run of river,292.9866667,0,2026,GR
+HR00,Open loop pumping,281.4,246.9,2026,HR
+HR00,Pondage,320.94,0,2026,HR
+HR00,Reservoir,1412.09,0,2026,HR
+HR00,Run of river,63.14,0,2026,HR
+HU00,Run of river,62.9,0,2026,HU
+IE00,Closed loop pumping,292,292,2026,IE
+IE00,Run of river,215,0,2026,IE
+ITCA,Reservoir,698.89,0,2026,IT
+ITCA,Run of river,118.174,0,2026,IT
+ITCN,Reservoir,373.56,0,2026,IT
+ITCN,Run of river,307.52,0,2026,IT
+ITCS,Closed loop pumping,985,985,2026,IT
+ITCS,Open loop pumping,742,333,2026,IT
+ITCS,Reservoir,961.21,0,2026,IT
+ITCS,Run of river,680.05,0,2026,IT
+ITN1,Closed loop pumping,2380,2377,2026,IT
+ITN1,Open loop pumping,2755.2,1751,2026,IT
+ITN1,Reservoir,6075.303,0,2026,IT
+ITN1,Run of river,5663.423028,0,2026,IT
+ITS1,Reservoir,177.08,0,2026,IT
+ITS1,Run of river,52.8,0,2026,IT
+ITSA,Closed loop pumping,240,242,2026,IT
+ITSA,Reservoir,142.19,0,2026,IT
+ITSA,Run of river,76.58,0,2026,IT
+ITSI,Closed loop pumping,500,570,2026,IT
+ITSI,Open loop pumping,80,58,2026,IT
+ITSI,Reservoir,37.23,0,2026,IT
+ITSI,Run of river,92.07,0,2026,IT
+LT00,Closed loop pumping,828,720,2026,LT
+LT00,Run of river,127.4,0,2026,LT
+LUG1,Run of river,27,0,2026,LU
+LUV1,Closed loop pumping,1300,1100,2026,LU
+LV00,Pondage,1592,0,2026,LV
+ME00,Reservoir,648,0,2026,ME
+MK00,Reservoir,538.6,0,2026,MK
+MK00,Run of river,211.5000011,0,2026,MK
+NL00,Run of river,37,0,2026,NL
+NOM1,Open loop pumping,59.82,75.80000003,2026,NO
+NOM1,Reservoir,3131.579705,0,2026,NO
+NOM1,Run of river,1156.9851,0,2026,NO
+NON1,Open loop pumping,0,1.980000056,2026,NO
+NON1,Reservoir,4681.909496,0,2026,NO
+NON1,Run of river,700.8896242,0,2026,NO
+NOS1,Open loop pumping,0,0,2026,
+NOS1,Reservoir,2799.934045,0,2026,
+NOS1,Run of river,2954.127061,0,2026,
+NOS2,Open loop pumping,238,200,2026,
+NOS2,Reservoir,9807.313652,0,2026,
+NOS2,Run of river,1659.290484,0,2026,
+NOS3,Open loop pumping,411.5,412.3,2026,
+NOS3,Reservoir,5470.422461,0,2026,
+NOS3,Run of river,810.6869181,0,2026,
+PL00,Closed loop pumping,1333.35,1486,2026,PL
+PL00,Open loop pumping,283,84,2026,PL
+PL00,Reservoir,204.74,88,2026,PL
+PL00,Run of river,523.56,0,2026,PL
+PT00,Open loop pumping,3839.4,3586,2026,PT
+PT00,Pondage,266,0,2026,PT
+PT00,Reservoir,3765.5,0,2026,PT
+PT00,Run of river,508,0,2026,PT
+RO00,Open loop pumping,809.944,91.5,2026,RO
+RO00,Reservoir,2390.68,0,2026,RO
+RO00,Run of river,3305.39757,0,2026,RO
+RS00,Closed loop pumping,614,560,2026,RS
+RS00,Reservoir,435.27,0,2026,RS
+RS00,Run of river,1946.8,0,2026,RS
+SE01,Reservoir,5444,0,2026,SE
+SE02,Reservoir,7650.1,0,2026,SE
+SE03,Reservoir,2286,0,2026,SE
+SE04,Reservoir,237.1,0,2026,SE
+SI00,Closed loop pumping,180,185,2026,SI
+SI00,Pondage,1007.3,0,2026,SI
+SI00,Reservoir,21.4,0,2026,SI
+SI00,Run of river,127.7829581,0,2026,SI
+SK00,Closed loop pumping,729.6,630,2026,SK
+SK00,Open loop pumping,276.2,178.28,2026,SK
+SK00,Pondage,202.88,0,2026,SK
+SK00,Reservoir,21.28,0,2026,SK
+SK00,Run of river,1401.4287,0,2026,SK
+TR00,Reservoir,24347.682,0,2026,TR
+TR00,Run of river,15829.111,0,2026,TR
+UK00,Closed loop pumping,411.6,2684,2026,UK
+UK00,Run of river,1677.155,0,2026,UK
+UKNI,Reservoir,6,0,2026,UK
+AL00,Reservoir,1821.744,0,2028,AL
+AL00,Run of river,420.672,0,2028,AL
+AT00,Open loop pumping,4360.3,3713.92,2028,AT
+AT00,Pondage,1149.307,0,2028,AT
+AT00,Reservoir,2531.844,0,2028,AT
+AT00,Run of river,4953.98893,0,2028,AT
+BA00,Open loop pumping,440,440,2028,BA
+BA00,Pondage,227.8,0,2028,BA
+BA00,Reservoir,1615.9,0,2028,BA
+BA00,Run of river,40.8,0,2028,BA
+BE00,Closed loop pumping,1305,1226.76,2028,BE
+BE00,Run of river,142.602,0,2028,BE
+BG00,Closed loop pumping,864,784,2028,BG
+BG00,Open loop pumping,535,148,2028,BG
+BG00,Reservoir,1281.3,0,2028,BG
+BG00,Run of river,535.51,0,2028,BG
+CH00,Closed loop pumping,1900,1900,2028,CH
+CH00,Open loop pumping,2359.1,1803.908571,2028,CH
+CH00,Reservoir,8227.317143,0,2028,CH
+CH00,Run of river,4202.442857,0,2028,CH
+CZ00,Closed loop pumping,678.15,664,2028,CZ
+CZ00,Open loop pumping,566.775,518.5,2028,CZ
+CZ00,Reservoir,535.34,0,2028,CZ
+CZ00,Run of river,431.63,0,2028,CZ
+DE00,Closed loop pumping,6724.84,6828.6,2028,DE
+DE00,Open loop pumping,2204.1,1861,2028,DE
+DE00,Reservoir,1001.9,8,2028,DE
+DE00,Run of river,3933.9,0,2028,DE
+ES00,Closed loop pumping,3866.605333,3687.77,2028,ES
+ES00,Open loop pumping,2683.32,2424.005633,2028,ES
+ES00,Reservoir,11176.984,0,2028,ES
+ES00,Run of river,3411.643047,0,2028,ES
+FI00,Reservoir,3236.608,0,2028,FI
+FR00,Closed loop pumping,1950,1950.003833,2028,FR
+FR00,Open loop pumping,1850,1850.004662,2028,FR
+FR00,Reservoir,9724,0,2028,FR
+FR00,Run of river,13600,0,2028,FR
+GR00,Closed loop pumping,680,710,2028,GR
+GR00,Open loop pumping,699,735,2028,GR
+GR00,Pondage,22.02,0,2028,GR
+GR00,Reservoir,2743.7,0,2028,GR
+GR00,Run of river,297.6533333,0,2028,GR
+HR00,Open loop pumping,281.4,246.9,2028,HR
+HR00,Pondage,320.94,0,2028,HR
+HR00,Reservoir,1412.09,0,2028,HR
+HR00,Run of river,63.14,0,2028,HR
+HU00,Run of river,62.9,0,2028,HU
+IE00,Closed loop pumping,292,292,2028,IE
+IE00,Run of river,215,0,2028,IE
+ITCA,Reservoir,698.89,0,2028,IT
+ITCA,Run of river,118.174,0,2028,IT
+ITCN,Reservoir,373.56,0,2028,IT
+ITCN,Run of river,307.52,0,2028,IT
+ITCS,Closed loop pumping,985,985,2028,IT
+ITCS,Open loop pumping,742,333,2028,IT
+ITCS,Reservoir,961.21,0,2028,IT
+ITCS,Run of river,680.05,0,2028,IT
+ITN1,Closed loop pumping,2380,2377,2028,IT
+ITN1,Open loop pumping,2755.2,1751,2028,IT
+ITN1,Reservoir,6075.303,0,2028,IT
+ITN1,Run of river,5663.423028,0,2028,IT
+ITS1,Reservoir,177.08,0,2028,IT
+ITS1,Run of river,52.8,0,2028,IT
+ITSA,Closed loop pumping,240,242,2028,IT
+ITSA,Reservoir,142.19,0,2028,IT
+ITSA,Run of river,76.58,0,2028,IT
+ITSI,Closed loop pumping,500,570,2028,IT
+ITSI,Open loop pumping,80,58,2028,IT
+ITSI,Reservoir,37.23,0,2028,IT
+ITSI,Run of river,92.07,0,2028,IT
+LT00,Closed loop pumping,938,720,2028,LT
+LT00,Run of river,127.4,0,2028,LT
+LUG1,Run of river,27,0,2028,LU
+LUV1,Closed loop pumping,1300,1100,2028,LU
+LV00,Pondage,1592,0,2028,LV
+ME00,Reservoir,706,0,2028,ME
+ME00,Run of river,581,0,2028,ME
+MK00,Reservoir,538.6,0,2028,MK
+MK00,Run of river,221.5000011,0,2028,MK
+NL00,Run of river,37,0,2028,NL
+NOM1,Open loop pumping,59.82,75.80000003,2028,NO
+NOM1,Reservoir,3181.988187,0,2028,NO
+NOM1,Run of river,1173.485624,0,2028,NO
+NON1,Open loop pumping,0,1.980000056,2028,NO
+NON1,Reservoir,4730.491951,0,2028,NO
+NON1,Run of river,716.7924233,0,2028,NO
+NOS1,Open loop pumping,0,0,2028,
+NOS1,Reservoir,2889.909157,0,2028,
+NOS1,Run of river,2983.579177,0,2028,
+NOS2,Open loop pumping,238,200,2028,
+NOS2,Reservoir,9927.37768,0,2028,
+NOS2,Run of river,1698.591794,0,2028,
+NOS3,Open loop pumping,411.5,412.3,2028,
+NOS3,Reservoir,5508.593605,0,2028,
+NOS3,Run of river,823.1817177,0,2028,
+PL00,Closed loop pumping,1333.35,1486,2028,PL
+PL00,Open loop pumping,283,84,2028,PL
+PL00,Reservoir,204.74,88,2028,PL
+PL00,Run of river,523.56,0,2028,PL
+PT00,Open loop pumping,3839.4,3586,2028,PT
+PT00,Pondage,266,0,2028,PT
+PT00,Reservoir,3765.5,0,2028,PT
+PT00,Run of river,508,0,2028,PT
+RO00,Open loop pumping,809.944,91.5,2028,RO
+RO00,Reservoir,2280.78,0,2028,RO
+RO00,Run of river,3336.59757,0,2028,RO
+RS00,Closed loop pumping,614,560,2028,RS
+RS00,Reservoir,435.27,0,2028,RS
+RS00,Run of river,2206,0,2028,RS
+SE01,Reservoir,5444,0,2028,SE
+SE02,Reservoir,7650.1,0,2028,SE
+SE03,Reservoir,2286,0,2028,SE
+SE04,Reservoir,237.1,0,2028,SE
+SI00,Closed loop pumping,180,185,2028,SI
+SI00,Pondage,1007.3,0,2028,SI
+SI00,Reservoir,21.4,0,2028,SI
+SI00,Run of river,128.0744371,0,2028,SI
+SK00,Closed loop pumping,760,690,2028,SK
+SK00,Open loop pumping,276.2,178.28,2028,SK
+SK00,Pondage,202.88,0,2028,SK
+SK00,Reservoir,21.28,0,2028,SK
+SK00,Run of river,1423.3121,0,2028,SK
+TR00,Reservoir,24347.682,0,2028,TR
+TR00,Run of river,17646.403,0,2028,TR
+UK00,Closed loop pumping,411.6,2684,2028,UK
+UK00,Run of river,1677.155,0,2028,UK
+UKNI,Reservoir,6,0,2028,UK
+AL00,Reservoir,2031.744,0,2030,AL
+AL00,Run of river,490.672,0,2030,AL
+AT00,Closed loop pumping,300,300,2030,AT
+AT00,Open loop pumping,5800.3,5153.92,2030,AT
+AT00,Pondage,1149.307,0,2030,AT
+AT00,Reservoir,2531.844,0,2030,AT
+AT00,Run of river,5215.58893,0,2030,AT
+BA00,Open loop pumping,440,440,2030,BA
+BA00,Pondage,227.8,0,2030,BA
+BA00,Reservoir,1615.9,0,2030,BA
+BA00,Run of river,40.8,0,2030,BA
+BE00,Closed loop pumping,1305,1226.76,2030,BE
+BE00,Run of river,148.202,0,2030,BE
+BG00,Closed loop pumping,864,784,2030,BG
+BG00,Open loop pumping,535,148,2030,BG
+BG00,Reservoir,1281.3,0,2030,BG
+BG00,Run of river,535.51,0,2030,BG
+CH00,Closed loop pumping,1900,1900,2030,CH
+CH00,Open loop pumping,2460,1890,2030,CH
+CH00,Reservoir,8530,0,2030,CH
+CH00,Run of river,4215,0,2030,CH
+CZ00,Closed loop pumping,678.15,664,2030,CZ
+CZ00,Open loop pumping,658.35,599,2030,CZ
+CZ00,Reservoir,535.34,0,2030,CZ
+CZ00,Run of river,431.63,0,2030,CZ
+DE00,Closed loop pumping,6874.84,7028.6,2030,DE
+DE00,Open loop pumping,2204.1,1861,2030,DE
+DE00,Reservoir,1001.9,8,2030,DE
+DE00,Run of river,3933.9,0,2030,DE
+ES00,Closed loop pumping,6461.485333,6532.41,2030,ES
+ES00,Open loop pumping,3123.32,2864.005633,2030,ES
+ES00,Reservoir,11176.984,0,2030,ES
+ES00,Run of river,3666.739481,0,2030,ES
+FI00,Reservoir,3236.608,0,2030,FI
+FR00,Closed loop pumping,1950,1950.003833,2030,FR
+FR00,Open loop pumping,1850,1850.004662,2030,FR
+FR00,Reservoir,9847,0,2030,FR
+FR00,Run of river,13600,0,2030,FR
+GR00,Closed loop pumping,680,710,2030,GR
+GR00,Open loop pumping,699,735,2030,GR
+GR00,Pondage,22.02,0,2030,GR
+GR00,Reservoir,2743.7,0,2030,GR
+GR00,Run of river,302.32,0,2030,GR
+HR00,Open loop pumping,281.4,246.9,2030,HR
+HR00,Pondage,320.94,0,2030,HR
+HR00,Reservoir,1412.09,0,2030,HR
+HR00,Run of river,63.14,0,2030,HR
+HU00,Run of river,62.9,0,2030,HU
+IE00,Closed loop pumping,292,292,2030,IE
+IE00,Run of river,215,0,2030,IE
+ITCA,Reservoir,698.89,0,2030,IT
+ITCA,Run of river,118.174,0,2030,IT
+ITCN,Reservoir,373.56,0,2030,IT
+ITCN,Run of river,307.52,0,2030,IT
+ITCS,Closed loop pumping,985,985,2030,IT
+ITCS,Open loop pumping,742,333,2030,IT
+ITCS,Reservoir,961.21,0,2030,IT
+ITCS,Run of river,680.05,0,2030,IT
+ITN1,Closed loop pumping,2380,2377,2030,IT
+ITN1,Open loop pumping,2755.2,1751,2030,IT
+ITN1,Reservoir,6075.303,0,2030,IT
+ITN1,Run of river,5663.423028,0,2030,IT
+ITS1,Reservoir,177.08,0,2030,IT
+ITS1,Run of river,52.8,0,2030,IT
+ITSA,Closed loop pumping,240,242,2030,IT
+ITSA,Reservoir,142.19,0,2030,IT
+ITSA,Run of river,76.58,0,2030,IT
+ITSI,Closed loop pumping,500,570,2030,IT
+ITSI,Open loop pumping,80,58,2030,IT
+ITSI,Reservoir,37.23,0,2030,IT
+ITSI,Run of river,92.07,0,2030,IT
+LT00,Closed loop pumping,938,720,2030,LT
+LT00,Run of river,127.4,0,2030,LT
+LUG1,Run of river,27,0,2030,LU
+LUV1,Closed loop pumping,1300,1100,2030,LU
+LV00,Pondage,1592,0,2030,LV
+ME00,Reservoir,706,0,2030,ME
+ME00,Run of river,581,0,2030,ME
+MK00,Reservoir,728.6,0,2030,MK
+MK00,Run of river,230.5000011,0,2030,MK
+NL00,Run of river,37,0,2030,NL
+NOM1,Open loop pumping,59.82,75.80000003,2030,NO
+NOM1,Reservoir,3206.463902,0,2030,NO
+NOM1,Run of river,1183.984472,0,2030,NO
+NON1,Open loop pumping,0,1.980000056,2030,NO
+NON1,Reservoir,4754.081044,0,2030,NO
+NON1,Run of river,726.910955,0,2030,NO
+NOS1,Open loop pumping,0,0,2030,
+NOS1,Reservoir,3268.596353,0,2030,
+NOS1,Run of river,3002.318782,0,2030,
+NOS2,Open loop pumping,238,200,2030,
+NOS2,Reservoir,10893.67448,0,2030,
+NOS2,Run of river,1723.598181,0,2030,
+NOS3,Open loop pumping,411.5,412.3,2030,
+NOS3,Reservoir,5527.127511,0,2030,
+NOS3,Run of river,831.1318291,0,2030,
+PL00,Closed loop pumping,1333.35,1486,2030,PL
+PL00,Open loop pumping,283,84,2030,PL
+PL00,Reservoir,204.74,88,2030,PL
+PL00,Run of river,523.56,0,2030,PL
+PT00,Open loop pumping,3839.4,3586,2030,PT
+PT00,Pondage,266,0,2030,PT
+PT00,Reservoir,3765.5,0,2030,PT
+PT00,Run of river,508,0,2030,PT
+RO00,Open loop pumping,809.944,91.5,2030,RO
+RO00,Reservoir,2402.98,0,2030,RO
+RO00,Run of river,3363.59757,0,2030,RO
+RS00,Closed loop pumping,614,560,2030,RS
+RS00,Reservoir,435.27,0,2030,RS
+RS00,Run of river,2214,0,2030,RS
+SE01,Reservoir,5444,0,2030,SE
+SE02,Reservoir,7650.1,0,2030,SE
+SE03,Reservoir,2286,0,2030,SE
+SE04,Reservoir,237.1,0,2030,SE
+SI00,Closed loop pumping,180,185,2030,SI
+SI00,Pondage,1052.3,0,2030,SI
+SI00,Reservoir,21.4,0,2030,SI
+SI00,Run of river,128.3659162,0,2030,SI
+SK00,Closed loop pumping,760,690,2030,SK
+SK00,Open loop pumping,276.2,178.28,2030,SK
+SK00,Pondage,202.88,0,2030,SK
+SK00,Reservoir,21.28,0,2030,SK
+SK00,Run of river,1425.3015,0,2030,SK
+TR00,Reservoir,24347.682,0,2030,TR
+TR00,Run of river,19463.695,0,2030,TR
+UK00,Closed loop pumping,411.6,2684,2030,UK
+UK00,Run of river,1677.155,0,2030,UK
+UKNI,Reservoir,6,0,2030,UK
+AL00,Reservoir,2031.744,0,2035,AL
+AL00,Run of river,490.672,0,2035,AL
+AT00,Closed loop pumping,300,300,2035,AT
+AT00,Open loop pumping,7015.3,5808.92,2035,AT
+AT00,Pondage,1149.307,0,2035,AT
+AT00,Reservoir,2531.844,0,2035,AT
+AT00,Run of river,5412.58893,0,2035,AT
+BA00,Open loop pumping,440,440,2035,BA
+BA00,Pondage,227.8,0,2035,BA
+BA00,Reservoir,1615.9,0,2035,BA
+BA00,Run of river,40.8,0,2035,BA
+BE00,Closed loop pumping,1305,1226.76,2035,BE
+BE00,Run of river,162.202,0,2035,BE
+BG00,Closed loop pumping,1664,1504,2035,BG
+BG00,Open loop pumping,535,148,2035,BG
+BG00,Reservoir,1281.3,0,2035,BG
+BG00,Run of river,535.51,0,2035,BG
+CH00,Closed loop pumping,1900,1900,2035,CH
+CH00,Open loop pumping,3290,2720,2035,CH
+CH00,Reservoir,8730,0,2035,CH
+CH00,Run of river,4262.5,0,2035,CH
+CZ00,Closed loop pumping,678.15,664,2035,CZ
+CZ00,Open loop pumping,658.35,599,2035,CZ
+CZ00,Reservoir,538.31,0,2035,CZ
+CZ00,Run of river,431.63,0,2035,CZ
+DE00,Closed loop pumping,6874.84,7028.6,2035,DE
+DE00,Open loop pumping,2204.1,1861,2035,DE
+DE00,Reservoir,1001.9,8,2035,DE
+DE00,Run of river,3933.9,0,2035,DE
+ES00,Closed loop pumping,8280.485333,8241.41,2035,ES
+ES00,Open loop pumping,3123.32,2864.005633,2035,ES
+ES00,Reservoir,11176.984,0,2035,ES
+ES00,Run of river,3666.739481,0,2035,ES
+FI00,Reservoir,3236.608,0,2035,FI
+FR00,Closed loop pumping,2179.411765,2179.400755,2035,FR
+FR00,Open loop pumping,2067.647059,2067.658152,2035,FR
+FR00,Reservoir,9847,0,2035,FR
+FR00,Run of river,13600,0,2035,FR
+GR00,Closed loop pumping,1500,1560,2035,GR
+GR00,Open loop pumping,699,735,2035,GR
+GR00,Pondage,22.02,0,2035,GR
+GR00,Reservoir,2743.7,0,2035,GR
+GR00,Run of river,507.9524,0,2035,GR
+HR00,Open loop pumping,281.4,246.9,2035,HR
+HR00,Pondage,320.94,0,2035,HR
+HR00,Reservoir,1948.09,0,2035,HR
+HR00,Run of river,63.14,0,2035,HR
+HU00,Run of river,62.9,0,2035,HU
+IE00,Closed loop pumping,292,292,2035,IE
+IE00,Run of river,215,0,2035,IE
+ITCA,Reservoir,698.89,0,2035,IT
+ITCA,Run of river,118.174,0,2035,IT
+ITCN,Reservoir,373.56,0,2035,IT
+ITCN,Run of river,307.52,0,2035,IT
+ITCS,Closed loop pumping,985,985,2035,IT
+ITCS,Open loop pumping,742,333,2035,IT
+ITCS,Reservoir,961.21,0,2035,IT
+ITCS,Run of river,680.05,0,2035,IT
+ITN1,Closed loop pumping,2380,2377,2035,IT
+ITN1,Open loop pumping,2755.2,1751,2035,IT
+ITN1,Reservoir,6075.303,0,2035,IT
+ITN1,Run of river,5663.423028,0,2035,IT
+ITS1,Reservoir,177.08,0,2035,IT
+ITS1,Run of river,52.8,0,2035,IT
+ITSA,Closed loop pumping,240,242,2035,IT
+ITSA,Reservoir,142.19,0,2035,IT
+ITSA,Run of river,76.58,0,2035,IT
+ITSI,Closed loop pumping,500,570,2035,IT
+ITSI,Open loop pumping,80,58,2035,IT
+ITSI,Reservoir,37.23,0,2035,IT
+ITSI,Run of river,92.07,0,2035,IT
+LT00,Closed loop pumping,938,720,2035,LT
+LT00,Run of river,127.4,0,2035,LT
+LUG1,Run of river,27,0,2035,LU
+LUV1,Closed loop pumping,1300,1100,2035,LU
+LV00,Pondage,1592,0,2035,LV
+ME00,Reservoir,706,0,2035,ME
+ME00,Run of river,581,0,2035,ME
+MK00,Reservoir,728.6,0,2035,MK
+MK00,Run of river,230.5000011,0,2035,MK
+NL00,Run of river,37,0,2035,NL
+NOM1,Open loop pumping,59.82,75.80000003,2035,NO
+NOM1,Reservoir,3248.694038,0,2035,NO
+NOM1,Run of river,1212.649476,0,2035,NO
+NON1,Open loop pumping,0,1.980000056,2035,NO
+NON1,Reservoir,4794.78141,0,2035,NO
+NON1,Run of river,754.5375811,0,2035,NO
+NOS1,Open loop pumping,0,0,2035,
+NOS1,Reservoir,3943.97377,0,2035,
+NOS1,Run of river,3053.483524,0,2035,
+NOS2,Open loop pumping,238,200,2035,
+NOS2,Reservoir,12194.25914,0,2035,
+NOS2,Run of river,1791.873116,0,2035,
+NOS3,Open loop pumping,411.5,412.3,2035,
+NOS3,Reservoir,5559.105713,0,2035,
+NOS3,Run of river,852.8380176,0,2035,
+PL00,Closed loop pumping,1333.35,1486,2035,PL
+PL00,Open loop pumping,283,84,2035,PL
+PL00,Reservoir,204.74,88,2035,PL
+PL00,Run of river,523.56,0,2035,PL
+PT00,Open loop pumping,3839.4,3586,2035,PT
+PT00,Pondage,266,0,2035,PT
+PT00,Reservoir,3765.5,0,2035,PT
+PT00,Run of river,508,0,2035,PT
+RO00,Open loop pumping,838.744,102.7,2035,RO
+RO00,Reservoir,2582.98,0,2035,RO
+RO00,Run of river,3377.59757,0,2035,RO
+RS00,Closed loop pumping,1314,1231.6,2035,RS
+RS00,Reservoir,435.27,0,2035,RS
+RS00,Run of river,2261,0,2035,RS
+SE01,Reservoir,5444,0,2035,SE
+SE02,Reservoir,7650.1,0,2035,SE
+SE03,Reservoir,2286,0,2035,SE
+SE04,Reservoir,237.1,0,2035,SE
+SI00,Closed loop pumping,180,185,2035,SI
+SI00,Pondage,1088.3,0,2035,SI
+SI00,Reservoir,21.4,0,2035,SI
+SI00,Run of river,133.8912134,0,2035,SI
+SK00,Closed loop pumping,760,690,2035,SK
+SK00,Open loop pumping,276.2,178.28,2035,SK
+SK00,Pondage,202.88,0,2035,SK
+SK00,Reservoir,21.28,0,2035,SK
+SK00,Run of river,1425.3015,0,2035,SK
+TR00,Reservoir,24347.682,0,2035,TR
+TR00,Run of river,19463.695,0,2035,TR
+UK00,Closed loop pumping,411.6,2684,2035,UK
+UK00,Run of river,1677.155,0,2035,UK
+UKNI,Reservoir,6,0,2035,UK
