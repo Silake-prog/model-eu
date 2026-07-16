@@ -317,7 +317,7 @@ def natural_gas_import_price() -> float:
             bare_price,
         )
     else:
-        from pommes_eur.data_fetchers import fetch_natural_gas_price_eur_per_mwh_th
+        from pommes_eur.sources.data_fetchers import fetch_natural_gas_price_eur_per_mwh_th
         bare_today = fetch_natural_gas_price_eur_per_mwh_th()
         ramp_mult = _fuel_ramp_multiplier()
         bare_price = bare_today * ramp_mult
@@ -374,7 +374,7 @@ def oil_import_price() -> float:
             bare_price,
         )
     else:
-        from pommes_eur.data_fetchers import fetch_brent_crude_price_eur_per_mwh_th
+        from pommes_eur.sources.data_fetchers import fetch_brent_crude_price_eur_per_mwh_th
         bare_today = fetch_brent_crude_price_eur_per_mwh_th(refining_margin=True)
         ramp_mult = _fuel_ramp_multiplier()
         bare_price = bare_today * ramp_mult

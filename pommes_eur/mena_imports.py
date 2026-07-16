@@ -592,7 +592,7 @@ def _solar_availability(country: str, hours: list[int], year_op: int):
 
     # 1. renewables.ninja (cached after first call)
     try:
-        from pommes_eur.data_fetchers import fetch_renewables_ninja_hourly
+        from pommes_eur.sources.data_fetchers import fetch_renewables_ninja_hourly
         cf = fetch_renewables_ninja_hourly(lat, lon, tag=tag, kind="pv")
         if str(cf.attrs.get("fallback", "true")).lower() == "false":
             logger.info(
@@ -609,7 +609,7 @@ def _solar_availability(country: str, hours: list[int], year_op: int):
 
     # 2. PVGIS (no auth, also cached)
     try:
-        from pommes_eur.data_fetchers import fetch_pvgis_solar_hourly
+        from pommes_eur.sources.data_fetchers import fetch_pvgis_solar_hourly
         cf = fetch_pvgis_solar_hourly(lat, lon, tag=tag)
         if str(cf.attrs.get("fallback", "true")).lower() == "false":
             logger.info(
@@ -650,7 +650,7 @@ def _wind_availability(country: str, hours: list[int], year_op: int):
     tag = f"mena_{country}_wind"
 
     try:
-        from pommes_eur.data_fetchers import fetch_renewables_ninja_hourly
+        from pommes_eur.sources.data_fetchers import fetch_renewables_ninja_hourly
         cf = fetch_renewables_ninja_hourly(lat, lon, tag=tag, kind="wind")
         if str(cf.attrs.get("fallback", "true")).lower() == "false":
             logger.info(

@@ -37,7 +37,7 @@ from typing import Literal
 
 import pandas as pd
 
-from pommes_eur.fetch import fetch_enspreso_biomass
+from pommes_eur.sources.fetch import fetch_enspreso_biomass
 
 logger = logging.getLogger(__name__)
 
