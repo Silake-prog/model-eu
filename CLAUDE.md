@@ -17,16 +17,19 @@ document the flag vocabulary, and get a minimal reproducible env spec. See `READ
 - `pommes_eur/` — the model package (formerly `clever`; `import clever` still works via the
   `clever/` compat shim). Concern-based subpackages:
   - `scenario/` — `parse.py` (flag parsers) + `registry.py` (flag vocabulary + structural
-    validation) + `env.py` (`POMMES_EUR_SCENARIO`/`CLEVER_SCENARIO` resolution).
+    validation) + `env.py` (`POMMES_EUR_SCENARIO`/`CLEVER_SCENARIO` resolution) +
+    `resolved.py` (the scenario string resolved to per-run scalar globals).
   - `data/` — `inputs.py` facade over `_inputs_generic.py` (dataset-agnostic scalars) +
-    `_inputs_clever.py` (CLEVER/EOLES/PEMMDB tables); `overrides.py` (scenario-resolved
-    values); `r0_input_tables.py`, `r0_overrides.py` (CLEVER R0 pipeline).
-  - `costs/` — `carbon_price.py`. `sources/` — `fetch.py`, `process.py`, `demand.py`,
-    `data_fetchers.py` (data acquisition).
+    `_inputs_clever.py` (CLEVER/EOLES/PEMMDB tables); `expansion.py` + `vre_limits.py`
+    (scenario-gated derived tables); `overrides.py` (thin back-compat facade re-exporting
+    resolved + expansion + vre_limits + fuel prices).
+  - `costs/` — `carbon_price.py`, `fuel_prices.py`. `sources/` — `fetch.py`, `process.py`,
+    `demand.py`, `data_fetchers.py` (data acquisition).
   - `model/` — `build.py` (POMMES LP; formerly model.py) + `techs/` (`biomethane.py`,
     `ccs.py`, `mena_imports.py`); `__init__` re-exports `build` lazily (PEP 562).
   - `solve/` — `runner.py` (solve + NetCDF), `adequacy.py`. `providers/` — `base.py`
-    protocol, `clever.py` adapter, `eraa.py` stub.
+    protocol, `eraa.py` stub, and `clever/` (the CLEVER case study: `provider.py`,
+    `dataset_overrides.py` + `override_inputs.py` — formerly the `r0_*` pipeline).
   - `constants.py` — top-level back-compat facade re-exporting parse+inputs+overrides.
   - Every old top-level module name (`inputs`, `model`, `runner`, `fetch`, …) remains a
     one-line `sys.modules` alias shim, so old `from clever.X import Y` imports keep working.

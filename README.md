@@ -17,7 +17,7 @@ are intentionally excluded — see `.gitignore`.
 
 | path | what it is |
 |------|------------|
-| `pommes_eur/` | the model package, concern-based subpackages: `scenario/` (flag parsers + registry + env), `data/` (`inputs.py` facade over generic/CLEVER tables, `overrides.py`, R0 pipeline), `costs/` (carbon price), `sources/` (fetch/process/demand/data_fetchers), `model/` (`build.py` + `techs/`), `solve/` (runner + adequacy), `providers/` (data-source adapters), `constants.py` (back-compat facade). Old top-level module names remain `sys.modules` alias shims. `pyproject.toml` declares the flat package. |
+| `pommes_eur/` | the model package, concern-based subpackages: `scenario/` (flag parsers + registry + env), `data/` (`inputs.py` over generic/CLEVER tables, `expansion.py`/`vre_limits.py` derived tables, `overrides.py` facade), `costs/` (carbon + fuel prices), `sources/` (fetch/process/demand/data_fetchers), `model/` (`build.py` + `techs/`), `solve/` (runner + adequacy), `scenario/resolved.py` (resolved scalars), `providers/` (adapters incl. `clever/` = provider + dataset/input overrides), `constants.py` (back-compat facade). Old top-level module names remain `sys.modules` alias shims. `pyproject.toml` declares the flat package. |
 | `clever/` | compatibility shim — aliases `pommes_eur` so old `import clever` paths keep working |
 | `notebooks/` | driver notebooks — `adequacy_clean.ipynb` (nbconvert → `scripts/run_adequacy.py`) |
 | `scripts/` | cluster launchers — `sbatch_clever.sh` (SLURM), `submit_*.sh`, `run_scenarios_sequential.sh`, generated `run_adequacy.py` |

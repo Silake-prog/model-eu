@@ -5,7 +5,7 @@ The golden snapshot (`tests/golden/`) proves existing scenarios still reproduce
 bit-identically after any change here, so extend with confidence.
 
 > Architecture in one line: a **scenario string** → `pommes_eur/scenario/parse.py` (parsers)
-> + `pommes_eur/scenario/registry.py` (flag vocabulary) → `pommes_eur/data/overrides.py` (resolved
+> + `pommes_eur/scenario/registry.py` (flag vocabulary) → `pommes_eur/scenario/resolved.py` (resolved
 > values) + `pommes_eur/data/inputs.py` (static tables) → `pommes_eur/model/build.py` builds a
 > `pommes_craft.EnergyModel` → `pommes_eur/solve/runner.py` solves + writes NetCDF.
 
@@ -25,7 +25,7 @@ Example: a `_myLever42` knob.
    ```
    and add the field to `ScenarioSpec` + `parse_scenario`. That is all validation needs —
    no `_VALID_SCENARIOS` edit. Regenerate the docs: `python docs/gen_flags_doc.py`.
-3. **Wire the value** — read it where it applies (in `pommes_eur/data/overrides.py` for a resolved
+3. **Wire the value** — read it where it applies (in `pommes_eur/scenario/resolved.py` for a resolved
    global, or in `pommes_eur/model/build.py` where the LP is built).
 
 ## Add a new technology
@@ -33,7 +33,7 @@ Example: a `_myLever42` knob.
 Technology mappings are static tables in `pommes_eur/data/inputs.py`:
 `CLEVER_CAPACITY_TO_MODEL`, `CLEVER_NON_ENR_TO_MODEL`, `MODELTECH_TO_EOLES`,
 `EOLES_LIFETIME`, `FUEL_ADDER_2050`, `CLEVER_VRE_SPECS`. Add the tech to the relevant
-maps; if it is investable, add it to `EXPANDABLE_MODEL_TECHS` (in `pommes_eur/data/overrides.py`,
+maps; if it is investable, add it to `EXPANDABLE_MODEL_TECHS` (in `pommes_eur/data/expansion.py`,
 since expandability can be scenario-gated). The generic reference builder
 `supplyforge/supplyforge/create_pommes_craft_model.py` keeps its own clean
 `DISPATCHABLE_TECH_DICT` / `INTERMITTENT_TECH_DICT` — use those as the template for a
