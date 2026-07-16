@@ -29,6 +29,7 @@ _SUBMODULES = (
     "carbon_price", "data_fetchers", "biomethane", "methane_h2_ccs", "mena_imports",
     "model", "runner", "r0_input_tables", "r0_overrides",
     "scenario", "scenario.parse", "scenario.registry", "scenario.env",
+    "providers", "providers.base", "providers.clever",
 )
 for _name in _SUBMODULES:
     try:
