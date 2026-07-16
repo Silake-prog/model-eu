@@ -13,7 +13,7 @@ changes. From that one declaration the module provides:
   * :func:`parse_scenario` — resolve a scenario string to a typed :class:`ScenarioSpec`
     (a pure function of the string; no dependency on the import-time env global). Values
     come straight from the ``clever.scenario.parse`` functions, so a spec is identical to
-    the ``clever.overrides`` globals for the same string (guarded by tests).
+    the ``clever.constants`` globals for the same string (guarded by tests).
   * :func:`iter_flags` — enumerate the vocabulary for docs (see docs/flags.md).
 
 Backwards compatibility: this does not change how any value is computed — it only
@@ -167,7 +167,7 @@ def validate(s: str) -> bool:
 # ── Typed scenario spec (pure function of the string) ───────────────────────────────
 @dataclass(frozen=True)
 class ScenarioSpec:
-    """All scenario-resolved values, mirroring the clever.overrides globals 1:1."""
+    """All scenario-resolved values, mirroring the clever.constants globals 1:1."""
 
     scenario: str
     high_demand: bool

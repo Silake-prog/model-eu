@@ -4,7 +4,7 @@ Guards three properties:
   1. Structural validation is a *superset* of the historical whitelist — every string in
      ``scripts/run_adequacy.py``'s ``_VALID_SCENARIOS`` (plus free-suffix compositions)
      validates, and obviously-malformed strings are rejected.
-  2. ``parse_scenario(s)`` reproduces the ``clever.overrides`` scenario globals exactly
+  2. ``parse_scenario(s)`` reproduces the ``clever.constants`` scenario globals exactly
      (per-scenario subprocess, since the globals are an import-time singleton). This is
      what proves the registry changed no numerics.
   3. Every flag declares a non-empty pattern and description (docs/flags.md contract).
@@ -27,7 +27,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from clever.scenario import registry as R  # noqa: E402
 
-# spec field -> clever.overrides global name (only fields with a stored global)
+# spec field -> clever.constants global name (only fields with a stored global)
 _FIELD_TO_GLOBAL = {
     "biomethane_scope": "_BIOMETHANE_SCOPE",
     "atr_enabled": "_ATR_ENABLED",
@@ -91,7 +91,7 @@ def _canon(o):
 
 _DUMP = r"""
 import json, os
-from clever import overrides as ov
+from clever import constants as ov
 from clever.scenario.registry import parse_scenario, _canon_hook  # noqa
 """
 
@@ -100,7 +100,7 @@ def _compare_in_subprocess(scenario: str) -> list[str]:
     """Return list of mismatch messages (empty == spec matches overrides globals)."""
     prog = (
         "import json, os\n"
-        "from clever import overrides as ov\n"
+        "from clever import constants as ov\n"
         "from clever.scenario.registry import parse_scenario\n"
         "s = os.environ['CLEVER_SCENARIO']\n"
         "spec = parse_scenario(s)\n"

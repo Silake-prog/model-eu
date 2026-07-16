@@ -19,7 +19,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 # Light submodules that import without the solver stack — identity must hold for these.
-_LIGHT = ("constants", "inputs", "overrides", "scenario.parse", "scenario.registry", "scenario.env")
+_LIGHT = ("constants", "inputs", "scenario.resolved", "scenario.parse", "scenario.registry", "scenario.env")
 
 
 def test_clever_is_pommes_eur() -> None:

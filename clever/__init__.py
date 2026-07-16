@@ -25,14 +25,14 @@ sys.modules[__name__] = pommes_eur
 # where it is absent they simply are not aliased (import-time errors are swallowed), but
 # on the cluster every submodule aliases cleanly.
 _SUBMODULES = (
-    "constants", "inputs", "overrides", "process", "fetch", "demand", "adequacy",
+    "constants", "inputs", "process", "fetch", "demand", "adequacy",
     "carbon_price", "data_fetchers", "biomethane", "methane_h2_ccs", "mena_imports",
     "model", "runner", "r0_input_tables", "r0_overrides",
     "scenario", "scenario.parse", "scenario.registry", "scenario.env", "scenario.resolved",
     "providers", "providers.base", "providers.clever", "providers.eraa",
     "providers.clever.provider", "providers.clever.dataset_overrides", "providers.clever.override_inputs",
     "providers.clever._appliers", "providers.clever._h2_demand", "providers.clever._min_bounds",
-    "data", "data.inputs", "data.overrides", "data.expansion", "data.vre_limits", "data.r0_input_tables", "data.r0_overrides",
+    "data", "data.inputs", "data.expansion", "data.vre_limits", "data.r0_input_tables", "data.r0_overrides",
     "costs", "costs.carbon_price", "costs.fuel_prices",
     "sources", "sources.fetch", "sources.process", "sources.demand", "sources.data_fetchers",
     "model.build", "model.techs", "model.techs.biomethane", "model.techs.ccs", "model.techs.mena_imports",
