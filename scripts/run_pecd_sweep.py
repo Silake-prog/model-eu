@@ -199,7 +199,6 @@ def make_plots(tidy, args) -> None:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    import pandas as pd
 
     figs = args.out / "figs"
     figs.mkdir(parents=True, exist_ok=True)

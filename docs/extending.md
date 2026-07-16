@@ -35,7 +35,7 @@ Technology mappings are static tables in `pommes_eur/data/inputs.py`:
 `EOLES_LIFETIME`, `FUEL_ADDER_2050`, `CLEVER_VRE_SPECS`. Add the tech to the relevant
 maps; if it is investable, add it to `EXPANDABLE_MODEL_TECHS` (in `pommes_eur/data/expansion.py`,
 since expandability can be scenario-gated). The generic reference builder
-`supplyforge/supplyforge/create_pommes_craft_model.py` keeps its own clean
+`supplyforge/create_pommes_craft_model.py` keeps its own clean
 `DISPATCHABLE_TECH_DICT` / `INTERMITTENT_TECH_DICT` — use those as the template for a
 dataset-neutral tech registry.
 
@@ -57,7 +57,7 @@ builds the `pommes_craft.EnergyModel`:
 - CLEVER adapter: `pommes_eur/providers/clever.py` — `CleverProvider`, a thin delegate to the
   existing `create_multi_country_model_from_clever` + `fetch.py`/`process.py`/`demand.py`.
 - A new dataset (ERAA, TYNDP, custom CSVs) is a new provider returning the same
-  `EnergyModel`. `supplyforge/supplyforge/create_pommes_craft_model.py` (ERAA-driven)
+  `EnergyModel`. `supplyforge/create_pommes_craft_model.py` (ERAA-driven)
   already fits the contract and is the reference for `pommes_eur/providers/eraa.py`.
 
 ## Verifying a change

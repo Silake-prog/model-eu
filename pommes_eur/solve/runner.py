@@ -872,17 +872,8 @@ def _export_gurobi_iis(linopy_model, year_op: int, diagnostics_dir: Path) -> Non
             )
             solver_model.optimize()
 
-            # Collect violated constraints
-            violations = []
-            for c in solver_model.getConstrs():
-                slack = c.Slack
-                rhs = c.RHS
-                sense = c.Sense
-                # After feasRelax, ArtP (positive) and ArtN (negative) variables
-                # indicate the violation. Check if slack is unusual.
-                name = c.ConstrName
-                # Actually, the easiest way is to look at the artificial variables
-            # Check artificial variables added by feasRelax
+            # After feasRelax, the ArtP (positive) / ArtN (negative) artificial
+            # variables carry the violations — read those directly.
             art_vars = [v for v in solver_model.getVars()
                         if v.VarName.startswith("ArtP_") or v.VarName.startswith("ArtN_")]
             violated = [(v.VarName, v.X) for v in art_vars if abs(v.X) > 1e-6]

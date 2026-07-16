@@ -103,13 +103,18 @@ from pathlib import Path
 from typing import Dict, Optional, Tuple
 
 # ---------------------------------------------------------------------------
-# Credentials — set BEFORE importing demandforge so the ENTSO-E client picks
-# them up at module import time.
+# Credentials — must be set in the environment (or a .env file) BEFORE running
+# this script so the ENTSO-E client picks them up at module import time.
+# NEVER hardcode the token here: this file is committed. (A previously
+# hardcoded key was removed — if you used it, revoke it on the ENTSO-E
+# Transparency Platform and generate a new one.)
 # ---------------------------------------------------------------------------
-os.environ.setdefault(
-    "ENTSOE_API_KEY",
-    "d37c8388-12b0-4f02-ac3b-584f08798565",
-)
+if not (os.environ.get("ENTSOE_API_KEY") or os.environ.get("ENTSOE_API_TOKEN")):
+    raise SystemExit(
+        "ENTSOE_API_KEY (or ENTSOE_API_TOKEN) is not set. Export it or put it in a "
+        ".env file before running this script — do not hardcode it."
+    )
+os.environ.setdefault("ENTSOE_API_KEY", os.environ.get("ENTSOE_API_TOKEN", ""))
 
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
