@@ -2314,7 +2314,7 @@ def _create_empty_energy_model(
     # even when no other H₂-active suffix (e.g. _atr, _h2HIGH) is present.
     if not include_hydrogen:
         try:
-            from pommes_eur.mena_imports import mena_imports_enabled
+            from pommes_eur.model.techs.mena_imports import mena_imports_enabled
             if mena_imports_enabled():
                 resources.append("hydrogen")
         except Exception:  # mena_imports unavailable at this import stage
@@ -2433,14 +2433,14 @@ def _add_country_components(
     # No-op if CLEVER_SCENARIO doesn't carry a _bioLow / _bioMed / _bioHigh suffix.
     # See clever/biomethane.py:add_biomethane_to_area for the bundled-tech
     # capex/FOM/fuel-cost computation and the article methodology section.
-    from pommes_eur.biomethane import add_biomethane_to_area
+    from pommes_eur.model.techs.biomethane import add_biomethane_to_area
     add_biomethane_to_area(area=area, country_code=country_code)
 
     # MENA H₂ imports — Variant A (NetImport on EU entry-point). No-op when
     # _menaH2NNN is absent or country_code is not in MENA_H2_ENTRY_SHARES.
     # Variant B (per-country MENA Areas) is wired separately in
     # create_multi_country_model_from_clever — see add_mena_to_model.
-    from pommes_eur.mena_imports import add_variant_a_imports_to_area
+    from pommes_eur.model.techs.mena_imports import add_variant_a_imports_to_area
     add_variant_a_imports_to_area(area=area, country_code=country_code)
 
     # Phase 3: fossil-methane + oil supply (per-country NetImports). Skipped
@@ -2472,7 +2472,7 @@ def _add_country_components(
     # bio_mode of either tech = BECCS (negative emissions).
     # Internally gated by `not _NO_GAS` + "hydrogen" in resources + at least
     # one of (natural_gas, biomethane) present.
-    from pommes_eur.methane_h2_ccs import add_h2_ccs_techs_to_area
+    from pommes_eur.model.techs.ccs import add_h2_ccs_techs_to_area
     add_h2_ccs_techs_to_area(area=area, country_code=country_code)
 
     # ── Free-import lockdown (added 2026-05-26, redesigned 2026-05-27) ──
@@ -2832,7 +2832,7 @@ def create_multi_country_model_from_clever(
     # No-op when no _menaOptim* suffix is active. The pipeline names use the
     # "mena_h2_pipeline_{src}_{dst}" prefix so they don't collide with the
     # intra-EU "h2_pipeline" components added by supplyforge.
-    from pommes_eur.mena_imports import add_mena_to_model
+    from pommes_eur.model.techs.mena_imports import add_mena_to_model
     add_mena_to_model(energy_model=energy_model, areas=areas, eoles_costs=eoles_costs)
 
     # Log build summary

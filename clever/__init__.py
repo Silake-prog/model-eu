@@ -33,6 +33,7 @@ _SUBMODULES = (
     "data", "data.inputs", "data.overrides", "data.r0_input_tables", "data.r0_overrides",
     "costs", "costs.carbon_price",
     "sources", "sources.fetch", "sources.process", "sources.demand", "sources.data_fetchers",
+    "model.build", "model.techs", "model.techs.biomethane", "model.techs.ccs", "model.techs.mena_imports",
 )
 for _name in _SUBMODULES:
     try:
