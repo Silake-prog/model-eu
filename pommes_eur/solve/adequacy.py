@@ -28,7 +28,6 @@ from pommes_eur.constants import (
     DEFAULT_LOAD_SHEDDING_COST,
     EPS_MW,
     EPS_MWH,
-    EXPANDABLE_MODEL_TECHS,
     MODELTECH_TO_EOLES,
     VRE_CAPACITY_CREDIT,
 )

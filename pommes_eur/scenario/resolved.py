@@ -14,8 +14,6 @@ from pommes_eur.scenario.env import current_scenario as _current_scenario
 _SCENARIO: str = _current_scenario()
 
 from pommes_eur.scenario.parse import (  # noqa: E402
-    _is_high_demand,
-    _is_nuclear_expandable,
     _parse_biomethane_scope,
     _parse_atr_enabled,
     _parse_electrolyser_capex_override,
@@ -99,7 +97,6 @@ INVESTABLE_CORRIDOR_MULT: float = _CORRIDOR_MULT  # exposed for model.py
 # Suffixes are parsed independently and can stack in any order:
 #   policy_nuke_bioMed_el900_atr  → all four flags active
 #   R0_v1_bioLow                  → biomethane only
-import re as _re
 
 
 _NG_UPSTREAM_LEAK_RATE: float = _parse_ng_leak_rate(_SCENARIO)

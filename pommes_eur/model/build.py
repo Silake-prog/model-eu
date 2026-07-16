@@ -60,7 +60,6 @@ from pommes_eur.constants import (
     HYDRO_RESERVOIR_FLAT_CF,
     DEFAULT_HYDRO_RESERVOIR_FLAT_CF,
     HYDRO_PEMMDB,
-    SUPPLYFORGE_HYDRO_INPUT_CANDIDATES,
     BESS_SPECS,
     BESS_POWER_INVESTMENT_MAX_MW_BY_COUNTRY,
     DEFAULT_BESS_POWER_INVESTMENT_MAX_MW,
@@ -87,45 +86,6 @@ logger = logging.getLogger(__name__)
 # =========================================================
 # HELPERS
 # =========================================================
-
-def _load_first_available_supplyforge_input(
-    country: str,
-    reference_year: int,
-    input_candidates: list[str],
-    max_attempts: int = 3,
-) -> tuple[Optional[pl.DataFrame], Optional[str]]:
-    """Try loading hydro data: first the requested year, then fallback years."""
-    # Try requested year across all candidates
-    for input_file in input_candidates:
-        df = try_load_supplyforge_parquet(
-            country=country,
-            reference_year=reference_year,
-            input_file=input_file,
-            max_attempts=max_attempts,
-        )
-        if df is not None and not df.is_empty():
-            return df, input_file
-
-    # Try fallback years across all candidates
-    for fallback_year in SUPPLYFORGE_FALLBACK_YEARS:
-        if fallback_year == reference_year:
-            continue
-        for input_file in input_candidates:
-            df = try_load_supplyforge_parquet(
-                country=country,
-                reference_year=fallback_year,
-                input_file=input_file,
-                max_attempts=max_attempts,
-            )
-            if df is not None and not df.is_empty():
-                logger.info(
-                    "Hydro input %s for %s: year %d unavailable, using fallback year %d.",
-                    input_file, country, reference_year, fallback_year,
-                )
-                return df, input_file
-
-    return None, None
-
 
 def _find_first_existing_column(df: pl.DataFrame, candidates: list[str]) -> Optional[str]:
     for col in candidates:
@@ -594,14 +554,6 @@ def shape_h2_demand_flat(
     })
 
 
-def _extract_available_plant_types(capacity_factors: Optional[pl.DataFrame]) -> list[str]:
-    if capacity_factors is None or capacity_factors.is_empty():
-        return []
-    if "plant_type" not in capacity_factors.columns:
-        return []
-    return sorted(map(str, capacity_factors["plant_type"].unique().to_list()))
-
-
 def _select_capacity_factor_slice(
     capacity_factors: Optional[pl.DataFrame],
     candidates: list[str],
@@ -744,13 +696,6 @@ def load_supplyforge_parquet_with_retry(
         f"reference_year={reference_year} after {max_attempts} attempts. Last error: {last_err}"
     )
 
-def _normalize_monthly_profile(values: list[float]) -> list[float]:
-    arr = np.asarray(values, dtype=float)
-    mean = float(arr.mean())
-    if mean <= 0:
-        raise ValueError("monthly profile mean must be > 0")
-    return (arr / mean).tolist()
-
 def try_load_supplyforge_parquet(
     country: str,
     reference_year: int,
@@ -813,25 +758,6 @@ def _build_flat_hourly_availability(hours: list[int], year_op: int, value: float
         }
     )
 
-
-def _build_simple_hydro_seasonal_profile(
-    hours: list[int],
-    year_op: int,
-    monthly_values: list[float],
-) -> pl.DataFrame:
-    if len(monthly_values) != 12:
-        raise ValueError("monthly_values must have length 12")
-
-    dt_index = pd.date_range(f"{year_op}-01-01 00:00:00", periods=len(hours), freq="h")
-    values = [float(monthly_values[m - 1]) for m in dt_index.month]
-
-    return pl.DataFrame(
-        {
-            "hour": hours,
-            "year_op": [year_op] * len(hours),
-            "availability": values,
-        }
-    )
 
 def get_clever_capacity_mw(
     capacity_df: pd.DataFrame,
@@ -1244,7 +1170,6 @@ def add_dispatchable_from_non_enr(
     #      synthetic Nuclear).
     #   3. The CLEVER loop above didn't already add Nuclear (e.g. a
     #      future CLEVER variant that does declare nuclear).
-    import os as _os
     from pommes_eur.constants import _is_nuclear_expandable
     from pommes_eur.scenario.env import current_scenario as _current_scenario
     _scen_env = _current_scenario()

@@ -849,8 +849,6 @@ def _export_gurobi_iis(linopy_model, year_op: int, diagnostics_dir: Path) -> Non
         # This is MUCH faster than computeIIS on large models and tells us
         # exactly which constraints are violated and by how much.
         try:
-            import gurobipy as grb  # noqa: F811
-
             logger.info("Running feasRelax to identify violated constraints ...")
             # Gurobi feasRelax signature (7 args + self = 8 total):
             #   feasRelax(relaxobjtype, minrelax, vars, lbpen, ubpen,

@@ -32,10 +32,7 @@ Egypt deferred — see TODO(EG-NH3). Ammonia deferred — see TODO(ammonia).
 from __future__ import annotations
 
 import logging
-from typing import TYPE_CHECKING, Any
-
-if TYPE_CHECKING:
-    from pommes_craft import Area, EnergyModel  # noqa: F401
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -1019,7 +1016,7 @@ def add_mena_country_area(energy_model: Any, country: str, eoles_costs: dict | N
             # ConversionTechnology (not CombinedTechnology) since there's
             # only one fuel mode here.
             from pommes_eur.model.techs.ccs import (
-                _CCS_EFFICIENCY, _CCS_CAPTURE_RATE,
+                _CCS_EFFICIENCY,
                 _SMR_CAPEX_EUR_PER_KW, _ATR_CAPEX_EUR_PER_KW,
                 _CCS_FOM_EUR_PER_KW_YR, _SMR_VOM_EUR_PER_MWH,
                 _ATR_VOM_EUR_PER_MWH, _CCS_OPCOST_EUR_PER_MWH_H2,

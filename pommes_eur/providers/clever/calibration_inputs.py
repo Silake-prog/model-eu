@@ -138,7 +138,7 @@ def build_r0_overrides_kwargs(
     caps_path = tables_dir / "h2_underground_storage_capacity_caps_by_country.csv"
     # _storPxNNN scenario suffix: multiply storage POWER caps by NNN/100 (sensitivity on
     # the 316 GW deliverability constraint; energy caps untouched).
-    import os as _os, re as _re
+    import re as _re
     _mm = _re.search(r"_storPx(\d+)", __import__("pommes_eur.scenario.env", fromlist=["current_scenario"]).current_scenario())
     _storp_mult = (int(_mm.group(1)) / 100.0) if _mm else 1.0
 

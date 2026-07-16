@@ -454,7 +454,6 @@ def fetch_world_bank_pink_sheet():
 
     Raises FileNotFoundError only if no cache exists AND the fetch fails.
     """
-    from pathlib import Path
     cache = CACHE_DIR / "wb_pink_sheet.xlsx"
 
     # Cache freshness: 30 days (WB publishes monthly)

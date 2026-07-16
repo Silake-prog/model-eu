@@ -88,7 +88,6 @@ from __future__ import annotations
 import logging
 from typing import Optional
 
-import numpy as np
 import pandas as pd
 import xarray as xr
 
@@ -110,7 +109,6 @@ from pommes_eur.providers.clever._appliers import (  # noqa: E402
     ELECTROLYSER_INVEST_COST_EUR_PER_KW,
     ELECTROLYSER_TECH,
     H2_STORAGE_TECH,
-    HYDROGEN_RESOURCE,
     HYDROGEN_LOAD_SHEDDING_COST_EUR_PER_MWH,
     _apply_hydrogen_load_shedding_cost,
     _apply_electrolyser_capex,

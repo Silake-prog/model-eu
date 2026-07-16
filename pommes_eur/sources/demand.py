@@ -34,7 +34,6 @@ from __future__ import annotations
 
 import argparse
 import logging
-import re
 import urllib.error
 from dataclasses import dataclass
 from pathlib import Path
@@ -293,13 +292,6 @@ def coalesce_duplicate_columns(df: pd.DataFrame, protected=("datetime",)) -> pd.
             out[col] = block.apply(pd.to_numeric, errors="coerce").sum(axis=1)
 
     return out
-
-
-def _get_1d_numeric(series_or_df) -> pd.Series:
-    """Return a 1D numeric Series (sum if DataFrame with duplicate columns)."""
-    if isinstance(series_or_df, pd.DataFrame):
-        return series_or_df.apply(pd.to_numeric, errors="coerce").sum(axis=1)
-    return pd.to_numeric(series_or_df, errors="coerce")
 
 
 def rebuild_total_from_components(wide: pd.DataFrame) -> pd.DataFrame:

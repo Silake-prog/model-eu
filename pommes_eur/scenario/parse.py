@@ -10,9 +10,7 @@ Carved verbatim out of ``clever/constants.py`` — behaviour is byte-for-byte id
 """
 from __future__ import annotations
 
-import os as _os        # noqa: F401 - kept for parity with source (some parsers use it)
 import re as _re
-import re as _re_corr    # noqa: F401 - alias parity with constants.py
 
 __all__ = [
     '_is_high_demand',

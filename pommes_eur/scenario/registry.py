@@ -24,7 +24,7 @@ drivers. No numerics changed.
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass, field, fields
+from dataclasses import dataclass
 from typing import Callable, Optional
 
 from pommes_eur.scenario import parse as _p
