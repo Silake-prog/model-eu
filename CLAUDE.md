@@ -1,5 +1,9 @@
 # CLAUDE.md — orientation for Claude Code
 
+> **This session's mission is in [`CLEANUP_MISSION.md`](CLEANUP_MISSION.md)** — read it
+> first. Short version: architecture cleanup so the model is easier to extend; no numerics
+> changes; keep scenario strings backward-compatible; never commit secrets/data.
+
 This repo is a **code-only snapshot** of the CLEVER-2050 / POMMES model, copied from the
 Aloret compute server for cleanup and version control. It does **not** run end-to-end here:
 the solver outputs (`results/`, `*.nc`), the Gurobi license, and the data caches live only on
