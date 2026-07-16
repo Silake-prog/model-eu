@@ -1,7 +1,7 @@
 """pommes_eur.providers.clever._appliers — the R0 per-country override mutators.
 
 The five in-place mutators applied to the assembled POMMES dataset by
-``dataset_overrides.apply_r0_overrides`` (electrolyser CAPEX / sovereignty min-bounds,
+``dataset_calibration.apply_r0_overrides`` (electrolyser CAPEX / sovereignty min-bounds,
 H2 storage CAPEX / caps, hydrogen load-shedding cost), plus the shared tech-name and
 default-cost constants. Split verbatim out of the CLEVER R0 calibration pipeline.
 """
