@@ -8,7 +8,6 @@
 
 The scenario-resolved scalar globals live in ``pommes_eur.scenario.resolved`` and the
 fuel-price functions in ``pommes_eur.costs.fuel_prices``; ``pommes_eur.constants`` is the
-back-compat facade that aggregates all of these. The CLEVER "R0" calibration pipeline moved
-to ``pommes_eur.providers.clever`` (``dataset_calibration`` / ``calibration_inputs``);
-``data/r0_input_tables.py`` remains as a compat shim.
+back-compat facade that aggregates all of these. The CLEVER "R0" calibration pipeline lives
+in ``pommes_eur.providers.clever`` (``dataset_calibration`` / ``calibration_inputs``).
 """

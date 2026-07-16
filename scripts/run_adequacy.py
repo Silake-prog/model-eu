@@ -1706,7 +1706,7 @@ print("run_model_with_ramping() defined.")
 # (per-scenario tables/<SCENARIO>/) and DemandForge's live H₂ demand for
 # the active bundle.  See `notes/r0_override_contract.md` for the
 # Layer-1 / Layer-2 ownership map.
-from clever.r0_input_tables import build_r0_overrides_kwargs
+from pommes_eur.providers.clever.calibration_inputs import build_r0_overrides_kwargs
 
 # Pull electrolyser CAPEX from the scenario-name parser (_elNNN suffix).
 # Default 500 €/kW when no suffix; _el700 → 700, _el900 → 900, etc.

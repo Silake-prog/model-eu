@@ -1,6 +1,6 @@
 """
-clever.r0_input_tables — Glue between R0 per-country CSV tables, DemandForge
-H₂ demand, and the override kwargs that clever.runner consumes.
+pommes_eur.providers.clever.calibration_inputs — Glue between R0 per-country CSV
+tables, DemandForge H₂ demand, and the override kwargs that the runner consumes.
 
 Role in pipeline
 ----------------
@@ -13,7 +13,7 @@ Usage in adequacy_clean.ipynb
 -----------------------------
 .. code-block:: python
 
-    from pommes_eur.r0_input_tables import build_r0_overrides_kwargs
+    from pommes_eur.providers.clever.calibration_inputs import build_r0_overrides_kwargs
 
     r0_kwargs = build_r0_overrides_kwargs(
         bundle_name=DEMANDFORGE_BUNDLE,

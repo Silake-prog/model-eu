@@ -51,7 +51,7 @@ Usage
 -----
 .. code-block:: python
 
-    from pommes_eur.r0_overrides import apply_r0_overrides
+    from pommes_eur.providers.clever.dataset_calibration import apply_r0_overrides
 
     # Default usage — applies only the electrolyser CAPEX bump (sub-task 2):
     p = apply_r0_overrides(p)
