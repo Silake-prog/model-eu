@@ -330,7 +330,7 @@ def natural_gas_import_price() -> float:
     # CO₂ adder via the dedicated carbon_price module (trajectory-based).
     # Lazy import to avoid a constants.py ↔ carbon_price.py circular dep
     # (carbon_price imports _CO2_PRICE_EUR_PER_TONNE from this module).
-    from pommes_eur.carbon_price import resolved_carbon_price
+    from pommes_eur.costs.carbon_price import resolved_carbon_price
     co2_price = resolved_carbon_price(year=_TARGET_MODEL_YEAR)
     co2_adder = NATURAL_GAS_CO2_INTENSITY_T_PER_MWH_TH * co2_price
     # Upstream CH4 leakage: leaked share of delivered energy, priced at
@@ -385,7 +385,7 @@ def oil_import_price() -> float:
         )
 
     # CO₂ adder via the dedicated carbon_price module (trajectory-based).
-    from pommes_eur.carbon_price import resolved_carbon_price
+    from pommes_eur.costs.carbon_price import resolved_carbon_price
     co2_price = resolved_carbon_price(year=_TARGET_MODEL_YEAR)
     co2_adder = OIL_CO2_INTENSITY_T_PER_MWH_TH * co2_price
     final = bare_price + co2_adder

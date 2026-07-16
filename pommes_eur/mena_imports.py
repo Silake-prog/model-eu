@@ -196,7 +196,7 @@ def mena_natural_gas_import_price(country: str) -> float:
         _TARGET_MODEL_YEAR,
         _MENA_NG_WHOLESALE_OVERRIDES,
     )
-    from pommes_eur.carbon_price import resolved_carbon_price
+    from pommes_eur.costs.carbon_price import resolved_carbon_price
 
     bare = _MENA_NG_WHOLESALE_OVERRIDES.get(
         country,

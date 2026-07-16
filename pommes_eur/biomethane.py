@@ -430,7 +430,7 @@ def add_biomethane_to_area(
         _BIO_CH4_LEAK_RATE, CH4_KG_PER_MWH_TH, CH4_GWP100_BIOGENIC,
         _TARGET_MODEL_YEAR,
     )
-    from pommes_eur.carbon_price import resolved_carbon_price
+    from pommes_eur.costs.carbon_price import resolved_carbon_price
     _l = _BIO_CH4_LEAK_RATE
     _gross = 1.0 / (1.0 - _l)
     biomass_per_out_mwh = _BIOMASS_PER_BIOMETHANE_MWH * _gross

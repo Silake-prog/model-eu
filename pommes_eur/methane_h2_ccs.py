@@ -97,7 +97,7 @@ def _ccs_carbon_adjustment_per_mwh_h2(eff: float) -> float:
         NATURAL_GAS_CO2_INTENSITY_T_PER_MWH_TH,
         _TARGET_MODEL_YEAR,
     )
-    from pommes_eur.carbon_price import resolved_carbon_price
+    from pommes_eur.costs.carbon_price import resolved_carbon_price
 
     co2_price = resolved_carbon_price(year=_TARGET_MODEL_YEAR)
     return (

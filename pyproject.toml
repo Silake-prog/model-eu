@@ -33,6 +33,7 @@ packages = [
     "pommes_eur",
     "pommes_eur.scenario",
     "pommes_eur.data",
+    "pommes_eur.costs",
     "pommes_eur.providers",
     "clever",
 ]

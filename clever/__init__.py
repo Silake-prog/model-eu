@@ -31,6 +31,7 @@ _SUBMODULES = (
     "scenario", "scenario.parse", "scenario.registry", "scenario.env",
     "providers", "providers.base", "providers.clever", "providers.eraa",
     "data", "data.inputs", "data.overrides", "data.r0_input_tables", "data.r0_overrides",
+    "costs", "costs.carbon_price",
 )
 for _name in _SUBMODULES:
     try:
