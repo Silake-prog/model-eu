@@ -1,0 +1,14 @@
+# PECD 4.2 staged data (supplyforge fetch/pecd/study.py)
+# pecd_version=pecd4_2
+# temporal_period=historical
+# origin=era5_reanalysis
+# emission_scenario=None
+# file_version=fv1
+# spatial_resolution_wind=peon
+# spatial_resolution_solar=szon  hydro=szon
+# climate_years=[2008]
+# Provenance note: hydro inflows are a statistical (RF) reconstruction; reservoir inflow is zero-clipped at source; some zones carry temporary corrections / IC-rescaling (PUG Table 2.10).
+pecd42_HRI_szon_2008_fv1.csv
+pecd42_SPV_szon_2008_fv1.csv
+pecd42_WOF_peof_2008_fv1.csv
+pecd42_WON_peon_2008_fv1.csv
