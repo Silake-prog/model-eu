@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pommes-eur"
+version = "0.1.0"
+description = "General European power/hydrogen energy-system model on the POMMES framework (CLEVER-2050 as one case study)"
+requires-python = ">=3.11"
+dependencies = [
+    "platformdirs",              # import-time (pommes_eur/__init__.py)
+    "numpy",
+    "pandas",
+    "polars",
+    "pyarrow",
+    "xarray",
+]
+
+# The optimisation framework (pommes, pommes_craft) and the data packages
+# (supplyforge, demandforge) are access-gated / path-installed and NOT on PyPI —
+# deliberately excluded here (documented in requirements.txt). Install out-of-band
+# on the cluster.
+[project.optional-dependencies]
+solver = []
+
+[tool.setuptools]
+# Explicit package list (not auto-find) so tests/, results/, notebooks/ and the vendored
+# supplyforge/demandforge trees are never packaged. This list doubles as the reorg
+# checklist — extend it as concern subpackages are added (data/, costs/, sources/,
+# model/, model/techs/, solve/). `clever` MUST stay listed or `import clever` breaks
+# after an install.
+packages = [
+    "pommes_eur",
+    "pommes_eur.scenario",
+    "pommes_eur.providers",
+    "clever",
+]
