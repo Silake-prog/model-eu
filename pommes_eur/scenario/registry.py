@@ -27,7 +27,7 @@ import re
 from dataclasses import dataclass, field, fields
 from typing import Callable, Optional
 
-from clever.scenario import parse as _p
+from pommes_eur.scenario import parse as _p
 
 
 # ── Base run prefixes (the demand/sufficiency stem a scenario starts from) ──────────

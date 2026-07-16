@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 import polars as pl
 
-from clever.constants import (
+from pommes_eur.constants import (
     ASSUMED_FLH,
     CLEVER_VRE_SPECS,
     DEFAULT_EXPANSION_HEADROOM_MW,
@@ -32,7 +32,7 @@ from clever.constants import (
     MODELTECH_TO_EOLES,
     VRE_CAPACITY_CREDIT,
 )
-from clever.model import (
+from pommes_eur.model import (
     _candidate_area_codes,
     get_clever_capacity_mw,
     is_expandable_dispatchable,

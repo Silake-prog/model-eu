@@ -256,9 +256,10 @@ def resolved_carbon_price(year: int = TARGET_MODEL_YEAR) -> float:
     """
     # Read existing _CO2_PRICE_EUR_PER_TONNE — that's where `_co2off` and
     # `_co2NNN` are already resolved by constants.py.
-    from clever.constants import _CO2_PRICE_EUR_PER_TONNE
+    from pommes_eur.constants import _CO2_PRICE_EUR_PER_TONNE
 
-    scen = os.environ.get("CLEVER_SCENARIO", "")
+    from pommes_eur.scenario.env import current_scenario
+    scen = current_scenario()
 
     # 1. _co2off → 0 (signaled by _CO2_PRICE_EUR_PER_TONNE = 0)
     if _CO2_PRICE_EUR_PER_TONNE == 0.0:

@@ -24,13 +24,15 @@ import os as _os
 
 # Scenario knob read from environment — drives per-scenario gating below.
 # Notebook cell 1.1 sets the same env var; for non-notebook entrypoints
-# (scripts/run_sweep.py, ad-hoc imports) the env var must be set BEFORE
-# `import clever` for the gates to take effect. Default empty = R0-style
-# behaviour (no Nuclear expansion, VRE upper band 0.15).
-_SCENARIO: str = _os.environ.get("CLEVER_SCENARIO", "")
+# (ad-hoc imports) the env var must be set BEFORE `import pommes_eur` for the
+# gates to take effect. Default empty = R0-style behaviour (no Nuclear
+# expansion, VRE upper band 0.15). POMMES_EUR_SCENARIO wins over the legacy
+# CLEVER_SCENARIO (see pommes_eur.scenario.env).
+from pommes_eur.scenario.env import current_scenario as _current_scenario  # noqa: E402
+_SCENARIO: str = _current_scenario()
 
 # Pure scenario-string parsers now live in clever/scenario/parse.py
-from clever.scenario.parse import (  # noqa: E402
+from pommes_eur.scenario.parse import (  # noqa: E402
     _is_high_demand,
     _is_nuclear_expandable,
     _parse_biomethane_scope,
@@ -70,7 +72,7 @@ from clever.scenario.parse import (  # noqa: E402
 )
 
 # Static input tables now live in clever/inputs.py
-from clever.inputs import (  # noqa: E402
+from pommes_eur.inputs import (  # noqa: E402
     INVESTABLE_CORRIDOR_PAIRS,
     INVESTABLE_CORRIDOR_CAPEX_EUR_PER_MW,
     INVESTABLE_CORRIDOR_LIFE_SPAN_YR,
@@ -315,7 +317,7 @@ def natural_gas_import_price() -> float:
             bare_price,
         )
     else:
-        from clever.data_fetchers import fetch_natural_gas_price_eur_per_mwh_th
+        from pommes_eur.data_fetchers import fetch_natural_gas_price_eur_per_mwh_th
         bare_today = fetch_natural_gas_price_eur_per_mwh_th()
         ramp_mult = _fuel_ramp_multiplier()
         bare_price = bare_today * ramp_mult
@@ -328,7 +330,7 @@ def natural_gas_import_price() -> float:
     # CO₂ adder via the dedicated carbon_price module (trajectory-based).
     # Lazy import to avoid a constants.py ↔ carbon_price.py circular dep
     # (carbon_price imports _CO2_PRICE_EUR_PER_TONNE from this module).
-    from clever.carbon_price import resolved_carbon_price
+    from pommes_eur.carbon_price import resolved_carbon_price
     co2_price = resolved_carbon_price(year=_TARGET_MODEL_YEAR)
     co2_adder = NATURAL_GAS_CO2_INTENSITY_T_PER_MWH_TH * co2_price
     # Upstream CH4 leakage: leaked share of delivered energy, priced at
@@ -372,7 +374,7 @@ def oil_import_price() -> float:
             bare_price,
         )
     else:
-        from clever.data_fetchers import fetch_brent_crude_price_eur_per_mwh_th
+        from pommes_eur.data_fetchers import fetch_brent_crude_price_eur_per_mwh_th
         bare_today = fetch_brent_crude_price_eur_per_mwh_th(refining_margin=True)
         ramp_mult = _fuel_ramp_multiplier()
         bare_price = bare_today * ramp_mult
@@ -383,7 +385,7 @@ def oil_import_price() -> float:
         )
 
     # CO₂ adder via the dedicated carbon_price module (trajectory-based).
-    from clever.carbon_price import resolved_carbon_price
+    from pommes_eur.carbon_price import resolved_carbon_price
     co2_price = resolved_carbon_price(year=_TARGET_MODEL_YEAR)
     co2_adder = OIL_CO2_INTENSITY_T_PER_MWH_TH * co2_price
     final = bare_price + co2_adder

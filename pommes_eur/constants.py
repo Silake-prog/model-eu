@@ -21,7 +21,7 @@ from __future__ import annotations
 # the parsers, the static tables, and the scenario-resolved/derived values. Copy the
 # whole thing across (including the underscore-prefixed scenario globals that a plain
 # `import *` would skip) to preserve the historical `clever.constants` surface.
-from clever import overrides as _overrides
+from pommes_eur import overrides as _overrides
 
 globals().update(
     {k: v for k, v in vars(_overrides).items() if not k.startswith("__")}

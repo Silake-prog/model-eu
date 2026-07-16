@@ -51,7 +51,7 @@ Usage
 -----
 .. code-block:: python
 
-    from clever.r0_overrides import apply_r0_overrides
+    from pommes_eur.r0_overrides import apply_r0_overrides
 
     # Default usage — applies only the electrolyser CAPEX bump (sub-task 2):
     p = apply_r0_overrides(p)
@@ -106,7 +106,7 @@ logger = logging.getLogger(__name__)
 #: Scenario-driven override: when CLEVER_SCENARIO carries an `_elNNN` suffix
 #: (e.g. `_el700`, `_el900`), `clever.constants._ELECTROLYSER_CAPEX_EUR_PER_KW`
 #: is set to NNN at module load. Default is 500 €/kW (no suffix).
-from clever.constants import _ELECTROLYSER_CAPEX_EUR_PER_KW as _SCEN_CAPEX
+from pommes_eur.constants import _ELECTROLYSER_CAPEX_EUR_PER_KW as _SCEN_CAPEX
 ELECTROLYSER_INVEST_COST_EUR_PER_KW = _SCEN_CAPEX
 
 #: Electrolyser conversion-tech name as registered in the POMMES bundle.

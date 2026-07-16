@@ -191,12 +191,12 @@ def mena_natural_gas_import_price(country: str) -> float:
     Override the bare wholesale via _menaNGcost{CC}_NNN scenario suffix
     (parsed in clever.constants).
     """
-    from clever.constants import (
+    from pommes_eur.constants import (
         NATURAL_GAS_CO2_INTENSITY_T_PER_MWH_TH,
         _TARGET_MODEL_YEAR,
         _MENA_NG_WHOLESALE_OVERRIDES,
     )
-    from clever.carbon_price import resolved_carbon_price
+    from pommes_eur.carbon_price import resolved_carbon_price
 
     bare = _MENA_NG_WHOLESALE_OVERRIDES.get(
         country,
@@ -362,7 +362,7 @@ def mena_finance_rate(country: str) -> float:
     further overridable per-scenario via `_menaRisk{CC}_{NNN}` suffix.
     """
     # Avoid circular import on module load — read overrides lazily.
-    from clever.constants import _MENA_RISK_PER_COUNTRY_OVERRIDES
+    from pommes_eur.constants import _MENA_RISK_PER_COUNTRY_OVERRIDES
 
     cfg = MENA_COUNTRY_CONFIG.get(country)
     if cfg is None:
@@ -428,7 +428,7 @@ def get_route_capex(src: str, dst: str) -> float:
       2. Global override `_menaInfra{NNN}`
       3. Base value from MENA_H2_PIPELINE_CAPEX_EUR_PER_MW
     """
-    from clever.constants import (
+    from pommes_eur.constants import (
         _MENA_INFRA_GLOBAL_OVERRIDE_EUR_PER_MW,
         _MENA_INFRA_PER_ROUTE_OVERRIDES,
     )
@@ -449,7 +449,7 @@ def resolve_mena_variants() -> dict[str, Any]:
       "variant_b_active": bool   — _menaOptim[subset]
       "variant_b_countries": tuple[str, ...]
     """
-    from clever.constants import (
+    from pommes_eur.constants import (
         _MENA_H2_IMPORT_CAP_TWH,
         _MENA_H2_DELIVERED_COST_EUR_PER_MWH,
         _MENA_H2_DELIVERED_COST_BY_ENTRY,
@@ -592,7 +592,7 @@ def _solar_availability(country: str, hours: list[int], year_op: int):
 
     # 1. renewables.ninja (cached after first call)
     try:
-        from clever.data_fetchers import fetch_renewables_ninja_hourly
+        from pommes_eur.data_fetchers import fetch_renewables_ninja_hourly
         cf = fetch_renewables_ninja_hourly(lat, lon, tag=tag, kind="pv")
         if str(cf.attrs.get("fallback", "true")).lower() == "false":
             logger.info(
@@ -609,7 +609,7 @@ def _solar_availability(country: str, hours: list[int], year_op: int):
 
     # 2. PVGIS (no auth, also cached)
     try:
-        from clever.data_fetchers import fetch_pvgis_solar_hourly
+        from pommes_eur.data_fetchers import fetch_pvgis_solar_hourly
         cf = fetch_pvgis_solar_hourly(lat, lon, tag=tag)
         if str(cf.attrs.get("fallback", "true")).lower() == "false":
             logger.info(
@@ -650,7 +650,7 @@ def _wind_availability(country: str, hours: list[int], year_op: int):
     tag = f"mena_{country}_wind"
 
     try:
-        from clever.data_fetchers import fetch_renewables_ninja_hourly
+        from pommes_eur.data_fetchers import fetch_renewables_ninja_hourly
         cf = fetch_renewables_ninja_hourly(lat, lon, tag=tag, kind="wind")
         if str(cf.attrs.get("fallback", "true")).lower() == "false":
             logger.info(
@@ -697,8 +697,8 @@ _mena_baseload_cache: "dict[str, Any]" = {}
 def _mena_baseload_shape(donor_cc: str, year_op: int) -> Any:
     """Memoised EU electricity-baseload profile for a donor country (or None)."""
     if donor_cc not in _mena_baseload_cache:
-        from clever import DEMAND_DIR
-        from clever.model import extract_baseload_profile
+        from pommes_eur import DEMAND_DIR
+        from pommes_eur.model import extract_baseload_profile
         csv = str(DEMAND_DIR / "hourly_electricity_demand.csv")
         _mena_baseload_cache[donor_cc] = extract_baseload_profile(
             electricity_demand_csv_path=csv,
@@ -734,7 +734,7 @@ def add_mena_country_area(energy_model: Any, country: str, eoles_costs: dict | N
         StorageTechnology,
     )
     # Lazy import — clever.constants must read CLEVER_SCENARIO before this fires.
-    from clever.constants import (
+    from pommes_eur.constants import (
         DEFAULT_LOAD_SHEDDING_COST,
         _MENA_CAP_SCALE,
         _MENA_PREF_SCALE,
@@ -759,14 +759,14 @@ def add_mena_country_area(energy_model: Any, country: str, eoles_costs: dict | N
     # in MENA_*_DEMAND_TWH_PER_YR. The pref_scale (_menaPrefNN suffix) lets
     # us sensitivity-test the "MENA exports everything" boundary by setting
     # pref=0; default 100% keeps the anchor values intact.
-    from clever.constants import DEMANDFORGE_BUNDLE  # set in run_adequacy.py
+    from pommes_eur.constants import DEMANDFORGE_BUNDLE  # set in run_adequacy.py
     elec_twh = mena_local_demand_twh(country, "electricity", DEMANDFORGE_BUNDLE)
     h2_twh   = mena_local_demand_twh(country, "hydrogen",    DEMANDFORGE_BUNDLE)
 
     # §3.5: baseload-SHAPED hourly demand (was flat scalar). Borrow the donor
     # EU country's electricity-baseload shape and rescale to the annual TWh,
     # scaled by the national-preference factor (_menaPrefNN suffix).
-    from clever.model import shape_h2_demand_from_baseload, shape_h2_demand_flat
+    from pommes_eur.model import shape_h2_demand_from_baseload, shape_h2_demand_flat
     annual_elec_mwh = elec_twh * 1e6 * pref_scale
     annual_h2_mwh   = h2_twh   * 1e6 * pref_scale
     donor = _MENA_SHAPE_DONOR.get(country, "ES")
@@ -900,8 +900,8 @@ def add_mena_country_area(energy_model: Any, country: str, eoles_costs: dict | N
         # finance_rate. Skipped (with a warning) if eoles_costs wasn't plumbed
         # through — keeps any non-standard caller backward-compatible.
         if eoles_costs is not None:
-            from clever.constants import BESS_SPECS
-            from clever.model import storage_costs_from_eoles
+            from pommes_eur.constants import BESS_SPECS
+            from pommes_eur.model import storage_costs_from_eoles
             for _bess, _spec in BESS_SPECS.items():
                 _cap_mw = MENA_BESS_POWER_CAP_MW_PER_COUNTRY.get(_bess, 0.0)
                 if _cap_mw <= 0.0:
@@ -1018,7 +1018,7 @@ def add_mena_country_area(energy_model: Any, country: str, eoles_costs: dict | N
             # reference parameters as clever.methane_h2_ccs, but using
             # ConversionTechnology (not CombinedTechnology) since there's
             # only one fuel mode here.
-            from clever.methane_h2_ccs import (
+            from pommes_eur.methane_h2_ccs import (
                 _CCS_EFFICIENCY, _CCS_CAPTURE_RATE,
                 _SMR_CAPEX_EUR_PER_KW, _ATR_CAPEX_EUR_PER_KW,
                 _CCS_FOM_EUR_PER_KW_YR, _SMR_VOM_EUR_PER_MWH,

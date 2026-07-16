@@ -54,7 +54,7 @@ if not hasattr(lp, "RESULTS_DIR") and hasattr(_df_root, "RESULTS_DIR"):
     lp.RESULTS_DIR = _df_root.RESULTS_DIR
 from pyarrow.lib import ArrowInvalid
 
-from clever.constants import HOURS_PER_YEAR, TWH_TO_MWH, AREA_TO_TYNDP
+from pommes_eur.constants import HOURS_PER_YEAR, TWH_TO_MWH, AREA_TO_TYNDP
 
 # ─────────────────────────────────────────────────────────────────────
 # Logging setup
@@ -1060,7 +1060,7 @@ def build_demand_for_countries(
 
     if output_dir is None:
         try:
-            from clever import DEMAND_DIR
+            from pommes_eur import DEMAND_DIR
             output_dir = Path(DEMAND_DIR)
         except ImportError:
             output_dir = clever_csv_dir / "demand_output"

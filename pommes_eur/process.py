@@ -29,7 +29,7 @@ Usage
 -----
 .. code-block:: python
 
-    from clever.process import process_clever_xlsx
+    from pommes_eur.process import process_clever_xlsx
 
     tables = process_clever_xlsx("Data_CLEVER.xlsx", output_dir="output")
     demand_df = tables["demand"]
@@ -46,8 +46,8 @@ from typing import Any, Optional
 import numpy as np
 import pandas as pd
 
-import clever
-from clever.constants import AREA_MAP
+import pommes_eur as clever
+from pommes_eur.constants import AREA_MAP
 
 logger = logging.getLogger(__name__)
 

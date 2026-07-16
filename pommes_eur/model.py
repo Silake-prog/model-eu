@@ -39,7 +39,7 @@ from pommes_craft import (
 from supplyforge.utils import _get_input_data_file
 
 # Import all constants from clever.constants
-from clever.constants import (
+from pommes_eur.constants import (
     AREA_MAP,
     MODEL_TO_SUPPLYFORGE,
     CLEVER_CAPACITY_TO_MODEL,
@@ -392,7 +392,7 @@ def _add_eu_resource_locks(area, country_code: str) -> None:
     code paths.
     """
     from pommes_craft import NetImport
-    from clever.constants import _BIOMETHANE_SCOPE, _NO_GAS, _MENA_OPTIM_ACTIVE_COUNTRIES
+    from pommes_eur.constants import _BIOMETHANE_SCOPE, _NO_GAS, _MENA_OPTIM_ACTIVE_COUNTRIES
 
     # Is there any real NetImport that will already flip p.net_import=True?
     # If not, skip locks entirely — adding them here would itself trigger the
@@ -984,7 +984,7 @@ def add_dispatchable_from_non_enr(
         # / etc. keep their CLEVER floors so cross-tech comparisons remain
         # internally consistent.
         if model_tech == "Gas":
-            from clever.constants import _GAS_FLOOR_LIFTED
+            from pommes_eur.constants import _GAS_FLOOR_LIFTED
             if _GAS_FLOOR_LIFTED and existing_capacity_mw > 0:
                 logger.info(
                     "Lifting Gas capacity floor for %s-%s (was %.1f MW): _nofloor scenario",
@@ -998,7 +998,7 @@ def add_dispatchable_from_non_enr(
         # The LP has Nuclear / Hydro / Biomethane CCGT / H2-CCGT / batteries /
         # load shedding as the only firm options. See methodology section.
         if model_tech in ("Gas", "Oil"):
-            from clever.constants import _NO_GAS
+            from pommes_eur.constants import _NO_GAS
             if _NO_GAS:
                 logger.info(
                     "Banning %s for %s-%s: _noGas scenario (no fossil methane)",
@@ -1136,7 +1136,7 @@ def add_dispatchable_from_non_enr(
         # CO₂ accounting: full combustion CO₂ already in natural_gas
         # import_price; bio_mode pays nothing for CO₂ (biogenic). No tech-
         # side adjustment needed for non-CCS CCGT/OCGT.
-        from clever.constants import _CCGT_EFF, _OCGT_EFF
+        from pommes_eur.constants import _CCGT_EFF, _OCGT_EFF
         eff = _CCGT_EFF if model_tech == "Gas" else _OCGT_EFF if model_tech == "Oil" else None
 
         # Defensive: §8.1 probes use a minimal mock Area without a real
@@ -1245,8 +1245,9 @@ def add_dispatchable_from_non_enr(
     #   3. The CLEVER loop above didn't already add Nuclear (e.g. a
     #      future CLEVER variant that does declare nuclear).
     import os as _os
-    from clever.constants import _is_nuclear_expandable
-    _scen_env = _os.environ.get("CLEVER_SCENARIO", "")
+    from pommes_eur.constants import _is_nuclear_expandable
+    from pommes_eur.scenario.env import current_scenario as _current_scenario
+    _scen_env = _current_scenario()
     if _is_nuclear_expandable(_scen_env):
         area_norm = normalize_country_code(country_code)
         country_headroom = EXPANSION_HEADROOM_BY_COUNTRY.get(area_norm, {})
@@ -2084,7 +2085,7 @@ def add_manual_interconnections(
     areas: dict[str, Area],
     interconnections: dict[tuple[str, str], dict],
 ) -> None:
-    from clever.constants import (
+    from pommes_eur.constants import (
         INVESTABLE_CORRIDOR_PAIRS,
         INVESTABLE_CORRIDOR_CAPEX_EUR_PER_MW,
         INVESTABLE_CORRIDOR_LIFE_SPAN_YR,
@@ -2303,7 +2304,7 @@ def _create_empty_energy_model(
     #   3. biomethane bus — drawn by BioCCGT (→ electricity) and ATR (→ hydrogen)
     # Auto-enabled whenever the scenario carries a _bioLow / _bioMed / _bioHigh suffix.
     if include_biomethane is None:
-        from clever.constants import _BIOMETHANE_SCOPE
+        from pommes_eur.constants import _BIOMETHANE_SCOPE
         include_biomethane = _BIOMETHANE_SCOPE is not None
     if include_biomethane:
         resources.append("biomethane")
@@ -2313,7 +2314,7 @@ def _create_empty_energy_model(
     # even when no other H₂-active suffix (e.g. _atr, _h2HIGH) is present.
     if not include_hydrogen:
         try:
-            from clever.mena_imports import mena_imports_enabled
+            from pommes_eur.mena_imports import mena_imports_enabled
             if mena_imports_enabled():
                 resources.append("hydrogen")
         except Exception:  # mena_imports unavailable at this import stage
@@ -2324,7 +2325,7 @@ def _create_empty_energy_model(
     # natural_gas is consumed by Gas (CCGT) and Oil (OCGT — methane-fired
     # peaker per EOLES). oil bus is future-facing — has supply (NetImport)
     # but no current consumer.
-    from clever.constants import _NO_GAS, _MENA_OPTIM_ACTIVE_COUNTRIES
+    from pommes_eur.constants import _NO_GAS, _MENA_OPTIM_ACTIVE_COUNTRIES
     # natural_gas stays in the model when MENA Variant B is active even under
     # _noGas: gas-free is an EU policy, not MENA's. MENA runs its own grid on
     # gas (its NG NetImport + CCGT are gated on this resource) and exports green
@@ -2432,24 +2433,24 @@ def _add_country_components(
     # No-op if CLEVER_SCENARIO doesn't carry a _bioLow / _bioMed / _bioHigh suffix.
     # See clever/biomethane.py:add_biomethane_to_area for the bundled-tech
     # capex/FOM/fuel-cost computation and the article methodology section.
-    from clever.biomethane import add_biomethane_to_area
+    from pommes_eur.biomethane import add_biomethane_to_area
     add_biomethane_to_area(area=area, country_code=country_code)
 
     # MENA H₂ imports — Variant A (NetImport on EU entry-point). No-op when
     # _menaH2NNN is absent or country_code is not in MENA_H2_ENTRY_SHARES.
     # Variant B (per-country MENA Areas) is wired separately in
     # create_multi_country_model_from_clever — see add_mena_to_model.
-    from clever.mena_imports import add_variant_a_imports_to_area
+    from pommes_eur.mena_imports import add_variant_a_imports_to_area
     add_variant_a_imports_to_area(area=area, country_code=country_code)
 
     # Phase 3: fossil-methane + oil supply (per-country NetImports). Skipped
     # under _noGas. Prices come from clever/data_fetchers.py (WB Pink Sheet),
     # with CO₂ adder layered on by clever/carbon_price.py. Oil bus has supply
     # but no current consumer — future-facing capability per refactor scope.
-    from clever.constants import _NO_GAS
+    from pommes_eur.constants import _NO_GAS
     if not _NO_GAS:
         from pommes_craft import NetImport
-        from clever.constants import natural_gas_import_price, oil_import_price
+        from pommes_eur.constants import natural_gas_import_price, oil_import_price
         with area.model.context():
             area.add_component(NetImport(
                 name="natural_gas_supply",
@@ -2471,7 +2472,7 @@ def _add_country_components(
     # bio_mode of either tech = BECCS (negative emissions).
     # Internally gated by `not _NO_GAS` + "hydrogen" in resources + at least
     # one of (natural_gas, biomethane) present.
-    from clever.methane_h2_ccs import add_h2_ccs_techs_to_area
+    from pommes_eur.methane_h2_ccs import add_h2_ccs_techs_to_area
     add_h2_ccs_techs_to_area(area=area, country_code=country_code)
 
     # ── Free-import lockdown (added 2026-05-26, redesigned 2026-05-27) ──
@@ -2831,7 +2832,7 @@ def create_multi_country_model_from_clever(
     # No-op when no _menaOptim* suffix is active. The pipeline names use the
     # "mena_h2_pipeline_{src}_{dst}" prefix so they don't collide with the
     # intra-EU "h2_pipeline" components added by supplyforge.
-    from clever.mena_imports import add_mena_to_model
+    from pommes_eur.mena_imports import add_mena_to_model
     add_mena_to_model(energy_model=energy_model, areas=areas, eoles_costs=eoles_costs)
 
     # Log build summary

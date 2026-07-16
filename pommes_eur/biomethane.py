@@ -37,7 +37,7 @@ from typing import Literal
 
 import pandas as pd
 
-from clever.fetch import fetch_enspreso_biomass
+from pommes_eur.fetch import fetch_enspreso_biomass
 
 logger = logging.getLogger(__name__)
 
@@ -415,7 +415,7 @@ def add_biomethane_to_area(
     """
     # Import here (not at module top) because clever.constants reads env vars
     # at import time, and we want late binding for tests.
-    from clever.constants import _BIOMETHANE_SCOPE, _ATR_ENABLED, _BIOMETHANE_ENSPRESO_SCENARIO
+    from pommes_eur.constants import _BIOMETHANE_SCOPE, _ATR_ENABLED, _BIOMETHANE_ENSPRESO_SCENARIO
 
     if _BIOMETHANE_SCOPE is None:
         return  # scenario doesn't have biomethane
@@ -426,11 +426,11 @@ def add_biomethane_to_area(
     # conversion_factor == 1, so the loss must sit on the input side) — and
     # (b) a GHG variable_cost = l/(1-l) × kgCH4/MWh × GWP100_biogenic × CO2
     # price, mirroring the (unrebated) fossil leak adder in constants.
-    from clever.constants import (
+    from pommes_eur.constants import (
         _BIO_CH4_LEAK_RATE, CH4_KG_PER_MWH_TH, CH4_GWP100_BIOGENIC,
         _TARGET_MODEL_YEAR,
     )
-    from clever.carbon_price import resolved_carbon_price
+    from pommes_eur.carbon_price import resolved_carbon_price
     _l = _BIO_CH4_LEAK_RATE
     _gross = 1.0 / (1.0 - _l)
     biomass_per_out_mwh = _BIOMASS_PER_BIOMETHANE_MWH * _gross

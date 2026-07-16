@@ -93,11 +93,11 @@ def _ccs_carbon_adjustment_per_mwh_h2(eff: float) -> float:
 
     Scales with whichever CO₂ trajectory is active via clever.carbon_price.
     """
-    from clever.constants import (
+    from pommes_eur.constants import (
         NATURAL_GAS_CO2_INTENSITY_T_PER_MWH_TH,
         _TARGET_MODEL_YEAR,
     )
-    from clever.carbon_price import resolved_carbon_price
+    from pommes_eur.carbon_price import resolved_carbon_price
 
     co2_price = resolved_carbon_price(year=_TARGET_MODEL_YEAR)
     return (
@@ -158,7 +158,7 @@ def add_h2_ccs_techs_to_area(area: Any, country_code: str) -> None:
     At least one of (natural_gas, biomethane) must be in resources; otherwise
     the tech has no fuel mode and would error.
     """
-    from clever.constants import _NO_GAS
+    from pommes_eur.constants import _NO_GAS
     if _NO_GAS:
         logger.debug(
             "add_h2_ccs_techs_to_area: _NO_GAS active — skipping SMR_CCS + ATR_CCS on %s",
@@ -188,7 +188,7 @@ def add_h2_ccs_techs_to_area(area: Any, country_code: str) -> None:
     # under a binding single-tech cap the LP would simply overflow into the
     # other, near-identical reformer). Framed as annual CO2-injection
     # realism: 1 GW_H2-CCS stores ~2.25 MtCO2/yr at CF~1.
-    from clever.constants import _CCS_CAP_GW_PER_COUNTRY
+    from pommes_eur.constants import _CCS_CAP_GW_PER_COUNTRY
     if _CCS_CAP_GW_PER_COUNTRY is not None:
         ccs_cap_mw = _CCS_CAP_GW_PER_COUNTRY * 1000.0 / 2.0
     else:

@@ -26,7 +26,7 @@ Usage
 -----
 .. code-block:: python
 
-    from clever.runner import (
+    from pommes_eur.runner import (
         load_hourly_total,
         build_demand_dict,
         build_solver_options,
@@ -74,9 +74,9 @@ from pommes.io.build_input_dataset import build_input_parameters
 from pommes.model.build_model import build_model
 from pommes.model.data_validation.dataset_check import check_inputs
 
-from clever.constants import PRICE_NUMERICAL_TOL, EOLES_LIFETIME
-from clever.constants import _ELECTRICITY_VOLL_OVERRIDE, _H2_VOLL_OVERRIDE
-from clever.constants import _PIPELINE_EUR_PER_MW_PER_KM
+from pommes_eur.constants import PRICE_NUMERICAL_TOL, EOLES_LIFETIME
+from pommes_eur.constants import _ELECTRICITY_VOLL_OVERRIDE, _H2_VOLL_OVERRIDE
+from pommes_eur.constants import _PIPELINE_EUR_PER_MW_PER_KM
 
 # Area centroids (lon, lat) — generated once from Natural Earth ne_110m
 # (largest-sub-polygon centroid; Malta manual). Used by
@@ -1333,7 +1333,7 @@ def run_model_without_ramping(
     # 1, 2, 3 in checklist_R0.md). Opt-in via r0_overrides_kwargs; default
     # behaviour is unchanged from before R0 (no override applied).
     if r0_overrides_kwargs is not None:
-        from clever.r0_overrides import apply_r0_overrides
+        from pommes_eur.r0_overrides import apply_r0_overrides
         logger.info("Applying R0 per-country overrides…")
         p = apply_r0_overrides(p, **r0_overrides_kwargs)
 
@@ -1401,7 +1401,7 @@ def run_model_without_ramping(
             if tech_dim in p.dims:
                 tech_names = list(p[tech_dim].values)
                 # Build a per-tech fallback array
-                from clever.constants import MODELTECH_TO_EOLES
+                from pommes_eur.constants import MODELTECH_TO_EOLES
                 per_tech_eol = {}
                 for tname in tech_names:
                     tstr = str(tname)

@@ -13,7 +13,7 @@ Usage in adequacy_clean.ipynb
 -----------------------------
 .. code-block:: python
 
-    from clever.r0_input_tables import build_r0_overrides_kwargs
+    from pommes_eur.r0_input_tables import build_r0_overrides_kwargs
 
     r0_kwargs = build_r0_overrides_kwargs(
         bundle_name=DEMANDFORGE_BUNDLE,
@@ -134,7 +134,7 @@ def build_r0_overrides_kwargs(
     # _storPxNNN scenario suffix: multiply storage POWER caps by NNN/100 (sensitivity on
     # the 316 GW deliverability constraint; energy caps untouched).
     import os as _os, re as _re
-    _mm = _re.search(r"_storPx(\d+)", _os.environ.get("CLEVER_SCENARIO", ""))
+    _mm = _re.search(r"_storPx(\d+)", __import__("pommes_eur.scenario.env", fromlist=["current_scenario"]).current_scenario())
     _storp_mult = (int(_mm.group(1)) / 100.0) if _mm else 1.0
 
     for p in (sov_path, capex_path, caps_path):

@@ -21,8 +21,7 @@ import urllib.request
 from pathlib import Path
 from typing import Optional
 
-import clever
-
+import pommes_eur as clever
 # ─────────────────────────────────────────────────────────────────────────
 # Constants
 # ─────────────────────────────────────────────────────────────────────────
