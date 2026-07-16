@@ -257,8 +257,8 @@ _VALID_SCENARIOS = {
     # Same gas-active HIGH variant but with _nofloor — lifts CLEVER's
     # politically-retained Gas existing-capacity floor (~22 GW EU-wide).
     # Lets the LP fully decommission residual Gas if economically irrational.
-    # Used in conjunction with the new SMR_CCS tech (clever/smr_ccs.py)
-    # added 2026-05-28: methane → H₂ with 90 % carbon capture, competes
+    # Used in conjunction with the SMR/ATR-CCS techs (clever/methane_h2_ccs.py,
+    # add_h2_ccs_techs_to_area): methane → H₂ with 90 % carbon capture, competes
     # head-to-head with ATR_biomethane on the H₂ bus.
     'R0_v1_nuke_bioHigh_atr_el700_corr2x_elecX180_h2HIGH_vreEXT_nofloor',
     # Same as above PLUS `_noElecFloor` (removes the tech-specific
