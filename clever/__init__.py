@@ -34,6 +34,7 @@ _SUBMODULES = (
     "costs", "costs.carbon_price",
     "sources", "sources.fetch", "sources.process", "sources.demand", "sources.data_fetchers",
     "model.build", "model.techs", "model.techs.biomethane", "model.techs.ccs", "model.techs.mena_imports",
+    "solve", "solve.runner", "solve.adequacy",
 )
 for _name in _SUBMODULES:
     try:
