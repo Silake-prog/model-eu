@@ -118,8 +118,8 @@ def test_facade_chain_shares_objects() -> None:
 # Cross-module imports that MUST stay inside function bodies (lazy) — promoting any of
 # these to module level reintroduces a hard circular import. (file, imported-module-substr)
 _LAZY_ONLY_EDGES = [
-    ("pommes_eur/data/overrides.py", "costs.carbon_price"),
-    ("pommes_eur/data/overrides.py", "sources.data_fetchers"),
+    ("pommes_eur/costs/fuel_prices.py", "costs.carbon_price"),
+    ("pommes_eur/costs/fuel_prices.py", "sources.data_fetchers"),
     ("pommes_eur/costs/carbon_price.py", "pommes_eur.constants"),
     ("pommes_eur/model/build.py", "model.techs.mena_imports"),
     ("pommes_eur/model/build.py", "model.techs.biomethane"),
