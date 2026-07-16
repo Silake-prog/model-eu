@@ -30,7 +30,7 @@ def _fetch_annual_h2_demand(
     and the dictionary entry "Coupled industry-electricity capacity-expansion".
     """
     try:
-        from supplyforge.h2_profiles import fetch_h2_demand_from_demandforge
+        from pommes_eur.providers.clever.h2_demand import fetch_h2_demand_from_demandforge
     except ImportError:
         # Fall back to direct DemandForge call (canonical path)
         from demandforge.load_projection.scenarios import load_bundle

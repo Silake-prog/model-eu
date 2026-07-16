@@ -127,17 +127,22 @@ from clever.runner import (
 #   analysis/post-processing helpers live under supplyforge.h2_analysis
 #   and supplyforge.h2_postprocess and should be imported on demand in a
 #   dedicated analysis notebook, not here.
+# Generic supply-side builders/costs stay in supplyforge (the generic data package).
 from supplyforge.create_pommes_craft_model import (
-    fetch_h2_demand_from_demandforge,
     add_hydrogen,
+    FIXED_COSTS as SF_FIXED_COSTS,
+    INVEST_COSTS as SF_INVEST_COSTS,
+    LIFETIMES as SF_LIFETIMES,
+)
+# CLEVER-specific H₂ glue now lives in pommes_eur (relocated from supplyforge so the model
+# depends on supplyforge only through the generic data loader).
+from pommes_eur.providers.clever.h2_demand import fetch_h2_demand_from_demandforge
+from pommes_eur.providers.clever.h2_network import (
     add_h2_interconnections,
     _find_component,           # used in §3.5 & §3.6.5 to detect CLEVER h2pp
     H2_PIPELINE_COSTS,
     H2_STORAGE_COSTS,
     H2_ADJACENCY,
-    FIXED_COSTS as SF_FIXED_COSTS,
-    INVEST_COSTS as SF_INVEST_COSTS,
-    LIFETIMES as SF_LIFETIMES,
 )
 
 from supplyforge.create_pommes_craft_model import (
@@ -151,7 +156,7 @@ from supplyforge.create_pommes_craft_model import (
 # "Component name 'h2_storage' already exists in area 'MA/DZ/TN/LY'").
 from clever.mena_imports import MENA_COUNTRY_CONFIG as _MENA_COUNTRY_CONFIG
 _MENA_AREA_CODES: frozenset[str] = frozenset(_MENA_COUNTRY_CONFIG.keys())
-from supplyforge.h2_analysis import cross_check_clever_totals   # §3.6 only
+from pommes_eur.providers.clever.h2_demand import cross_check_clever_totals   # §3.6 only
 
 # ── Logging / warnings ────────────────────────────────────────────
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -1083,7 +1088,7 @@ else:
     print("DemandForge H₂ disabled — coherence check skipped.")
 
 
-from supplyforge.create_pommes_craft_model import _component_factor_dict
+from pommes_eur.providers.clever.h2_network import _component_factor_dict
 # ══════════════════════════════════════════════════════════════════════
 # 3.6.5  H₂ ↔ electricity coupling verification
 # ══════════════════════════════════════════════════════════════════════
