@@ -29,7 +29,7 @@ document the flag vocabulary, and get a minimal reproducible env spec. See `READ
     `ccs.py`, `mena_imports.py`); `__init__` re-exports `build` lazily (PEP 562).
   - `solve/` — `runner.py` (solve + NetCDF), `adequacy.py`. `providers/` — `base.py`
     protocol, `eraa.py` stub, and `clever/` (the CLEVER case study: `provider.py`,
-    `dataset_overrides.py` + `override_inputs.py` — formerly the `r0_*` pipeline).
+    `dataset_calibration.py` + `calibration_inputs.py` — formerly the `r0_*` pipeline).
   - `constants.py` — top-level back-compat facade re-exporting parse+inputs+overrides.
   - Every old top-level module name (`inputs`, `model`, `runner`, `fetch`, …) remains a
     one-line `sys.modules` alias shim, so old `from clever.X import Y` imports keep working.

@@ -10,5 +10,5 @@
                    so ``from pommes_eur.constants import X`` keeps resolving.
 
 The CLEVER "R0" override pipeline moved to ``pommes_eur.providers.clever``
-(``dataset_overrides`` / ``override_inputs``); ``data/r0_*.py`` remain as compat shims.
+(``dataset_calibration`` / ``calibration_inputs``); ``data/r0_*.py`` remain as compat shims.
 """

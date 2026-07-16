@@ -1333,7 +1333,7 @@ def run_model_without_ramping(
     # 1, 2, 3 in checklist_R0.md). Opt-in via r0_overrides_kwargs; default
     # behaviour is unchanged from before R0 (no override applied).
     if r0_overrides_kwargs is not None:
-        from pommes_eur.providers.clever.dataset_overrides import apply_r0_overrides
+        from pommes_eur.providers.clever.dataset_calibration import apply_r0_overrides
         logger.info("Applying R0 per-country overrides…")
         p = apply_r0_overrides(p, **r0_overrides_kwargs)
 

@@ -42,7 +42,7 @@ ALLOWED_MISSING = {
 # Stable top-level module names (always resolvable — real modules now, alias shims after
 # they move into subpackages). Order irrelevant.
 ALL_MODULES = [
-    "constants", "inputs", "r0_input_tables", "r0_overrides",
+    "constants", "inputs", "r0_input_tables",
     "carbon_price", "data_fetchers", "fetch", "process", "demand",
     "scenario.resolved", "data.expansion", "data.vre_limits", "costs.fuel_prices",
     "biomethane", "methane_h2_ccs", "mena_imports", "model", "runner", "adequacy",

@@ -1,5 +1,5 @@
 """
-clever.r0_overrides — R0 per-country override pipeline.
+pommes_eur.providers.clever.dataset_calibration — CLEVER per-country dataset calibration.
 
 Role in pipeline
 ----------------
