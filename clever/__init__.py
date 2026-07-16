@@ -30,6 +30,8 @@ _SUBMODULES = (
     "model", "runner", "r0_input_tables", "r0_overrides",
     "scenario", "scenario.parse", "scenario.registry", "scenario.env", "scenario.resolved",
     "providers", "providers.base", "providers.clever", "providers.eraa",
+    "providers.clever.provider", "providers.clever.dataset_overrides", "providers.clever.override_inputs",
+    "providers.clever._appliers", "providers.clever._h2_demand", "providers.clever._min_bounds",
     "data", "data.inputs", "data.overrides", "data.expansion", "data.vre_limits", "data.r0_input_tables", "data.r0_overrides",
     "costs", "costs.carbon_price", "costs.fuel_prices",
     "sources", "sources.fetch", "sources.process", "sources.demand", "sources.data_fetchers",

@@ -1,10 +1,10 @@
-"""Compatibility shim: pommes_eur.r0_input_tables → pommes_eur.data.r0_input_tables.
+"""Compatibility shim: pommes_eur…r0_input_tables → pommes_eur.providers.clever.override_inputs.
 
-Kept so existing `from pommes_eur.r0_input_tables import X` / `from clever.r0_input_tables import X`
-(the generated launcher, notebooks, external code) keep resolving to the SAME module
-object after the reorg into pommes_eur/data/. Prefer importing pommes_eur.data.r0_input_tables.
+The CLEVER 'R0' pipeline was renamed and rehomed under the CLEVER provider. This alias
+keeps old `from clever.r0_input_tables import …` imports (the generated launcher, notebooks)
+resolving to the same module object. Prefer pommes_eur.providers.clever.override_inputs.
 """
 import sys
-from pommes_eur.data import r0_input_tables as _mod
+from pommes_eur.providers.clever import override_inputs as _mod
 
 sys.modules[__name__] = _mod

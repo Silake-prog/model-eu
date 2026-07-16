@@ -39,5 +39,6 @@ packages = [
     "pommes_eur.model.techs",
     "pommes_eur.solve",
     "pommes_eur.providers",
+    "pommes_eur.providers.clever",
     "clever",
 ]

@@ -1,10 +1,10 @@
-"""Compatibility shim: pommes_eur.r0_overrides → pommes_eur.data.r0_overrides.
+"""Compatibility shim: pommes_eur…r0_overrides → pommes_eur.providers.clever.dataset_overrides.
 
-Kept so existing `from pommes_eur.r0_overrides import X` / `from clever.r0_overrides import X`
-(the generated launcher, notebooks, external code) keep resolving to the SAME module
-object after the reorg into pommes_eur/data/. Prefer importing pommes_eur.data.r0_overrides.
+The CLEVER 'R0' pipeline was renamed and rehomed under the CLEVER provider. This alias
+keeps old `from clever.r0_overrides import …` imports (the generated launcher, notebooks)
+resolving to the same module object. Prefer pommes_eur.providers.clever.dataset_overrides.
 """
 import sys
-from pommes_eur.data import r0_overrides as _mod
+from pommes_eur.providers.clever import dataset_overrides as _mod
 
 sys.modules[__name__] = _mod
