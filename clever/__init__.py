@@ -28,7 +28,7 @@ _SUBMODULES = (
     "constants", "inputs", "overrides", "process", "fetch", "demand", "adequacy",
     "carbon_price", "data_fetchers", "biomethane", "methane_h2_ccs", "mena_imports",
     "model", "runner", "r0_input_tables", "r0_overrides",
-    "scenario", "scenario.parse", "scenario.registry", "scenario.env",
+    "scenario", "scenario.parse", "scenario.registry", "scenario.env", "scenario.resolved",
     "providers", "providers.base", "providers.clever", "providers.eraa",
     "data", "data.inputs", "data.overrides", "data.r0_input_tables", "data.r0_overrides",
     "costs", "costs.carbon_price",
