@@ -1,0 +1,28 @@
+# Minimal runtime dependencies for the clever model package.
+#
+# This is a code-only snapshot: the full solve additionally needs a Gurobi license,
+# the CLEVER data caches, and the POMMES framework (pommes / pommes_craft), which live
+# on the cluster and are NOT on PyPI — see below. The lightweight structural checks
+# (tests/golden/, tests/test_registry.py, tests/test_smoke_build.py's spec layer) run
+# with only `platformdirs` + the scientific stack.
+
+# -- always needed (import time / structural checks) --
+platformdirs
+
+# -- scientific stack (input assembly, model build) --
+numpy
+pandas
+polars
+pyarrow
+xarray
+
+# -- POMMES optimisation framework: NOT on PyPI --
+# Install from the upstream GitLab (access-gated):
+#   git.persee.minesparis.psl.eu/energy-alternatives/pommes
+# provides the `pommes` and `pommes_craft` importables.
+# pommes_craft
+# pommes
+
+# -- vendored, path-installed via PYTHONPATH (see README "Running") --
+# supplyforge  -> ./supplyforge
+# demandforge  -> ./demandforge
