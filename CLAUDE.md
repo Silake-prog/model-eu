@@ -15,12 +15,22 @@ document the flag vocabulary, and get a minimal reproducible env spec. See `READ
 
 ## Map of the code
 - `pommes_eur/` — the model package (formerly `clever`; `import clever` still works via the
-  `clever/` compat shim). Scenario layer: `scenario/parse.py` (flag parsers) +
-  `scenario/registry.py` (flag vocabulary + structural validation) + `scenario/env.py`
-  (`POMMES_EUR_SCENARIO`/`CLEVER_SCENARIO`). Inputs: `inputs.py` (static tables),
-  `overrides.py` (scenario-resolved values), `constants.py` (back-compat facade re-exporting
-  all three). Build/solve: `model.py` (POMMES LP), `runner.py` (solve + NetCDF). Data-source
-  seam: `providers/` (`base.py` protocol, `clever.py` adapter, `eraa.py` stub).
+  `clever/` compat shim). Concern-based subpackages:
+  - `scenario/` — `parse.py` (flag parsers) + `registry.py` (flag vocabulary + structural
+    validation) + `env.py` (`POMMES_EUR_SCENARIO`/`CLEVER_SCENARIO` resolution).
+  - `data/` — `inputs.py` facade over `_inputs_generic.py` (dataset-agnostic scalars) +
+    `_inputs_clever.py` (CLEVER/EOLES/PEMMDB tables); `overrides.py` (scenario-resolved
+    values); `r0_input_tables.py`, `r0_overrides.py` (CLEVER R0 pipeline).
+  - `costs/` — `carbon_price.py`. `sources/` — `fetch.py`, `process.py`, `demand.py`,
+    `data_fetchers.py` (data acquisition).
+  - `model/` — `build.py` (POMMES LP; formerly model.py) + `techs/` (`biomethane.py`,
+    `ccs.py`, `mena_imports.py`); `__init__` re-exports `build` lazily (PEP 562).
+  - `solve/` — `runner.py` (solve + NetCDF), `adequacy.py`. `providers/` — `base.py`
+    protocol, `clever.py` adapter, `eraa.py` stub.
+  - `constants.py` — top-level back-compat facade re-exporting parse+inputs+overrides.
+  - Every old top-level module name (`inputs`, `model`, `runner`, `fetch`, …) remains a
+    one-line `sys.modules` alias shim, so old `from clever.X import Y` imports keep working.
+    `pyproject.toml` declares the flat package (deps mirror `requirements.txt`).
 - `notebooks/adequacy_clean.ipynb` — the live driver; `jupyter nbconvert` turns it into
   `scripts/run_adequacy.py`, which the SLURM job (`scripts/sbatch_clever.sh`) executes.
   NOTE: the committed `run_adequacy.py` has diverged from the notebook (hand edits); treat the

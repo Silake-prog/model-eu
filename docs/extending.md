@@ -5,9 +5,9 @@ The golden snapshot (`tests/golden/`) proves existing scenarios still reproduce
 bit-identically after any change here, so extend with confidence.
 
 > Architecture in one line: a **scenario string** → `pommes_eur/scenario/parse.py` (parsers)
-> + `pommes_eur/scenario/registry.py` (flag vocabulary) → `pommes_eur/overrides.py` (resolved
-> values) + `pommes_eur/inputs.py` (static tables) → `pommes_eur/model.py` builds a
-> `pommes_craft.EnergyModel` → `pommes_eur/runner.py` solves + writes NetCDF.
+> + `pommes_eur/scenario/registry.py` (flag vocabulary) → `pommes_eur/data/overrides.py` (resolved
+> values) + `pommes_eur/data/inputs.py` (static tables) → `pommes_eur/model/build.py` builds a
+> `pommes_craft.EnergyModel` → `pommes_eur/solve/runner.py` solves + writes NetCDF.
 
 ## Add a new lever (scenario flag)
 
@@ -25,15 +25,15 @@ Example: a `_myLever42` knob.
    ```
    and add the field to `ScenarioSpec` + `parse_scenario`. That is all validation needs —
    no `_VALID_SCENARIOS` edit. Regenerate the docs: `python docs/gen_flags_doc.py`.
-3. **Wire the value** — read it where it applies (in `pommes_eur/overrides.py` for a resolved
-   global, or in `pommes_eur/model.py` where the LP is built).
+3. **Wire the value** — read it where it applies (in `pommes_eur/data/overrides.py` for a resolved
+   global, or in `pommes_eur/model/build.py` where the LP is built).
 
 ## Add a new technology
 
-Technology mappings are static tables in `pommes_eur/inputs.py`:
+Technology mappings are static tables in `pommes_eur/data/inputs.py`:
 `CLEVER_CAPACITY_TO_MODEL`, `CLEVER_NON_ENR_TO_MODEL`, `MODELTECH_TO_EOLES`,
 `EOLES_LIFETIME`, `FUEL_ADDER_2050`, `CLEVER_VRE_SPECS`. Add the tech to the relevant
-maps; if it is investable, add it to `EXPANDABLE_MODEL_TECHS` (in `pommes_eur/overrides.py`,
+maps; if it is investable, add it to `EXPANDABLE_MODEL_TECHS` (in `pommes_eur/data/overrides.py`,
 since expandability can be scenario-gated). The generic reference builder
 `supplyforge/supplyforge/create_pommes_craft_model.py` keeps its own clean
 `DISPATCHABLE_TECH_DICT` / `INTERMITTENT_TECH_DICT` — use those as the template for a
@@ -42,9 +42,9 @@ dataset-neutral tech registry.
 ## Add a region / country
 
 The country set is data-driven from `AREA_MAP` (+ `MANUAL_INTERCONNECTIONS`,
-`HYDRO_PEMMDB`, per-country tables) in `pommes_eur/inputs.py`. Adding a region means adding
+`HYDRO_PEMMDB`, per-country tables) in `pommes_eur/data/inputs.py`. Adding a region means adding
 its rows there and supplying its data. Non-EU regions already work through this seam:
-`pommes_eur/mena_imports.py` adds MA/DZ/TN/LY behind the `_menaOptim` flag. The provider
+`pommes_eur/model/techs/mena_imports.py` adds MA/DZ/TN/LY behind the `_menaOptim` flag. The provider
 `country_set()` hook (see below) is the intended single entry point for region membership.
 
 ## Add a data source (provider)

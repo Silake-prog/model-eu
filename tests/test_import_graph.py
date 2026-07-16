@@ -115,6 +115,46 @@ def test_facade_chain_shares_objects() -> None:
     assert c.AREA_MAP is inp.AREA_MAP
 
 
+# Cross-module imports that MUST stay inside function bodies (lazy) — promoting any of
+# these to module level reintroduces a hard circular import. (file, imported-module-substr)
+_LAZY_ONLY_EDGES = [
+    ("pommes_eur/data/overrides.py", "costs.carbon_price"),
+    ("pommes_eur/data/overrides.py", "sources.data_fetchers"),
+    ("pommes_eur/costs/carbon_price.py", "pommes_eur.constants"),
+    ("pommes_eur/model/build.py", "model.techs.mena_imports"),
+    ("pommes_eur/model/build.py", "model.techs.biomethane"),
+    ("pommes_eur/model/build.py", "model.techs.ccs"),
+    ("pommes_eur/model/techs/mena_imports.py", "pommes_eur.model import"),
+    ("pommes_eur/model/techs/mena_imports.py", "model.techs.ccs"),
+]
+
+
+def _module_level_import_lines(path: Path) -> list[str]:
+    """Return source lines of imports that are direct children of the module (not nested)."""
+    import ast
+
+    tree = ast.parse(path.read_text())
+    src = path.read_text().splitlines()
+    out = []
+    for node in tree.body:  # only module-level statements
+        if isinstance(node, (ast.Import, ast.ImportFrom)):
+            out.append(src[node.lineno - 1])
+    return out
+
+
+def test_cycle_edges_stay_lazy() -> None:
+    for rel, needle in _LAZY_ONLY_EDGES:
+        p = REPO_ROOT / rel
+        if not p.exists():
+            continue
+        offenders = [ln for ln in _module_level_import_lines(p) if needle in ln]
+        assert not offenders, (
+            f"{rel}: import of {needle!r} was promoted to module level "
+            f"(reintroduces a circular import). Keep it inside the function body.\n"
+            + "\n".join(offenders)
+        )
+
+
 def test_all_sources_compile() -> None:
     failures = []
     for pkg in ("pommes_eur", "clever"):
@@ -133,6 +173,7 @@ def _run_standalone() -> int:
         ("pure_modules_import", test_pure_modules_import),
         ("clever_alias_identity", test_clever_alias_identity),
         ("facade_chain_shares_objects", test_facade_chain_shares_objects),
+        ("cycle_edges_stay_lazy", test_cycle_edges_stay_lazy),
         ("all_sources_compile", test_all_sources_compile),
     ]:
         try:
