@@ -566,6 +566,7 @@ def _load_capacity_factor_slice_with_fallback(
     reference_year_weather: int,
     clever_tech: str,
     profile_candidates: list[str],
+    vre_raw: bool = False,
 ) -> tuple[pl.DataFrame, Optional[str], Optional[str]]:
     """Try loading VRE capacity factors with country and year fallbacks.
 
@@ -574,15 +575,25 @@ def _load_capacity_factor_slice_with_fallback(
     2. Try primary country with fallback years (2021, 2022, 2023)
     3. Try neighbouring countries (from VRE_PROFILE_FALLBACK_BY_COUNTRY) with requested year
     4. Try neighbouring countries with fallback years
+
+    ``vre_raw`` (PECD climate runs): the *year* IS the climate scenario, so the
+    historical year-fallback (2, 4) is disabled — only ``reference_year_weather``
+    is tried, per country. A missing PECD year then fails loudly (flat-profile
+    fallback) instead of silently substituting a historical weather year. The
+    neighbouring-country fallback (spatial) is kept.
     """
     search_countries = [country_code]
     fallback_cfg = VRE_PROFILE_FALLBACK_BY_COUNTRY.get(country_code, {})
     search_countries.extend(fallback_cfg.get(clever_tech, []))
 
-    # Build ordered list of (country, year) pairs to try
-    years_to_try = [reference_year_weather] + [
-        y for y in SUPPLYFORGE_FALLBACK_YEARS if y != reference_year_weather
-    ]
+    # Build ordered list of (country, year) pairs to try. In vre_raw (PECD) mode
+    # the climate year must never be swapped for a historical fallback year.
+    if vre_raw:
+        years_to_try = [reference_year_weather]
+    else:
+        years_to_try = [reference_year_weather] + [
+            y for y in SUPPLYFORGE_FALLBACK_YEARS if y != reference_year_weather
+        ]
 
     for candidate_country in search_countries:
         sf_candidate = to_supplyforge_code(candidate_country)
@@ -825,6 +836,7 @@ def add_dispatchable_from_non_enr(
     country_code: str,
     model_year: int,
     eoles_costs: dict[str, dict[str, float]],
+    no_nuke: bool = False,
 ) -> None:
     sub = pd.DataFrame()
     for candidate in _candidate_area_codes(country_code):
@@ -846,6 +858,11 @@ def add_dispatchable_from_non_enr(
     for _, row in sub.iterrows():
         model_tech = str(row["model_tech"]).strip()
         max_yearly_production_mwh = float(row["max_yearly_production_mwh"])
+
+        # _noNuke (fully-renewable mix): drop any existing CLEVER Nuclear fleet.
+        if no_nuke and model_tech == "Nuclear":
+            logger.info("noNuke: dropping existing Nuclear for %s-%s.", country_code, model_year)
+            continue
 
         eoles_tech = MODELTECH_TO_EOLES.get(model_tech)
         if eoles_tech is None:
@@ -1134,7 +1151,8 @@ def add_dispatchable_from_non_enr(
     from pommes_eur.constants import _is_nuclear_expandable
     from pommes_eur.scenario.env import current_scenario as _current_scenario
     _scen_env = _current_scenario()
-    if _is_nuclear_expandable(_scen_env):
+    # _noNuke (fully-renewable mix) overrides any _nuke force-injection.
+    if _is_nuclear_expandable(_scen_env) and not no_nuke:
         area_norm = normalize_country_code(country_code)
         country_headroom = EXPANSION_HEADROOM_BY_COUNTRY.get(area_norm, {})
         nuke_cap_mw = float(country_headroom.get("Nuclear", 0.0))
@@ -1629,6 +1647,7 @@ def add_intermittent_tech_from_clever(
     eoles_costs: dict[str, dict[str, float]],
     allow_profile_fallback_from_other_country: bool = True,
     skip_if_no_profile: bool = True,
+    vre_raw: bool = False,
 ) -> None:
     if clever_tech not in CLEVER_VRE_SPECS:
         raise ValueError(f"Unsupported CLEVER VRE technology: {clever_tech}")
@@ -1653,6 +1672,7 @@ def add_intermittent_tech_from_clever(
             reference_year_weather=reference_year_weather,
             clever_tech=clever_tech,
             profile_candidates=profile_candidates,
+            vre_raw=vre_raw,
         )
     else:
         capacity_factors = try_load_supplyforge_parquet(
@@ -1705,7 +1725,10 @@ def add_intermittent_tech_from_clever(
             cf_slice.select("capacity_factor")
             if "capacity_factor" in cf_slice.columns
             else cf_slice.select("availability"),
-            target_load_factor=target_load_factor,
+            # vre_raw (PECD climate runs): keep the profile AS-IS — both hourly
+            # shape AND annual level — so the climate-change signal in the CF
+            # level survives (target_load_factor=None is a no-op rescale).
+            target_load_factor=(None if vre_raw else target_load_factor),
             hours=hours,
             year_op=year_op,
         )
@@ -2175,7 +2198,19 @@ def _add_country_components(
     flex_ramp_up: float = np.nan,
     flex_ramp_down: float = np.nan,
     flex_variable_cost: float = np.nan,
+    vre_raw: Optional[bool] = None,
+    no_nuke: Optional[bool] = None,
 ) -> None:
+    # Auto-resolve the two PECD/mix levers from the process-global env + scenario
+    # when the caller doesn't force them (the model's established pattern). Both
+    # default OFF, so non-PECD runs are unchanged (golden byte-identical).
+    if vre_raw is None:
+        import os as _os
+        vre_raw = _os.environ.get("POMMES_EUR_VRE_RAW", "").strip().lower() in ("1", "true", "yes", "on")
+    if no_nuke is None:
+        from pommes_eur.scenario.parse import _parse_no_nuke as _pnn
+        from pommes_eur.scenario.env import current_scenario as _cs
+        no_nuke = _pnn(_cs())
     normalized_country = normalize_country_code(country_code)
 
     _log_country_adequacy_diagnostic(
@@ -2212,6 +2247,7 @@ def _add_country_components(
             capacity_mw=clever_capacity,
             target_load_factor=target_lf,
             eoles_costs=eoles_costs,
+            vre_raw=vre_raw,
         )
 
     add_dispatchable_from_non_enr(
@@ -2220,6 +2256,7 @@ def _add_country_components(
         country_code=country_code,
         model_year=model_year,
         eoles_costs=eoles_costs,
+        no_nuke=no_nuke,
     )
 
     # Biomethane bundle (Biomethane_CCGT + optional ATR_biomethane).

@@ -35,6 +35,7 @@ __all__ = [
     '_parse_no_elec_floor',
     '_parse_no_grid_exp',
     '_parse_no_gas',
+    '_parse_no_nuke',
     '_parse_mena_h2_cap',
     '_parse_mena_h2_cost',
     '_parse_mena_h2_cost_by_entry',
@@ -309,6 +310,18 @@ def _parse_no_gas(s: str) -> bool:
     H2-CCGT / batteries / load shedding as the only firm options.
     """
     return bool(_re.search(r"_noGas(?:_|$)", s))
+
+
+def _parse_no_nuke(s: str) -> bool:
+    """Return True if the scenario bans nuclear (`_noNuke` suffix).
+
+    Drops any existing CLEVER Nuclear fleet (e.g. FR) and suppresses the
+    `_nuke` force-injection, so no Nuclear ConversionTechnology is created in
+    any country. Combined with `_noGas`, this defines the *fully renewable*
+    supply mix (VRE + hydro + biomethane + H₂ storage/turbines for balancing)
+    used by the climate-adequacy study.
+    """
+    return bool(_re.search(r"_noNuke(?:_|$)", s))
 
 
 # ─── MENA H₂ imports (Phase 2.5) ─────────────────────────────────────

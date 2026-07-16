@@ -93,6 +93,7 @@ FLAG_REGISTRY: tuple[Flag, ...] = (
     Flag("noElecFloor", r"noElecFloor", "flag", "drop electrolyser deployment floor", _p._parse_no_elec_floor),
     Flag("noGridExp", r"noGridExp", "flag", "disable grid expansion", _p._parse_no_grid_exp),
     Flag("noGas", r"noGas", "flag", "methane ban", _p._parse_no_gas),
+    Flag("noNuke", r"noNuke", "flag", "nuclear ban (fully-renewable mix)", _p._parse_no_nuke),
     Flag("voll", r"voll\d+", "float", "electricity demand-response VoLL override", _p._parse_voll_override),
     # VRE / nuclear ceilings
     Flag("vreEXT", r"vreEXT", "flag", "VRE ceiling normal (extended)", _p._parse_vre_extended),
@@ -192,6 +193,7 @@ class ScenarioSpec:
     no_elec_floor: bool
     no_grid_expansion: bool
     no_gas: bool
+    no_nuke: bool
     mena_h2_import_cap_twh: float
     mena_h2_delivered_cost_eur_per_mwh: Optional[float]
     mena_h2_delivered_cost_by_entry: dict
@@ -234,6 +236,7 @@ def parse_scenario(s: str) -> ScenarioSpec:
         no_elec_floor=_p._parse_no_elec_floor(s),
         no_grid_expansion=_p._parse_no_grid_exp(s),
         no_gas=_p._parse_no_gas(s),
+        no_nuke=_p._parse_no_nuke(s),
         mena_h2_import_cap_twh=_p._parse_mena_h2_cap(s),
         mena_h2_delivered_cost_eur_per_mwh=_p._parse_mena_h2_cost(s),
         mena_h2_delivered_cost_by_entry=_p._parse_mena_h2_cost_by_entry(s),

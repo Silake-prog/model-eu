@@ -43,6 +43,7 @@ modifier or base-inherited gate resolved in `pommes_eur/scenario/resolved.py`).
 | `noElecFloor` | `noElecFloor` | flag | drop electrolyser deployment floor | `_parse_no_elec_floor` |
 | `noGridExp` | `noGridExp` | flag | disable grid expansion | `_parse_no_grid_exp` |
 | `noGas` | `noGas` | flag | methane ban | `_parse_no_gas` |
+| `noNuke` | `noNuke` | flag | nuclear ban (fully-renewable mix) | `_parse_no_nuke` |
 | `voll` | `voll\d+` | float | electricity demand-response VoLL override | `_parse_voll_override` |
 | `vreEXT` | `vreEXT` | flag | VRE ceiling normal (extended) | `_parse_vre_extended` |
 | `vreXXL` | `vreXXL` | flag | VRE ceiling doubled | `_parse_vre_xxl` |
@@ -66,4 +67,4 @@ modifier or base-inherited gate resolved in `pommes_eur/scenario/resolved.py`).
 | `menaCap` | `menaCap\d+` | int | MENA import cap scale (percent) | `_parse_mena_cap_scale` |
 | `menaPref` | `menaPref\d+` | int | MENA preference scale (percent) | `_parse_mena_pref_scale` |
 
-_44 flags declared._
+_45 flags declared._
