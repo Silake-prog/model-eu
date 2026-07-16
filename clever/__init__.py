@@ -30,6 +30,7 @@ _SUBMODULES = (
     "model", "runner", "r0_input_tables", "r0_overrides",
     "scenario", "scenario.parse", "scenario.registry", "scenario.env",
     "providers", "providers.base", "providers.clever", "providers.eraa",
+    "data", "data.inputs", "data.overrides", "data.r0_input_tables", "data.r0_overrides",
 )
 for _name in _SUBMODULES:
     try:

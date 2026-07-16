@@ -40,12 +40,12 @@ class CleverProvider:
         Non-EU regions are added by other providers (or by extending the tables); MENA
         (MA/DZ/TN/LY) already enters this set via the ``_menaOptim`` scenario flag.
         """
-        from pommes_eur.inputs import DEFAULT_KEEP_AREAS
+        from pommes_eur.data.inputs import DEFAULT_KEEP_AREAS
 
         return sorted(DEFAULT_KEEP_AREAS)
 
     def reference_year_weather(self, spec: ScenarioSpec) -> int:
-        from pommes_eur.inputs import DEFAULT_WEATHER_REF_YEAR
+        from pommes_eur.data.inputs import DEFAULT_WEATHER_REF_YEAR
 
         if self._weather_override is not None:
             return self._weather_override
