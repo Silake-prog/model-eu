@@ -42,6 +42,16 @@ document the flag vocabulary, and get a minimal reproducible env spec. See `READ
   lever/tech/region/dataset). `tests/` — no-solve safety net (golden reproduction, registry,
   smoke, rename-shim, provider-contract). Regenerate flags: `python docs/gen_flags_doc.py`.
 - `supplyforge/`, `demandforge/` — vendored data packages (imported by the model).
+  `supplyforge/` is the generic supply-side package in FLAT layout (the package root is
+  `supplyforge/` itself — the old nested `supplyforge/supplyforge/` copy was removed as it
+  shadowed this one on `sys.path`). It carries the PECD4.2/ERA5 climate integration
+  (`sources.py` `res_source: entsoe|era5|pecd`, `process/pecd/`, `fetch/pecd/`); the model
+  consumes it only through `supplyforge.utils._get_input_data_file` + `RESULTS_DIR`
+  (CLEVER-specific H₂ glue lives in `pommes_eur/providers/clever/{h2_network,h2_demand}.py`).
+  Raw PECD CSVs: `results/pecd_study/`. PYTHONPATH is now just
+  `"$ROOT:$ROOT/demandforge"` — the old `$ROOT/supplyforge` entry must be DROPPED
+  (`import supplyforge` resolves via the repo root; keeping the old entry makes
+  `supplyforge/tests/` shadow the repo's `tests/` package).
 
 ## How a run is defined
 Everything is encoded in the **scenario string** (parsed in `pommes_eur/scenario/`), e.g.

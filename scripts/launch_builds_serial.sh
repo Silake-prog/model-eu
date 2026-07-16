@@ -8,7 +8,7 @@ set -u
 AW=/home/aloret/DATA/brigode/clever-work
 PY=/home/aloret/.conda/envs/EOLES_POMMES/bin/python
 export CLEVER_WORK_ROOT=$AW MPLBACKEND=Agg GRB_LICENSE_FILE=/home/aloret/gurobi.lic
-export PYTHONPATH="$AW/supplyforge:$AW:$AW/demandforge"
+export PYTHONPATH="$AW:$AW/demandforge"
 export CLEVER_GRB_THREADS=${SLURM_CPUS_PER_TASK:-8} CLEVER_BUILD_ONLY=1
 cd $AW
 # discard any corrupted shared demand CSV from a prior concurrent run; the first

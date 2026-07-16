@@ -77,9 +77,8 @@ def build_calibration_inputs(
     ----------
     bundle_name : str
         DemandForge bundle name (e.g. ``"low_h2"``). Forwarded to
-        ``supplyforge.h2_profiles.build_all_sector_profiles`` (or
-        ``fetch_h2_demand_from_demandforge``) to retrieve per-country annual
-        H₂ demand for ``model_year``.
+        ``pommes_eur.providers.clever.h2_demand.fetch_h2_demand_from_demandforge``
+        to retrieve per-country annual H₂ demand for ``model_year``.
     countries : list[str]
         Country codes (e.g. ``["FR", "DE", ...]``) matching the POMMES bundle's
         ``area`` coord.

@@ -11,7 +11,7 @@
 ROOT=/home/aloret/DATA/brigode/clever-work
 PY=/home/aloret/.conda/envs/EOLES_POMMES/bin/python   # direct path (no mamba activate needed)
 export CLEVER_WORK_ROOT=$ROOT MPLBACKEND=Agg GRB_LICENSE_FILE=/home/aloret/gurobi.lic
-export PYTHONPATH="$ROOT/supplyforge:$ROOT:$ROOT/demandforge"
+export PYTHONPATH="$ROOT:$ROOT/demandforge"
 export CLEVER_SCENARIO=$SCEN CLEVER_GRB_THREADS=${SLURM_CPUS_PER_TASK:-16}
 cd $ROOT && mkdir -p logs results/diagnostics/$SCEN results/export/$SCEN results/figures/$SCEN
 srun $PY -u scripts/run_adequacy.py > logs/$SCEN.log 2>&1

@@ -15,7 +15,7 @@
 ROOT=/home/aloret/DATA/brigode/clever-work
 PY=/home/aloret/.conda/envs/EOLES_POMMES/bin/python
 export CLEVER_WORK_ROOT=$ROOT MPLBACKEND=Agg GRB_LICENSE_FILE=/home/aloret/gurobi.lic
-export PYTHONPATH="$ROOT/supplyforge:$ROOT:$ROOT/demandforge"
+export PYTHONPATH="$ROOT:$ROOT/demandforge"
 export CLEVER_GRB_THREADS=${SLURM_CPUS_PER_TASK:-32}
 export CLEVER_DIAG_ROOT=$ROOT/results/diagnostics
 export CLEVER_ENS_BASE="$ENS_BASE"

@@ -21,7 +21,7 @@ are intentionally excluded — see `.gitignore`.
 | `clever/` | compatibility shim — aliases `pommes_eur` so old `import clever` paths keep working |
 | `notebooks/` | driver notebooks — `adequacy_clean.ipynb` (nbconvert → `scripts/run_adequacy.py`) |
 | `scripts/` | cluster launchers — `sbatch_clever.sh` (SLURM), `submit_*.sh`, `run_scenarios_sequential.sh`, generated `run_adequacy.py` |
-| `supplyforge/` | supply-side data package (VRE profiles, hydro, NTCs, ENTSO-E fetchers); its `create_pommes_craft_model.py` is the generic ERAA-driven reference builder |
+| `supplyforge/` | generic supply-side data package (flat layout — the package root IS `supplyforge/`). VRE capacity factors selectable by source via `supplyforge/config/config.yaml`: `res_source: entsoe \| era5 \| pecd` (**PECD4.2** = climate-change scenarios, per GCM/SSP/year, via `process/pecd/` + `fetch/pecd/`; needs `cdsapi` + CDS credentials to fetch). `create_pommes_craft_model.py` is the generic reference builder. Raw PECD study CSVs live in `results/pecd_study/`. CLEVER-specific H₂ glue moved to `pommes_eur/providers/clever/{h2_network,h2_demand}.py` |
 | `demandforge/` | demand-side data package (load curves, ENTSO-E fetchers) |
 | `docs/` | `flags.md` (auto-generated scenario-flag vocabulary), `extending.md` (how to add a lever/tech/region/dataset) |
 | `tests/` | no-solve safety net — `golden/` (input reproduction), `test_registry.py`, `test_smoke_build.py`, `test_rename_shim.py` |
@@ -33,7 +33,9 @@ The full solve runs on the cluster under the `EOLES_POMMES` conda env (needs Gur
 
 ```bash
 export CLEVER_WORK_ROOT=<repo root>
-export PYTHONPATH="$CLEVER_WORK_ROOT/supplyforge:$CLEVER_WORK_ROOT:$CLEVER_WORK_ROOT/demandforge"
+# NOTE: since the supplyforge flat-layout merge, the package root is the repo root itself —
+# do NOT put $CLEVER_WORK_ROOT/supplyforge on the path (its tests/ dir would shadow ours).
+export PYTHONPATH="$CLEVER_WORK_ROOT:$CLEVER_WORK_ROOT/demandforge"
 export GRB_LICENSE_FILE=<path to gurobi.lic>      # NOT in this repo
 export ENTSOE_API_TOKEN=<your token>              # only needed for data fetching
 export POMMES_EUR_SCENARIO=<scenario string>      # or legacy CLEVER_SCENARIO; e.g. R0_v1_nuke_..._pipekm1000
