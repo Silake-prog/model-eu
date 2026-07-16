@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["supplyforge", "supplyforge.fetch", "supplyforge.fetch.pecd", "supplyforge.fetch.era5", "supplyforge.fetch.osm", "supplyforge.fetch.tools", "supplyforge.fetch.tools.visualisation", "supplyforge.process", "supplyforge.process.pecd", "supplyforge.process.era5"]
+
+[project]
+name = "supplyforge"
+version = "0.1.5"
+authors = [
+    { name = "Yassine Abdelouadoud", email = "yassine.abdelouadoud@minesparis.psl.eu" },
+    { name = "Simon Brigode", email = "simon.brigode@ehess.fr" }
+]
+description = "A Snakemake workflow to generate country-level electricity supply datasets."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pandas",
+    "polars",
+    "pyarrow",
+    "entsoe-py",
+    "elexon-bmrs",
+    "pommes_craft",
+    "fastexcel",
+    "python-dotenv",
+    "platformdirs",
+    "plotly",
+    "cdsapi"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+license = {file = "LICENSE"}
+
+[project.optional-dependencies]
+viz = ["geopandas", "matplotlib"]   # optional: maps.choropleth / load_geodataframe plotting helpers
+era5 = ["atlite", "rioxarray", "geopandas"]   # optional: raw-ERA5 + atlite engine (res_source=era5)
+
+[project.urls]
+"Homepage" = "https://git.persee.minesparis.psl.eu/energy-alternatives/supplyforge"
+"Bug Tracker" = "https://git.persee.minesparis.psl.eu/energy-alternatives/supplyforge/-/issues"

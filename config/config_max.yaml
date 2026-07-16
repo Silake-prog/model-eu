@@ -1,0 +1,65 @@
+# Configuration file for DemandForge data fetching
+
+# Countries to process (using CNTR_ID from country_borders.gpkg)
+countries:
+  - AL  # Albania
+  - AT  # Austria
+  - BE  # Belgium
+  - BA  # Bosnia and Herzegovina
+  - BG  # Bulgaria
+  - HR  # Croatia
+  - CY  # Cyprus
+  - CZ  # Czech Republic
+  - DK  # Denmark
+  - EE  # Estonia
+  - FI  # Finland
+  - FR  # France
+  - GE  # Georgia
+  - DE  # Germany
+  - GR  # Greece
+  - HU  # Hungary
+  - IS  # Iceland
+  - IE  # Ireland
+  - IT  # Italy
+  - LV  # Latvia
+  - LT  # Lithuania
+  - LU  # Luxembourg
+  - MD  # Moldova
+  - ME  # Montenegro
+  - NL  # Netherlands
+  - MK  # North Macedonia
+  - "NO"  # Norway
+  - PL  # Poland
+  - PT  # Portugal
+  - RO  # Romania
+  - RS  # Serbia
+  - SK  # Slovakia
+  - SI  # Slovenia
+  - ES  # Spain
+  - SE  # Sweden
+  - CH  # Switzerland
+  - UK  # United Kingdom
+
+
+# Years to process
+years:
+  - 2005
+  - 2006
+  - 2007
+  - 2008
+  - 2009
+  - 2010
+  - 2011
+  - 2012
+  - 2013
+  - 2014
+  - 2015
+  - 2016
+  - 2017
+  - 2018
+  - 2019
+  - 2020
+  - 2021
+  - 2022
+  - 2023
+  - 2024

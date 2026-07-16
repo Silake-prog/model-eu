@@ -1,0 +1,114 @@
+# =============================================================================
+# What drives ELECTRICITY PRICES IN BELGIUM — scenario configuration
+# =============================================================================
+# Drives notebooks/electricity_price_factors.ipynb (engine: supplyforge.price_study).
+#
+# The study is a HYBRID:
+#   * STRUCTURAL — a multi-country merit-order model (real ERAA fleet + fuel/CO2
+#     prices + real ENTSO-E demand + PECD weather + Ember interconnection) whose
+#     hourly clearing price is the dual of the energy-balance constraint, and
+#   * EMPIRICAL — a comparison against the real ENTSO-E day-ahead price where it
+#     is available (cached parquet / shared bucket / ENTSOE token).
+#
+# `focus` picks the country the notebook zooms in on (Belgium). Belgium is small,
+# gas+nuclear, and one of Europe's most interconnected zones, so its price is set
+# partly at home (gas, nuclear, demand) and partly imported from neighbours (cheap
+# French nuclear, German/Dutch gas) across the interconnectors — exactly what the
+# scenarios below let you pull apart.
+#
+# `scenarios:` is the heart: each named scenario inherits `base` and overrides one
+# or more FACTORS. Re-run the notebook, read off how each driver moves Belgium's
+# price. Edit anything here — it is meant to be changed.
+#
+# All data the default config needs is KEYLESS (public ERAA archive, public
+# ENTSO-E Power-Statistics load CSV, cached PECD weather), so the notebook is
+# shareable and runs WITHOUT an ENTSO-E API token. A token only enriches the
+# empirical (real-price) half.
+# =============================================================================
+
+run:
+  # The country to analyse in depth. All single-country panels zoom in on this.
+  focus: BE
+
+  # Countries in the coupled market (ISO-2, project convention: UK not GB).
+  # Belgium first, then its electrical neighbours + the price-setting periphery.
+  countries: [BE, FR, DE, NL, LU, AT, CH, ES, PL]
+
+  # The reanalysis year — drives REAL demand (ENTSO-E Power-Stats) and, when
+  # available, real day-ahead prices. Weather (PECD) is set by climate_year below.
+  year: 2023
+
+  # Representative hours actually solved. 8760 = full year (slow, minutes).
+  # A stride samples every Nth hour (each stands for `stride` hours, weighted up
+  # to the full year by the model). ~180 sampled hours (stride 48) keeps a single
+  # scenario to a few seconds; set to 1 for a full-year publication run.
+  hour_stride: 48
+
+  # ERAA 2024 vintage used for the fleet and commodity prices. ERAA's earliest
+  # target year is 2026, so a 2023 reanalysis uses the 2026 prospective system
+  # as its closest real fleet (documented approximation; bump for a forward study).
+  eraa_target_year: 2026
+  eraa_data_version: Final        # 'Final' or 'Pre-CfE'
+
+  # PECD climate (weather) year for the wind/solar capacity factors. Cached
+  # keyless options: 2008 (historical reanalysis) or 2050 (projection). The
+  # structural price-attribution conclusions are weather-robust; pick 2008.
+  climate_year: 2008
+
+# -----------------------------------------------------------------------------
+# Base commodity prices (EUR per GJ of fuel; CO2 in EUR per tonne). Left null to
+# read the ERAA value for eraa_target_year; set a number to override globally.
+# These are the levers the `gas`/`co2` scenarios pull. Fuel & CO2 prices are
+# EU-wide commodities, so they always apply to every country.
+# -----------------------------------------------------------------------------
+commodities:
+  gas_eur_per_gj: null            # null -> ERAA "Natural Gas"
+  coal_eur_per_gj: null           # null -> ERAA "Hard coal"
+  lignite_eur_per_gj: null        # null -> ERAA lignite (group default)
+  oil_eur_per_gj: null            # null -> ERAA "Light oil"
+  biomass_eur_per_gj: 8.0         # ERAA has no single biomass fuel price; assume
+  co2_eur_per_t: null             # null -> ERAA "CO2 price"
+
+# -----------------------------------------------------------------------------
+# Scenarios. `base` is the reference run; every other inherits `base` and
+# overrides only the factors it names. The notebook runs them all and reports the
+# price delta vs base for Belgium (the factor-attribution / tornado view).
+#
+# Factor knobs:
+#   gas_eur_per_gj / co2_eur_per_t : ABSOLUTE commodity-price overrides (EU-wide)
+#   demand_scale     : x hourly demand
+#   nuclear_avail    : de-rate (<1) or boost (>1) firm nuclear capacity
+#   coal_avail       : de-rate coal+lignite capacity (phase-out)
+#   res_scale        : x solar + wind capacity
+#   ntc_scale        : x interconnection capacity (grid expansion / outage)
+#   apply_to         : [list] -> restrict the CAPACITY/DEMAND/NTC knobs to these
+#                      countries (fuel/CO2 stay EU-wide). Lets you separate a
+#                      Belgium-domestic shock from a system-wide one.
+# -----------------------------------------------------------------------------
+scenarios:
+  base: {}
+
+  # --- System-wide commodity shocks (reach Belgium via its gas plants + imports)
+  gas_crisis:        {gas_eur_per_gj: 90.0}    # 2022-style gas spike
+  cheap_gas:         {gas_eur_per_gj: 10.0}
+  high_co2:          {co2_eur_per_t: 150.0}
+  no_co2:            {co2_eur_per_t: 0.0}
+
+  # --- Belgium-DOMESTIC shocks (apply_to: [BE]) — pure home-grown effects
+  be_nuclear_outage: {nuclear_avail: 0.0, apply_to: [BE]}   # Doel/Tihange offline
+  be_nuclear_half:   {nuclear_avail: 0.5, apply_to: [BE]}
+  be_cold_snap:      {demand_scale: 1.15, apply_to: [BE]}   # Belgian demand peak
+  be_offshore_boom:  {res_scale: 2.0,    apply_to: [BE]}    # North Sea wind build-out
+  be_renewables:     {res_scale: 1.8,    apply_to: [BE]}    # optimised high-RES BE (+80% wind & solar)
+
+  # --- Belgium's coupling to neighbours (interconnection)
+  be_isolation:      {ntc_scale: 0.0, apply_to: [BE]}       # all BE borders cut
+  be_more_interco:   {ntc_scale: 1.5, apply_to: [BE]}       # +50% BE interconnection
+
+  # --- Neighbour shocks that spill INTO Belgium
+  fr_nuclear_outage: {nuclear_avail: 0.5, apply_to: [FR]}   # French nuclear crunch
+  de_coal_phaseout:  {coal_avail: 0.0,    apply_to: [DE, PL]}
+
+  # --- System-wide (everyone) for comparison
+  cold_snap:         {demand_scale: 1.15}
+  res_boom:          {res_scale: 2.0}

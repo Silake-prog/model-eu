@@ -1,0 +1,38 @@
+# --- solver / model outputs (never commit; regenerable, huge) ---
+results/
+results_ensemble/
+diagnostics/
+*.nc
+*.parquet
+logs/
+*.log
+slurm_*.out
+data_cache/
+
+# --- secrets / licenses (NEVER commit) ---
+gurobi*.lic
+*.lic
+.env
+.env.*
+*_secret*
+*credentials*
+
+# --- python ---
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+
+# --- editor / OS junk ---
+.DS_Store
+*~
+*.bak
+*.bak.old
+*.py.txt
+.idea/
+.vscode/

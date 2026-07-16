@@ -1,0 +1,129 @@
+# Configuration file for DemandForge data fetching
+
+# Countries to process (using CNTR_ID from country_borders.gpkg)
+countries:
+  - AL  # Albania
+  - AT  # Austria
+  - BE  # Belgium
+  - BG  # Bulgaria
+  - HR  # Croatia
+  - CY  # Cyprus
+  - CZ  # Czech Republic
+  - DK  # Denmark
+  - EE  # Estonia
+  - FI  # Finland
+  - FR  # France
+  - GE  # Georgia
+  - DE  # Germany
+  - GR  # Greece
+#  - HU  # Hungary
+  - IS  # Iceland
+  - IE  # Ireland
+  - IT  # Italy
+  - LV  # Latvia
+  - LT  # Lithuania
+  - LU  # Luxembourg
+  - MD  # Moldova
+  - ME  # Montenegro
+  - NL  # Netherlands
+  - MK  # North Macedonia
+  - "NO"  # Norway
+#  - PL  # Poland
+  - PT  # Portugal
+  - RO  # Romania
+  - RS  # Serbia
+  - SK  # Slovakia
+  - SI  # Slovenia
+  - ES  # Spain
+  - SE  # Sweden
+  - CH  # Switzerland
+  - UK  # United Kingdom
+
+
+# Years to process
+years:
+  - 2005
+  - 2006
+  - 2007
+  - 2008
+  - 2009
+  - 2010
+  - 2011
+  - 2012
+  - 2013
+  - 2014
+  - 2015
+  - 2016
+  - 2017
+  - 2018
+  - 2019
+  - 2020
+  - 2021
+  - 2022
+  - 2023
+  - 2024
+
+
+# =============================================================================
+# Weather-data source selectors  (PECD 4.2 / raw-ERA5 integration)
+# -----------------------------------------------------------------------------
+# The two selectors below are ORTHOGONAL and BACKWARD-COMPATIBLE: if they are
+# absent the pipeline behaves exactly as before (everything from ENTSO-E).
+# See README.md / AGENTS.md for the full data-source matrix.
+# =============================================================================
+
+# Wind & solar capacity factors:  entsoe | era5 | pecd
+#   entsoe -> observed ENTSO-E generation / installed capacity (default, unchanged)
+#   pecd   -> PECD 4.2 CDS product (ERA5-historical or CMIP6 projection)
+#   era5   -> raw-ERA5 -> atlite conversion   (Phase 2 - not yet implemented)
+res_source: entsoe
+
+# Reservoir inflow + run-of-river:  auto | entsoe | pecd
+#   auto   -> follow res_source when it can supply hydro (pecd->pecd, entsoe->entsoe);
+#             falls back to entsoe when res_source == era5 (raw ERA5 cannot make inflows)
+#   entsoe -> water-balance reconstruction (hydro_inflow.py) + ENTSO-E RoR CF
+#   pecd   -> PECD HRI reservoir inflow + PECD-derived RoR CF
+hydro_source: auto
+
+# --- PECD 4.2 (used iff res_source == pecd OR resolved hydro_source == pecd) ---
+# Keys map 1:1 to the CDS `sis-energy-pecd` API request fields. Use the exact
+# API enum strings (documented in supplyforge/fetch/pecd.py).
+pecd:
+  pecd_version: pecd4_2
+  temporal_period: historical        # historical | future_projections  (NB plural for projections)
+  origin: era5_reanalysis            # era5_reanalysis OR a climate-model id for projections
+                                     #   (cmcc_cm2_sr5|ec_earth3|mpi_esm1_2_hr|awi_cm_1_1_mr|bcc_csm2_mr|mri_esm2_0)
+  emission_scenario: null            # required iff temporal_period == future_projections
+                                     #   (ssp1_2_6|ssp2_4_5|ssp3_7_0|ssp5_8_5)
+  file_version: fv1                  # fv1 | fv2  (use fv2 for bcc_csm2_mr+ssp2_4_5 wind, MENA)
+  spatial_resolution_wind: peon      # peon|p2on onshore; peof|p2of offshore (NUT0 wind is deprecated)
+  spatial_resolution_solar: szon     # szon | nuts_0 | peon ...  (nuts_0 preferred when available)
+  # hydro is SZON-only (fixed by the dataset)
+  wind_technology_onshore: "30"      # existing onshore fleet
+  wind_technology_offshore: "20"     # existing offshore fleet
+  energy_scenario: resource_grade_b  # ReGrA/ReGrB -> resource_grade_a|resource_grade_b
+  climate_years: [2008, 2009, 2012]  # -> CDS `year`; weather years to fetch & expose (also the WS label)
+  variables_hydro:                   # API long names (data codes: HRI/HRR/HPI/HOL)
+    - hydropower_reservoir_inflow
+    - hydropower_run_of_river_inflow
+    - hydropower_run_of_river_with_pondage_inflow
+    - hydropower_open_loop_pumped_storage_inflow
+  use_hol_for_phs: false             # D4 (default off): fetch HOL but do not change PHS modelling
+  ror_source: pecd                   # D3 (resolved: pecd): entsoe | pecd  -> how to build RoR CF
+  # Optional precise per-zone wind/solar weights (else equal-weight over non-empty zones):
+  #   zone_capacities:               # MW per PECD zone (from the PECD onshore/offshore run workbooks)
+  #     wind_onshore:  {FR01: 1200, FR02: 800}
+  #     wind_offshore: {FR081_OFF: 1500}
+  #     solar:         {FR00: 9000, FR15: 300}
+  # zone_capacities_csv: path/to/zone_caps.csv   # columns: zone, technology, capacity_mw
+
+# --- Raw-ERA5 engine (Phase 2 - used iff res_source == era5; ignored otherwise) ---
+era5:
+  climate_years: [2008, 2009, 2012]  # keep equal to pecd.climate_years for climate-consistent scenarios
+  hub_height_m: 100
+  turbine_onshore: Vestas_V112_3MW
+  turbine_offshore: NREL_ReferenceTurbine_5MW_offshore
+  pv_panel: CSi
+  pv_orientation: {slope: 35, azimuth: 180}
+  land_use_masks: true
+  bias_correction: gwa2              # gwa2 | none  (GWA delta correction; ERA5 wind biased in complex terrain)
