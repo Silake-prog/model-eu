@@ -38,7 +38,7 @@ def _compute_electrolyser_min_bounds(
     for area in countries:
         if area not in sov_by_area:
             logger.warning(
-                "r0_input_tables: no sovereignty row for %r; min bound = 0", area
+                "calibration_inputs: no sovereignty row for %r; min bound = 0", area
             )
             continue
 
@@ -65,7 +65,7 @@ def _compute_electrolyser_min_bounds(
         if capacity_mw > 0:
             bounds[area] = capacity_mw / 1000.0  # GW
             logger.info(
-                "r0_input_tables: %s electrolyser min = %.2f GW "
+                "calibration_inputs: %s electrolyser min = %.2f GW "
                 "(factor=%s, demand=%.1f TWh, LF=%.2f, abs_floor=%s MW)",
                 area, bounds[area],
                 f"{factor:.2f}" if pd.notna(factor) else "—",

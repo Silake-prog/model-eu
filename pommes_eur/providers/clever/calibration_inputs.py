@@ -6,16 +6,16 @@ Role in pipeline
 ----------------
 Reads the three R0-policy CSV tables under ``tables/R0/`` and the live
 DemandForge H₂ demand for the current bundle/year, computes the sovereignty-
-anchored electrolyser min bounds, and returns a single ``r0_overrides_kwargs``
+anchored electrolyser min bounds, and returns a single ``dataset_calibration_kwargs``
 dict ready to pass to ``clever.runner.run_model_without_ramping``.
 
 Usage in adequacy_clean.ipynb
 -----------------------------
 .. code-block:: python
 
-    from pommes_eur.providers.clever.calibration_inputs import build_r0_overrides_kwargs
+    from pommes_eur.providers.clever.calibration_inputs import build_calibration_inputs
 
-    r0_kwargs = build_r0_overrides_kwargs(
+    calibration_kwargs = build_calibration_inputs(
         bundle_name=DEMANDFORGE_BUNDLE,
         countries=COUNTRIES_MODELLED,
         model_year=MODEL_YEAR,
@@ -24,7 +24,7 @@ Usage in adequacy_clean.ipynb
 
     linopy_model = run_model_without_ramping(
         ...,
-        r0_overrides_kwargs=r0_kwargs,
+        dataset_calibration_kwargs=calibration_kwargs,
     )
 
 Design notes
@@ -60,7 +60,7 @@ from pommes_eur.providers.clever._h2_demand import _fetch_annual_h2_demand  # no
 from pommes_eur.providers.clever._min_bounds import _compute_electrolyser_min_bounds  # noqa: E402
 
 
-def build_r0_overrides_kwargs(
+def build_calibration_inputs(
     bundle_name: str,
     countries: list[str],
     model_year: int,
@@ -71,7 +71,7 @@ def build_r0_overrides_kwargs(
     hydrogen_load_shedding_cost_eur_per_mwh: float = 30_000.0,
 ) -> dict:
     """
-    Build the ``r0_overrides_kwargs`` payload from CSVs + DemandForge.
+    Build the ``dataset_calibration_kwargs`` payload from CSVs + DemandForge.
 
     Parameters
     ----------
@@ -95,7 +95,7 @@ def build_r0_overrides_kwargs(
         capacity. If None, read per-row from the sovereignty CSV's
         ``load_factor_assumption`` column.
     electrolyser_invest_cost_eur_per_kw : float
-        Pass-through; default 500 €/kW. See ``r0_overrides`` units comment for
+        Pass-through; default 500 €/kW. See ``dataset_calibration`` units comment for
         the POMMES-H₂-output convention.
     hydrogen_load_shedding_cost_eur_per_mwh : float
         Pass-through; default 30 000 €/MWh (matches electricity VOLL).
@@ -103,7 +103,7 @@ def build_r0_overrides_kwargs(
     Returns
     -------
     dict
-        Ready to splat into ``run_model_without_ramping(r0_overrides_kwargs=...)``.
+        Ready to splat into ``run_model_without_ramping(dataset_calibration_kwargs=...)``.
     """
     # ── Fallback for sensitivity-suffix scenarios ────────────────────
     # New SCENARIO suffixes (_bioLow, _bioMed, _bioHigh, _atr, _elNNN, _h2HIGH)
@@ -128,7 +128,7 @@ def build_r0_overrides_kwargs(
         if fallback.exists() and fallback != tables_dir:
             import logging as _lg_local
             _lg_local.getLogger(__name__).info(
-                "r0_input_tables: tables_dir %s missing — falling back to %s",
+                "calibration_inputs: tables_dir %s missing — falling back to %s",
                 tables_dir, fallback,
             )
             tables_dir = fallback
@@ -190,7 +190,7 @@ def build_r0_overrides_kwargs(
     )
 
     logger.info(
-        "r0_input_tables: built kwargs for %d countries — "
+        "calibration_inputs: built kwargs for %d countries — "
         "%d electrolyser min bounds, %d storage CAPEX rows, %d cap rows",
         len(countries),
         len(electrolyser_min_bounds_gw),

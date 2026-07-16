@@ -41,7 +41,7 @@ Design notes
 * Capacity caps (``*_capacity_investment_max``) are standalone bounds — no
   annuity propagation required.
 
-* Pre-solve sandbox validation: the module includes ``validate_overrides()``
+* Pre-solve sandbox validation: the module includes ``validate_calibration()``
   which sanity-checks every overridden variable's shape, dtype, and bounds
   (``investment_min ≤ investment_max``, annuity ≥ 0, etc.) before the dataset
   is returned. Tripping the validation raises rather than silently producing
@@ -51,13 +51,13 @@ Usage
 -----
 .. code-block:: python
 
-    from pommes_eur.providers.clever.dataset_calibration import apply_r0_overrides
+    from pommes_eur.providers.clever.dataset_calibration import apply_dataset_calibration
 
     # Default usage — applies only the electrolyser CAPEX bump (sub-task 2):
-    p = apply_r0_overrides(p)
+    p = apply_dataset_calibration(p)
 
     # With sovereignty-anchored min bounds (sub-task 1):
-    p = apply_r0_overrides(
+    p = apply_dataset_calibration(
         p,
         electrolyser_min_bounds_gw={"FR": 25.0, "DE": 12.0, ...},
     )
@@ -66,7 +66,7 @@ Usage
     import pandas as pd
     capex_df = pd.read_csv("tables/R0/h2_underground_storage_capex_by_country.csv")
     caps_df = pd.read_csv("tables/R0/h2_underground_storage_capacity_caps_by_country.csv")
-    p = apply_r0_overrides(
+    p = apply_dataset_calibration(
         p,
         electrolyser_min_bounds_gw={"FR": 25.0, "DE": 12.0, ...},
         storage_capex_by_area=capex_df,
@@ -80,8 +80,8 @@ In ``clever/runner.py::run_model_without_ramping``, between line 913
 (``p = check_inputs(p)``) and line 984 (``p = sanitize_absent_conversions(p)``),
 insert::
 
-    if r0_overrides is not None:
-        p = apply_r0_overrides(p, **r0_overrides)
+    if dataset_calibration_kwargs is not None:
+        p = apply_dataset_calibration(p, **dataset_calibration_kwargs)
 """
 from __future__ import annotations
 
@@ -118,7 +118,7 @@ from pommes_eur.providers.clever._appliers import (  # noqa: E402
 )
 
 
-def apply_r0_overrides(
+def apply_dataset_calibration(
     p: xr.Dataset,
     *,
     electrolyser_invest_cost_eur_per_kw: float = ELECTROLYSER_INVEST_COST_EUR_PER_KW,
@@ -198,7 +198,7 @@ def apply_r0_overrides(
 
     # ── 6. Post-override validation ────────────────────────────────────
     if not skip_validation:
-        validate_overrides(p)
+        validate_calibration(p)
 
     return p
 
@@ -213,7 +213,7 @@ def apply_r0_overrides(
 # ═════════════════════════════════════════════════════════════════════
 
 
-def validate_overrides(p: xr.Dataset) -> None:
+def validate_calibration(p: xr.Dataset) -> None:
     """
     Post-override sanity checks. Raises ValueError if any check fails.
 
@@ -274,4 +274,4 @@ def validate_overrides(p: xr.Dataset) -> None:
             "R0 override validation failed:\n  - " + "\n  - ".join(errors)
         )
 
-    logger.info("r0_overrides: validate_overrides passed")
+    logger.info("dataset_calibration: validate_calibration passed")

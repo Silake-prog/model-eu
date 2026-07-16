@@ -1,7 +1,7 @@
 """pommes_eur.providers.clever._appliers — the R0 per-country override mutators.
 
 The five in-place mutators applied to the assembled POMMES dataset by
-``dataset_calibration.apply_r0_overrides`` (electrolyser CAPEX / sovereignty min-bounds,
+``dataset_calibration.apply_dataset_calibration`` (electrolyser CAPEX / sovereignty min-bounds,
 H2 storage CAPEX / caps, hydrogen load-shedding cost), plus the shared tech-name and
 default-cost constants. Split verbatim out of the CLEVER R0 calibration pipeline.
 """
@@ -64,20 +64,20 @@ def _apply_hydrogen_load_shedding_cost(p: xr.Dataset, eur_per_mwh: float) -> Non
     """
     if "load_shedding_cost" not in p:
         logger.warning(
-            "r0_overrides: load_shedding_cost variable absent from dataset; "
+            "dataset_calibration: load_shedding_cost variable absent from dataset; "
             "skipping hydrogen safety-valve override"
         )
         return
     if HYDROGEN_RESOURCE not in p.coords["resource"].values:
         logger.warning(
-            "r0_overrides: hydrogen not in resource coord; skipping safety-valve"
+            "dataset_calibration: hydrogen not in resource coord; skipping safety-valve"
         )
         return
 
     sel = dict(resource=HYDROGEN_RESOURCE)
     p["load_shedding_cost"].loc[sel] = float(eur_per_mwh)
     logger.info(
-        "r0_overrides: hydrogen load_shedding_cost set to %.0f €/MWh (safety valve)",
+        "dataset_calibration: hydrogen load_shedding_cost set to %.0f €/MWh (safety valve)",
         eur_per_mwh,
     )
 
@@ -111,7 +111,7 @@ def _apply_electrolyser_capex(p: xr.Dataset, new_eur_per_kw: float) -> None:
     # MENA areas don't actually have an "electrolysis" tech (they use
     # "MENA_electrolysis"); POMMES gates presence on the conversion_factor,
     # not on invest_cost. So a non-zero invest_cost on a non-existent
-    # area-tech slot is harmless — and required to pass validate_overrides()
+    # area-tech slot is harmless — and required to pass validate_calibration()
     # which insists every cell be positive after override.
     p["conversion_invest_cost"].loc[sel] = new_eur_per_mw
 
@@ -123,7 +123,7 @@ def _apply_electrolyser_capex(p: xr.Dataset, new_eur_per_kw: float) -> None:
     )
 
     logger.info(
-        "r0_overrides: electrolyser invest_cost %.0f → %.0f €/MW (ratio %.3f)",
+        "dataset_calibration: electrolyser invest_cost %.0f → %.0f €/MW (ratio %.3f)",
         old_mean, new_eur_per_mw, ratio,
     )
 
@@ -148,7 +148,7 @@ def _apply_electrolyser_min_bounds(
         ] = mw
 
     logger.info(
-        "r0_overrides: electrolyser min bounds applied to %d areas: %s",
+        "dataset_calibration: electrolyser min bounds applied to %d areas: %s",
         len(min_bounds_gw), {a: f"{gw:.1f} GW" for a, gw in min_bounds_gw.items()},
     )
 
@@ -196,7 +196,7 @@ def _apply_storage_capex(p: xr.Dataset, capex_df: pd.DataFrame) -> None:
         )
 
     logger.info(
-        "r0_overrides: storage CAPEX overrides applied to %d areas", len(capex_df)
+        "dataset_calibration: storage CAPEX overrides applied to %d areas", len(capex_df)
     )
 
 
@@ -231,5 +231,5 @@ def _apply_storage_caps(p: xr.Dataset, caps_df: pd.DataFrame) -> None:
             p["storage_power_capacity_investment_max"].loc[sel] = cap_mw
 
     logger.info(
-        "r0_overrides: storage capacity caps applied to %d areas", len(caps_df)
+        "dataset_calibration: storage capacity caps applied to %d areas", len(caps_df)
     )

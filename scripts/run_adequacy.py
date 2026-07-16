@@ -1702,16 +1702,16 @@ print("run_model_with_ramping() defined.")
 # ══════════════════════════════════════════════════════════════════════
 # 4.0  R0 per-country override kwargs (sub-tasks 1, 2, 3)
 # ══════════════════════════════════════════════════════════════════════
-# Builds the r0_overrides_kwargs payload from the CSVs in TABLES_DIR
+# Builds the dataset_calibration_kwargs payload from the CSVs in TABLES_DIR
 # (per-scenario tables/<SCENARIO>/) and DemandForge's live H₂ demand for
 # the active bundle.  See `notes/r0_override_contract.md` for the
 # Layer-1 / Layer-2 ownership map.
-from pommes_eur.providers.clever.calibration_inputs import build_r0_overrides_kwargs
+from pommes_eur.providers.clever.calibration_inputs import build_calibration_inputs
 
 # Pull electrolyser CAPEX from the scenario-name parser (_elNNN suffix).
 # Default 500 €/kW when no suffix; _el700 → 700, _el900 → 900, etc.
 from clever.constants import _ELECTROLYSER_CAPEX_EUR_PER_KW as _SCEN_EL_CAPEX
-r0_kwargs = build_r0_overrides_kwargs(
+calibration_kwargs = build_calibration_inputs(
     bundle_name=DEMANDFORGE_BUNDLE,
     countries=COUNTRIES_MODELLED,
     model_year=MODEL_YEAR,
@@ -1720,17 +1720,17 @@ r0_kwargs = build_r0_overrides_kwargs(
 )
 
 print(f"R0 overrides ready: "
-      f"{len(r0_kwargs['electrolyser_min_bounds_gw'])} electrolyser min-bound countries, "
-      f"{len(r0_kwargs['storage_capex_by_area'])} storage CAPEX rows, "
-      f"{len(r0_kwargs['storage_caps_by_area'])} storage cap rows, "
-      f"electrolyser CAPEX={r0_kwargs['electrolyser_invest_cost_eur_per_kw']:.0f} €/kW")
+      f"{len(calibration_kwargs['electrolyser_min_bounds_gw'])} electrolyser min-bound countries, "
+      f"{len(calibration_kwargs['storage_capex_by_area'])} storage CAPEX rows, "
+      f"{len(calibration_kwargs['storage_caps_by_area'])} storage cap rows, "
+      f"electrolyser CAPEX={calibration_kwargs['electrolyser_invest_cost_eur_per_kw']:.0f} €/kW")
 
 # Sub-task 5: disable electrolyser sovereignty min bounds for the
 # "policy_re_noMin" SCENARIO. Same demand / VRE / storage / CAPEX as
 # policy_re, only the per-country floor is removed. Must come AFTER the
 # print above, which would crash on len(None).
 if NO_MIN_BOUNDS:
-    r0_kwargs["electrolyser_min_bounds_gw"] = None
+    calibration_kwargs["electrolyser_min_bounds_gw"] = None
     print("Sub-task 5: electrolyser sovereignty min bounds DISABLED (policy_re_noMin)")
 
 # 2026-05-28: also disable the electrolyser floor for any scenario carrying
@@ -1738,8 +1738,8 @@ if NO_MIN_BOUNDS:
 # with any base scenario). Used to evaluate the LP's H₂-supply choice when
 # BECCS via ATR_CCS/SMR_CCS bio_mode is available.
 from clever.constants import _NO_ELEC_FLOOR
-if _NO_ELEC_FLOOR and r0_kwargs.get("electrolyser_min_bounds_gw") is not None:
-    r0_kwargs["electrolyser_min_bounds_gw"] = None
+if _NO_ELEC_FLOOR and calibration_kwargs.get("electrolyser_min_bounds_gw") is not None:
+    calibration_kwargs["electrolyser_min_bounds_gw"] = None
     print("_noElecFloor: electrolyser sovereignty min bounds DISABLED — "
           "LP is free to allocate H₂ production across any local tech.")
 
@@ -1760,7 +1760,7 @@ print(f"Building model... (this may take 10-20 min for {len(COUNTRIES_MODELLED)}
 
 if RAMPING_ENABLED:
     # NOTE: R0 overrides currently only plumbed through run_model_without_ramping.
-    # If you re-enable ramping, mirror the r0_overrides_kwargs argument into
+    # If you re-enable ramping, mirror the dataset_calibration_kwargs argument into
     # run_model_with_ramping (one-line edit to its signature in clever/runner.py)
     # and forward it here.
     linopy_model = run_model_with_ramping(
@@ -1780,7 +1780,7 @@ else:
         year_op=MODEL_YEAR,
         write_lp=False,
         diagnostics_dir=DIAG_DIR,
-        r0_overrides_kwargs=r0_kwargs,
+        dataset_calibration_kwargs=calibration_kwargs,
     )
 
 # Restore logging after solve

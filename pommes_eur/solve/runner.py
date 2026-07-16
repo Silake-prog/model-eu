@@ -1204,7 +1204,7 @@ def run_model_without_ramping(
     year_op: int,
     write_lp: bool = False,
     diagnostics_dir: Optional[Path] = None,
-    r0_overrides_kwargs: Optional[dict] = None,
+    dataset_calibration_kwargs: Optional[dict] = None,
 ):
     """
     Build, sanitize, and solve the POMMES model.
@@ -1226,11 +1226,11 @@ def run_model_without_ramping(
         If True, write LP file and input dataset netcdf to diagnostics.
     diagnostics_dir : Path, optional
         Directory for diagnostics. If None, diagnostics are not written.
-    r0_overrides_kwargs : dict, optional
+    dataset_calibration_kwargs : dict, optional
         If provided, the kwargs are forwarded to
-        ``clever.r0_overrides.apply_r0_overrides`` after ``check_inputs`` and
+        ``pommes_eur.providers.clever.dataset_calibration.apply_dataset_calibration`` after ``check_inputs`` and
         the case-variant merge, but before ``sanitize_*``. Supported kwargs
-        documented in ``clever.r0_overrides`` — covers:
+        documented in ``pommes_eur.providers.clever.dataset_calibration`` — covers:
 
           * ``electrolyser_invest_cost_eur_per_kw`` (sub-task 2)
           * ``electrolyser_min_bounds_gw`` (sub-task 1)
@@ -1328,12 +1328,12 @@ def run_model_without_ramping(
     # ── R0 per-country overrides ────────────────────────────────────────
     # Hook point: after check_inputs validation and the case-variant merge,
     # before sanitize_*. Mutates p with R0-specific recalibrations (sub-tasks
-    # 1, 2, 3 in checklist_R0.md). Opt-in via r0_overrides_kwargs; default
+    # 1, 2, 3 in checklist_R0.md). Opt-in via dataset_calibration_kwargs; default
     # behaviour is unchanged from before R0 (no override applied).
-    if r0_overrides_kwargs is not None:
-        from pommes_eur.providers.clever.dataset_calibration import apply_r0_overrides
+    if dataset_calibration_kwargs is not None:
+        from pommes_eur.providers.clever.dataset_calibration import apply_dataset_calibration
         logger.info("Applying R0 per-country overrides…")
-        p = apply_r0_overrides(p, **r0_overrides_kwargs)
+        p = apply_dataset_calibration(p, **dataset_calibration_kwargs)
 
     p = sanitize_absent_conversions(p)
     p = sanitize_storage_inputs(p)
