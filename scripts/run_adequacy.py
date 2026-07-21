@@ -199,7 +199,7 @@ MODEL_YEAR       = 2050
 from clever.constants import _WEATHER_YEAR_OVERRIDE as _PARSED_WY
 WEATHER_REF_YEAR = _PARSED_WY if _PARSED_WY is not None else 2024  # SupplyForge / DemandForge reference year
 REF_EV_YEAR      = 2024          # EV profile reference year
-SOLVER           = "gurobi"      # "gurobi" or "highs"
+SOLVER           = _os.environ.get("CLEVER_SOLVER", "gurobi")  # "gurobi" or "highs" (env-overridable for local no-license runs)
 ADD_HYDRO        = True          # include hydro (RoR, reservoir, PHS)
 ADD_INTERCO      = True          # include NTC interconnections
 
